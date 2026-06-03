@@ -397,8 +397,8 @@
                   </select>
                 </div>
                 <div>
-                  <label class="block text-xs text-gray-500 mb-1.5">最新处理人</label>
-                  <input type="text" class="filter-input w-full" placeholder="请输入最新处理人">
+                  <label class="block text-xs text-gray-500 mb-1.5">最新流转回复人</label>
+                  <input type="text" class="filter-input w-full" placeholder="请输入最新流转回复人">
                 </div>
                 <div>
                   <label class="block text-xs text-gray-500 mb-1.5">客服</label>
@@ -529,8 +529,8 @@
                     <th class="px-3 py-3 text-left font-medium text-gray-700 border-b border-gray-200 w-[150px]">工单创建时间</th>
                     <th class="px-3 py-3 text-left font-medium text-gray-700 border-b border-gray-200 w-[150px]">客服首次处理截止时间</th>
                     <th class="px-3 py-3 text-left font-medium text-gray-700 border-b border-gray-200 w-[150px]">工单完结截止时间</th>
-                    <th class="px-3 py-3 text-left font-medium text-gray-700 border-b border-gray-200 w-[150px]">最新处理时间</th>
-                    <th class="px-3 py-3 text-left font-medium text-gray-700 border-b border-gray-200 w-[100px]">最新处理人</th>
+                    <th class="px-3 py-3 text-left font-medium text-gray-700 border-b border-gray-200 w-[150px]">最新流转回复时间</th>
+                    <th class="px-3 py-3 text-left font-medium text-gray-700 border-b border-gray-200 w-[100px]">最新流转回复人</th>
                     <th class="px-3 py-3 text-left font-medium text-gray-700 border-b border-gray-200 w-[150px]">工单实际完结时间</th>
                     <th class="px-3 py-3 text-left font-medium text-gray-700 border-b border-gray-200 w-[150px]">工单号</th>
                   </tr>
@@ -954,7 +954,7 @@
               <div class="p-4 bg-gray-50 rounded-lg"><div class="text-sm text-gray-500 mb-1">客户号</div><div class="font-medium text-gray-800">CUS00123</div></div>
               <div class="p-4 bg-gray-50 rounded-lg"><div class="text-sm text-gray-500 mb-1">工单来源</div><div class="font-medium text-gray-800">电话</div></div>
               <div class="p-4 bg-gray-50 rounded-lg"><div class="text-sm text-gray-500 mb-1">工单创建人</div><div class="font-medium text-gray-800">张经理</div></div>
-              <div class="p-4 bg-gray-50 rounded-lg"><div class="text-sm text-gray-500 mb-1">最新处理人</div><div class="font-medium text-gray-800">李客服</div></div>
+              <div class="p-4 bg-gray-50 rounded-lg"><div class="text-sm text-gray-500 mb-1">最新流转回复人</div><div class="font-medium text-gray-800">李客服</div></div>
             </div>
             <div class="grid grid-cols-2 gap-4 mb-6">
               <div class="p-4 bg-gray-50 rounded-lg"><div class="text-sm text-gray-500 mb-1">工单创建时间</div><div class="font-medium text-gray-800">2024-01-15 10:30:00</div></div>
@@ -1425,7 +1425,7 @@
               <span class="text-sm text-gray-700">工单完结截止时间</span>
               <span class="ml-auto text-sm text-gray-400">180px</span>
             </div>
-            <div class="customize-item flex items-center gap-3 p-2.5 rounded-md bg-gray-50" data-field="最新处理时间" data-width="180">
+            <div class="customize-item flex items-center gap-3 p-2.5 rounded-md bg-gray-50" data-field="最新流转回复时间" data-width="180">
               <div class="flex flex-col gap-0.5">
                 <svg class="w-4 h-3 text-gray-300 cursor-pointer btn-move-up" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
@@ -1434,8 +1434,8 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
               </div>
-              <input type="checkbox" checked class="w-4 h-4 text-blue-500 rounded" data-field="最新处理时间">
-              <span class="text-sm text-gray-700">最新处理时间</span>
+              <input type="checkbox" checked class="w-4 h-4 text-blue-500 rounded" data-field="最新流转回复时间">
+              <span class="text-sm text-gray-700">最新流转回复时间</span>
               <span class="ml-auto text-sm text-gray-400">180px</span>
             </div>
             <div class="customize-item flex items-center gap-3 p-2.5 rounded-md bg-gray-50" data-field="工单实际完结时间" data-width="180">
@@ -1465,7 +1465,7 @@
               <span class="ml-auto text-sm text-gray-400">100px</span>
               <span class="text-xs text-orange-500">（固定列）</span>
             </div>
-            <div class="customize-item flex items-center gap-3 p-2.5 rounded-md bg-gray-50" data-field="最新处理人" data-width="100" data-fixed="right">
+            <div class="customize-item flex items-center gap-3 p-2.5 rounded-md bg-gray-50" data-field="最新流转回复人" data-width="100" data-fixed="right">
               <div class="flex flex-col gap-0.5">
                 <svg class="w-4 h-3 text-gray-300 cursor-pointer btn-move-up" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
@@ -1474,8 +1474,8 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
               </div>
-              <input type="checkbox" checked class="w-4 h-4 text-blue-500 rounded" data-field="最新处理人">
-              <span class="text-sm text-gray-700">最新处理人</span>
+              <input type="checkbox" checked class="w-4 h-4 text-blue-500 rounded" data-field="最新流转回复人">
+              <span class="text-sm text-gray-700">最新流转回复人</span>
               <span class="ml-auto text-sm text-gray-400">100px</span>
               <span class="text-xs text-orange-500">（固定列）</span>
             </div>
@@ -1522,7 +1522,7 @@
           <div class="border-b border-gray-200 bg-white">
             <nav class="flex space-x-8 px-5" aria-label="Tabs">
               <button id="tab-process" class="flex items-center gap-2 px-4 py-3 font-medium text-blue-600 border-b-2 border-blue-600 text-sm">
-                处理流转过程
+                流转处理过程
               </button>
               <button id="tab-result" class="flex items-center gap-2 px-4 py-3 font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-50 text-sm">
                 处理结果登记
@@ -1531,7 +1531,7 @@
           </div>
           <!-- 标签内容 -->
           <div class="flex-1 overflow-y-auto p-5">
-            <!-- 处理流转过程 -->
+            <!-- 流转处理过程 -->
             <div id="tab-content-process">
               <!-- 工单处理 -->
               <div class="mb-8">
@@ -1609,7 +1609,7 @@
                     <input type="text" readonly class="filter-input w-full bg-gray-50" value="2024-01-15 10:30:00">
                   </div>
                   <div>
-                    <label class="block text-sm text-gray-500 mb-1">工单截止处理时间</label>
+                    <label class="block text-sm text-gray-500 mb-1">工单截止流转回复时间</label>
                     <input type="text" readonly class="filter-input w-full bg-gray-50" value="2026-05-10 18:00">
                   </div>
                   <div>
@@ -1635,28 +1635,32 @@
                   </div>
                 </div>
               </div>
-              <!-- 流转回复方案 -->
+              <!-- 工单流转记录 -->
               <div class="mb-6">
                 <h4 class="font-medium text-gray-800 mb-4 pb-2 border-b border-gray-200 flex items-center gap-2">
                   <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
                   </svg>
-                  流转回复方案
+                  工单流转记录
                 </h4>
                 <div class="space-y-3">
                   <div class="p-4 bg-gray-50 rounded-md">
-                    <div class="grid grid-cols-7 gap-4">
+                    <div class="grid grid-cols-9 gap-4">
                       <div>
                         <span class="text-sm text-gray-500">流转方案</span>
                         <p class="text-sm text-gray-800 mt-1">转仓库查件</p>
                       </div>
                       <div>
+                        <span class="text-sm text-gray-500">流转方案说明</span>
+                        <p class="text-sm text-gray-800 mt-1">包裹断更5天，请尽快找到包裹，避免产生赔偿</p>
+                      </div>
+                      <div>
                         <span class="text-sm text-gray-500">流转回复方案</span>
-                        <p class="text-sm text-gray-800 mt-1">已确认</p>
+                        <p class="text-sm text-gray-800 mt-1">丢件</p>
                       </div>
                       <div>
                         <span class="text-sm text-gray-500">流转回复内容</span>
-                        <p class="text-sm text-gray-800 mt-1">仓库已确认包裹位置，正在安排派送</p>
+                        <p class="text-sm text-gray-800 mt-1">已联系仓库确认包裹位置</p>
                       </div>
                       <div>
                         <span class="text-sm text-gray-500">附件</span>
@@ -1671,32 +1675,40 @@
                         </div>
                       </div>
                       <div>
+                        <span class="text-sm text-gray-500">开始流转时间</span>
+                        <p class="text-sm text-gray-800 mt-1">2024-01-10 18:00:00</p>
+                      </div>
+                      <div>
                         <span class="text-sm text-gray-500">流转处理截止时间</span>
-                        <p class="text-sm text-gray-800 mt-1">2026-05-30 18:00</p>
+                        <p class="text-sm text-gray-800 mt-1">2024-01-16 18:00:00</p>
                       </div>
                       <div>
-                        <span class="text-sm text-gray-500">处理时间</span>
-                        <p class="text-sm text-gray-800 mt-1">2026-05-28 10:30</p>
+                        <span class="text-sm text-gray-500">流转回复时间</span>
+                        <p class="text-sm text-gray-800 mt-1">2024-01-15 11:00:00</p>
                       </div>
                       <div>
-                        <span class="text-sm text-gray-500">处理人</span>
+                        <span class="text-sm text-gray-500">流转回复人</span>
                         <p class="text-sm text-gray-800 mt-1">PHX-Prime Axis</p>
                       </div>
                     </div>
                   </div>
                   <div class="p-4 bg-gray-50 rounded-md">
-                    <div class="grid grid-cols-7 gap-4">
+                    <div class="grid grid-cols-9 gap-4">
                       <div>
                         <span class="text-sm text-gray-500">流转方案</span>
                         <p class="text-sm text-gray-800 mt-1">转车队确认</p>
                       </div>
                       <div>
+                        <span class="text-sm text-gray-500">流转方案说明</span>
+                        <p class="text-sm text-gray-800 mt-1">包裹断更5天，请尽快找到包裹，避免产生赔偿</p>
+                      </div>
+                      <div>
                         <span class="text-sm text-gray-500">流转回复方案</span>
-                        <p class="text-sm text-gray-800 mt-1">确认丢件</p>
+                        <p class="text-sm text-gray-800 mt-1">超期自动认可</p>
                       </div>
                       <div>
                         <span class="text-sm text-gray-500">流转回复内容</span>
-                        <p class="text-sm text-gray-800 mt-1">确认丢件，无异议</p>
+                        <p class="text-sm text-gray-800 mt-1">车队已确认派送安排</p>
                       </div>
                       <div>
                         <span class="text-sm text-gray-500">附件</span>
@@ -1705,15 +1717,19 @@
                         </div>
                       </div>
                       <div>
-                        <span class="text-sm text-gray-500">流转处理截止时间</span>
-                        <p class="text-sm text-gray-800 mt-1">2026-05-31 18:00</p>
+                        <span class="text-sm text-gray-500">开始流转时间</span>
+                        <p class="text-sm text-gray-800 mt-1">2024-01-12 10:00:00</p>
                       </div>
                       <div>
-                        <span class="text-sm text-gray-500">处理时间</span>
+                        <span class="text-sm text-gray-500">流转处理截止时间</span>
+                        <p class="text-sm text-gray-800 mt-1">2024-01-17 18:00:00</p>
+                      </div>
+                      <div>
+                        <span class="text-sm text-gray-500">流转回复时间</span>
                         <p class="text-sm text-gray-800 mt-1">2026-05-29 14:20</p>
                       </div>
                       <div>
-                        <span class="text-sm text-gray-500">处理人</span>
+                        <span class="text-sm text-gray-500">流转回复人</span>
                         <p class="text-sm text-gray-800 mt-1">DFW-STROUD</p>
                       </div>
                     </div>
@@ -1894,7 +1910,7 @@
                     <input type="text" readonly class="filter-input w-full bg-gray-50" value="2024-01-15 10:30:00">
                   </div>
                   <div>
-                    <label class="block text-sm text-gray-500 mb-1">工单截止处理时间</label>
+                    <label class="block text-sm text-gray-500 mb-1">工单截止流转回复时间</label>
                     <input type="text" readonly class="filter-input w-full bg-gray-50" value="2026-05-10 18:00">
                   </div>
                   <div>
@@ -1920,28 +1936,32 @@
                   </div>
                 </div>
               </div>
-              <!-- 流转回复方案 -->
+              <!-- 工单流转记录 -->
               <div class="mb-6">
                 <h4 class="font-medium text-gray-800 mb-4 pb-2 border-b border-gray-200 flex items-center gap-2">
                   <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
                   </svg>
-                  流转回复方案
+                  工单流转记录
                 </h4>
                 <div class="space-y-3">
                   <div class="p-4 bg-gray-50 rounded-md">
-                    <div class="grid grid-cols-7 gap-4">
+                    <div class="grid grid-cols-9 gap-4">
                       <div>
                         <span class="text-sm text-gray-500">流转方案</span>
                         <p class="text-sm text-gray-800 mt-1">转仓库查件</p>
                       </div>
                       <div>
+                        <span class="text-sm text-gray-500">流转方案说明</span>
+                        <p class="text-sm text-gray-800 mt-1">包裹断更5天，请尽快找到包裹，避免产生赔偿</p>
+                      </div>
+                      <div>
                         <span class="text-sm text-gray-500">流转回复方案</span>
-                        <p class="text-sm text-gray-800 mt-1">已确认</p>
+                        <p class="text-sm text-gray-800 mt-1">丢件</p>
                       </div>
                       <div>
                         <span class="text-sm text-gray-500">流转回复内容</span>
-                        <p class="text-sm text-gray-800 mt-1">仓库已确认包裹位置，正在安排派送</p>
+                        <p class="text-sm text-gray-800 mt-1">已联系仓库确认包裹位置</p>
                       </div>
                       <div>
                         <span class="text-sm text-gray-500">附件</span>
@@ -1956,32 +1976,40 @@
                         </div>
                       </div>
                       <div>
+                        <span class="text-sm text-gray-500">开始流转时间</span>
+                        <p class="text-sm text-gray-800 mt-1">2024-01-10 18:00:00</p>
+                      </div>
+                      <div>
                         <span class="text-sm text-gray-500">流转处理截止时间</span>
-                        <p class="text-sm text-gray-800 mt-1">2026-05-30 18:00</p>
+                        <p class="text-sm text-gray-800 mt-1">2024-01-16 18:00:00</p>
                       </div>
                       <div>
-                        <span class="text-sm text-gray-500">处理时间</span>
-                        <p class="text-sm text-gray-800 mt-1">2026-05-28 10:30</p>
+                        <span class="text-sm text-gray-500">流转回复时间</span>
+                        <p class="text-sm text-gray-800 mt-1">2024-01-15 11:00:00</p>
                       </div>
                       <div>
-                        <span class="text-sm text-gray-500">处理人</span>
+                        <span class="text-sm text-gray-500">流转回复人</span>
                         <p class="text-sm text-gray-800 mt-1">PHX-Prime Axis</p>
                       </div>
                     </div>
                   </div>
                   <div class="p-4 bg-gray-50 rounded-md">
-                    <div class="grid grid-cols-7 gap-4">
+                    <div class="grid grid-cols-9 gap-4">
                       <div>
                         <span class="text-sm text-gray-500">流转方案</span>
                         <p class="text-sm text-gray-800 mt-1">转车队确认</p>
                       </div>
                       <div>
+                        <span class="text-sm text-gray-500">流转方案说明</span>
+                        <p class="text-sm text-gray-800 mt-1">包裹断更5天，请尽快找到包裹，避免产生赔偿</p>
+                      </div>
+                      <div>
                         <span class="text-sm text-gray-500">流转回复方案</span>
-                        <p class="text-sm text-gray-800 mt-1">确认丢件</p>
+                        <p class="text-sm text-gray-800 mt-1">超期自动认可</p>
                       </div>
                       <div>
                         <span class="text-sm text-gray-500">流转回复内容</span>
-                        <p class="text-sm text-gray-800 mt-1">确认丢件，无异议</p>
+                        <p class="text-sm text-gray-800 mt-1">车队已确认派送安排</p>
                       </div>
                       <div>
                         <span class="text-sm text-gray-500">附件</span>
@@ -1990,15 +2018,19 @@
                         </div>
                       </div>
                       <div>
-                        <span class="text-sm text-gray-500">流转处理截止时间</span>
-                        <p class="text-sm text-gray-800 mt-1">2026-05-31 18:00</p>
+                        <span class="text-sm text-gray-500">开始流转时间</span>
+                        <p class="text-sm text-gray-800 mt-1">2024-01-12 10:00:00</p>
                       </div>
                       <div>
-                        <span class="text-sm text-gray-500">处理时间</span>
+                        <span class="text-sm text-gray-500">流转处理截止时间</span>
+                        <p class="text-sm text-gray-800 mt-1">2024-01-17 18:00:00</p>
+                      </div>
+                      <div>
+                        <span class="text-sm text-gray-500">流转回复时间</span>
                         <p class="text-sm text-gray-800 mt-1">2026-05-29 14:20</p>
                       </div>
                       <div>
-                        <span class="text-sm text-gray-500">处理人</span>
+                        <span class="text-sm text-gray-500">流转回复人</span>
                         <p class="text-sm text-gray-800 mt-1">DFW-STROUD</p>
                       </div>
                     </div>
@@ -2198,7 +2230,7 @@
               <div class="border-b border-gray-200 bg-white">
                 <nav class="flex space-x-8 px-5" aria-label="Tabs">
                   <button id="batch-tab-process" class="flex items-center gap-2 px-4 py-3 font-medium text-blue-600 border-b-2 border-blue-600 text-sm">
-                    处理流转过程
+                    流转处理过程
                   </button>
                   <button id="batch-tab-result" class="flex items-center gap-2 px-4 py-3 font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-50 text-sm">
                     处理结果登记
@@ -2798,8 +2830,8 @@
                     <table class="w-full text-sm">
                       <thead>
                         <tr class="bg-gray-50">
-                          <th class="px-4 py-3 text-left font-medium text-gray-700 border-b border-gray-200">文件名</th>
                           <th class="px-4 py-3 text-left font-medium text-gray-700 border-b border-gray-200">批次号</th>
+                          <th class="px-4 py-3 text-left font-medium text-gray-700 border-b border-gray-200">文件名</th>
                           <th class="px-4 py-3 text-left font-medium text-gray-700 border-b border-gray-200">状态</th>
                           <th class="px-4 py-3 text-left font-medium text-gray-700 border-b border-gray-200">总条数</th>
                           <th class="px-4 py-3 text-left font-medium text-gray-700 border-b border-gray-200">成功数</th>
@@ -2810,8 +2842,8 @@
                       </thead>
                       <tbody>
                         <tr class="border-b border-gray-100">
-                          <td class="px-4 py-3">批量客诉工单_20260501.xlsx</td>
                           <td class="px-4 py-3">PC2026050001</td>
+                          <td class="px-4 py-3">批量客诉工单_20260501.xlsx</td>
                           <td class="px-4 py-3"><span class="status-completed">处理中</span></td>
                           <td class="px-4 py-3">156</td>
                           <td class="px-4 py-3">142</td>
@@ -2820,8 +2852,8 @@
                           <td class="px-4 py-3">程思敏</td>
                         </tr>
                         <tr class="border-b border-gray-100 bg-gray-50">
-                          <td class="px-4 py-3">批量客诉工单_20260515.xlsx</td>
                           <td class="px-4 py-3">PC2026050015</td>
+                          <td class="px-4 py-3">批量客诉工单_20260515.xlsx</td>
                           <td class="px-4 py-3"><span class="status-completed">成功</span></td>
                           <td class="px-4 py-3">89</td>
                           <td class="px-4 py-3">89</td>
@@ -2830,8 +2862,8 @@
                           <td class="px-4 py-3">黄燕株</td>
                         </tr>
                         <tr class="border-b border-gray-100">
-                          <td class="px-4 py-3">批量客诉工单_20260520.xlsx</td>
                           <td class="px-4 py-3">PC2026050020</td>
+                          <td class="px-4 py-3">批量客诉工单_20260520.xlsx</td>
                           <td class="px-4 py-3"><span class="status-failed">失败</span></td>
                           <td class="px-4 py-3">45</td>
                           <td class="px-4 py-3">30</td>
@@ -3206,40 +3238,12 @@
                 <textarea readonly class="filter-input w-full bg-gray-50 resize-none" rows="3" style="min-height: 80px;">包裹车队已确认丢件，且满足公司赔偿标准，同意赔偿运费+申报价值共计50美元</textarea>
               </div>
               <div>
-                <label class="block text-sm text-gray-500 mb-1">处理时间</label>
+                <label class="block text-sm text-gray-500 mb-1">流转回复时间</label>
                 <input type="text" readonly class="filter-input w-full bg-gray-50" value="2024-01-15 14:30:00">
               </div>
               <div>
-                <label class="block text-sm text-gray-500 mb-1">处理人</label>
+                <label class="block text-sm text-gray-500 mb-1">流转回复人</label>
                 <input type="text" readonly class="filter-input w-full bg-gray-50" value="黄燕株">
-              </div>
-            </div>
-          </div>
-
-          <!-- 流转处理方案 -->
-          <div class="mb-6">
-            <h4 class="font-medium text-gray-800 mb-4 pb-2 border-b border-gray-200 flex items-center gap-2">
-              <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
-              </svg>
-              流转处理方案
-            </h4>
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <label class="block text-sm text-gray-500 mb-1">流转方案</label>
-                <input type="text" readonly class="filter-input w-full bg-gray-50" value="转仓库查件">
-              </div>
-              <div>
-                <label class="block text-sm text-gray-500 mb-1">流转方案说明</label>
-                <input type="text" readonly class="filter-input w-full bg-gray-50" value="包裹断更5天，请尽快找到包裹，避免产生赔偿">
-              </div>
-              <div>
-                <label class="block text-sm text-gray-500 mb-1">流转回复方案</label>
-                <input type="text" readonly class="filter-input w-full bg-gray-50" value="确认丢件">
-              </div>
-              <div>
-                <label class="block text-sm text-gray-500 mb-1">流转回复内容</label>
-                <input type="text" readonly class="filter-input w-full bg-gray-50" value="确认丢件">
               </div>
             </div>
           </div>
@@ -3254,10 +3258,14 @@
             </h4>
             <div class="space-y-3">
               <div class="p-4 bg-gray-50 rounded-md">
-                <div class="grid grid-cols-7 gap-4">
+                <div class="grid grid-cols-9 gap-4">
                   <div>
-                    <span class="text-sm text-gray-500">工单过程方案</span>
+                    <span class="text-sm text-gray-500">流转方案</span>
                     <p class="text-sm text-gray-800 mt-1">转仓库查件</p>
+                  </div>
+                  <div>
+                    <span class="text-sm text-gray-500">流转方案说明</span>
+                    <p class="text-sm text-gray-800 mt-1">包裹断更5天，请尽快找到包裹，避免产生赔偿</p>
                   </div>
                   <div>
                     <span class="text-sm text-gray-500">流转回复方案</span>
@@ -3280,24 +3288,32 @@
                     </div>
                   </div>
                   <div>
+                    <span class="text-sm text-gray-500">开始流转时间</span>
+                    <p class="text-sm text-gray-800 mt-1">2024-01-10 18:00:00</p>
+                  </div>
+                  <div>
                     <span class="text-sm text-gray-500">流转处理截止时间</span>
                     <p class="text-sm text-gray-800 mt-1">2024-01-16 18:00:00</p>
                   </div>
                   <div>
-                    <span class="text-sm text-gray-500">处理时间</span>
+                    <span class="text-sm text-gray-500">流转回复时间</span>
                     <p class="text-sm text-gray-800 mt-1">2024-01-15 11:00:00</p>
                   </div>
                   <div>
-                    <span class="text-sm text-gray-500">处理人</span>
+                    <span class="text-sm text-gray-500">流转回复人</span>
                     <p class="text-sm text-gray-800 mt-1">PHX-Prime Axis</p>
                   </div>
                 </div>
               </div>
               <div class="p-4 bg-gray-50 rounded-md">
-                <div class="grid grid-cols-7 gap-4">
+                <div class="grid grid-cols-9 gap-4">
                   <div>
-                    <span class="text-sm text-gray-500">工单过程方案</span>
+                    <span class="text-sm text-gray-500">流转方案</span>
                     <p class="text-sm text-gray-800 mt-1">转车队确认</p>
+                  </div>
+                  <div>
+                    <span class="text-sm text-gray-500">流转方案说明</span>
+                    <p class="text-sm text-gray-800 mt-1">包裹断更5天，请尽快找到包裹，避免产生赔偿</p>
                   </div>
                   <div>
                     <span class="text-sm text-gray-500">流转回复方案</span>
@@ -3314,15 +3330,19 @@
                     </div>
                   </div>
                   <div>
+                    <span class="text-sm text-gray-500">开始流转时间</span>
+                    <p class="text-sm text-gray-800 mt-1">2024-01-12 10:00:00</p>
+                  </div>
+                  <div>
                     <span class="text-sm text-gray-500">流转处理截止时间</span>
                     <p class="text-sm text-gray-800 mt-1">2024-01-17 18:00:00</p>
                   </div>
                   <div>
-                    <span class="text-sm text-gray-500">处理时间</span>
+                    <span class="text-sm text-gray-500">流转回复时间</span>
                     <p class="text-sm text-gray-800 mt-1">2024-01-15 12:30:00</p>
                   </div>
                   <div>
-                    <span class="text-sm text-gray-500">处理人</span>
+                    <span class="text-sm text-gray-500">流转回复人</span>
                     <p class="text-sm text-gray-800 mt-1">DFW-STROUD</p>
                   </div>
                 </div>
@@ -3372,7 +3392,7 @@
                 <input type="text" readonly class="filter-input w-full bg-gray-50" value="2024-01-15 10:30:00">
               </div>
               <div>
-                <label class="block text-sm text-gray-500 mb-1">工单截止处理时间</label>
+                <label class="block text-sm text-gray-500 mb-1">工单截止流转回复时间</label>
                 <input type="text" readonly class="filter-input w-full bg-gray-50" value="2024-01-18 18:00:00">
               </div>
               <div>
