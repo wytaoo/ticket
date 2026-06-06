@@ -302,7 +302,7 @@
                   <input type="text" class="filter-input w-full" placeholder="支持批量（逗号分隔）或单个查询">
                 </div>
                 <div>
-                  <label class="block text-xs text-gray-500 mb-1.5">异常大类</label>
+                  <label class="block text-xs text-gray-500 mb-1.5">客诉大类</label>
                   <select class="filter-input w-full">
                     <option value="">请选择</option>
                     <option value="包裹破损">包裹破损</option>
@@ -312,7 +312,7 @@
                   </select>
                 </div>
                 <div>
-                  <label class="block text-xs text-gray-500 mb-1.5">异常小类</label>
+                  <label class="block text-xs text-gray-500 mb-1.5">客诉小类</label>
                   <select class="filter-input w-full">
                     <option value="">请选择</option>
                     <option value="内件缺失">内件缺失</option>
@@ -502,8 +502,8 @@
                     </th>
                     <th class="table-frozen-left-2 px-3 py-3 text-left font-medium text-gray-700 border-b border-gray-200 w-[120px]">操作</th>
                     <th class="table-frozen-left-3 px-3 py-3 text-left font-medium text-gray-700 border-b border-gray-200 w-[170px] sortable">运单号</th>
-                    <th class="table-frozen-left-4 px-3 py-3 text-left font-medium text-gray-700 border-b border-gray-200 w-[150px] sortable">异常大类</th>
-                    <th class="table-frozen-left-5 px-3 py-3 text-left font-medium text-gray-700 border-b border-gray-200 w-[170px] sortable">异常小类</th>
+                    <th class="table-frozen-left-4 px-3 py-3 text-left font-medium text-gray-700 border-b border-gray-200 w-[150px] sortable">客诉大类</th>
+                    <th class="table-frozen-left-5 px-3 py-3 text-left font-medium text-gray-700 border-b border-gray-200 w-[170px] sortable">客诉小类</th>
                     <th class="px-3 py-3 text-left font-medium text-gray-700 border-b border-gray-200 w-[100px]">工单状态</th>
                     <th class="px-3 py-3 text-left font-medium text-gray-700 border-b border-gray-200 w-[200px]">客户诉求内容</th>
                     <th class="px-3 py-3 text-left font-medium text-gray-700 border-b border-gray-200 w-[200px]">最终处理结果</th>
@@ -946,8 +946,8 @@
           <div class="bg-white rounded-lg shadow-sm p-6 mb-4">
             <div class="grid grid-cols-4 gap-4 mb-6">
               <div class="p-4 bg-gray-50 rounded-lg"><div class="text-sm text-gray-500 mb-1">运单号</div><div class="font-medium text-gray-800">YWE2024010001</div></div>
-              <div class="p-4 bg-gray-50 rounded-lg"><div class="text-sm text-gray-500 mb-1">异常大类</div><div class="font-medium text-gray-800">延误</div></div>
-              <div class="p-4 bg-gray-50 rounded-lg"><div class="text-sm text-gray-500 mb-1">异常小类</div><div class="font-medium text-gray-800">派送延迟</div></div>
+              <div class="p-4 bg-gray-50 rounded-lg"><div class="text-sm text-gray-500 mb-1">客诉大类</div><div class="font-medium text-gray-800">延误</div></div>
+              <div class="p-4 bg-gray-50 rounded-lg"><div class="text-sm text-gray-500 mb-1">客诉小类</div><div class="font-medium text-gray-800">派送延迟</div></div>
               <div class="p-4 bg-gray-50 rounded-lg"><div class="text-sm text-gray-500 mb-1">工单状态</div><div><span class="status-processing">处理中</span></div></div>
             </div>
             <div class="grid grid-cols-4 gap-4 mb-6">
@@ -1012,8 +1012,8 @@
                 <h3 class="font-medium text-gray-800 mb-4">工单信息</h3>
                 <div class="grid grid-cols-2 gap-4">
                   <div><label class="block text-sm text-gray-500 mb-1">运单号</label><input type="text" readonly class="filter-input w-full bg-gray-50" value="YWE2024010001"></div>
-                  <div><label class="block text-sm text-gray-500 mb-1">异常大类</label><select id="handle-major" class="filter-input w-full"><option value="delay" selected>延误</option><option value="damage">破损</option><option value="loss">丢失</option><option value="customs">清关问题</option><option value="other">其他</option></select></div>
-                  <div><label class="block text-sm text-gray-500 mb-1">异常小类</label><select id="handle-minor" class="filter-input w-full"><option value="minor1" selected>派送延迟</option><option value="minor2">仓库滞留</option><option value="minor3">外包装破损</option><option value="minor4">内件损坏</option><option value="minor5">完全丢失</option></select></div>
+                  <div><label class="block text-sm text-gray-500 mb-1">客诉大类</label><select id="handle-major" class="filter-input w-full"><option value="delay" selected>延误</option><option value="damage">破损</option><option value="loss">丢失</option><option value="customs">清关问题</option><option value="other">其他</option></select></div>
+                  <div><label class="block text-sm text-gray-500 mb-1">客诉小类</label><select id="handle-minor" class="filter-input w-full"><option value="minor1" selected>派送延迟</option><option value="minor2">仓库滞留</option><option value="minor3">外包装破损</option><option value="minor4">内件损坏</option><option value="minor5">完全丢失</option></select></div>
                   <div><label class="block text-sm text-gray-500 mb-1">工单状态</label><select id="handle-status" class="filter-input w-full"><option value="pending">待处理</option><option value="processing" selected>处理中</option><option value="completed">已完成</option><option value="closed">已关闭</option></select></div>
                 </div>
               </div>
@@ -1111,7 +1111,7 @@
               <span class="ml-auto text-sm text-gray-400">170px</span>
               <span class="text-xs text-orange-500">（固定列）</span>
             </div>
-            <div class="customize-item flex items-center gap-3 p-2.5 rounded-md bg-gray-50" data-field="异常大类" data-width="150" data-fixed="left">
+            <div class="customize-item flex items-center gap-3 p-2.5 rounded-md bg-gray-50" data-field="客诉大类" data-width="150" data-fixed="left">
               <div class="flex flex-col gap-0.5">
                 <svg class="w-4 h-3 text-gray-300 cursor-pointer btn-move-up" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
@@ -1120,12 +1120,12 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
               </div>
-              <input type="checkbox" checked class="w-4 h-4 text-blue-500 rounded" data-field="异常大类">
-              <span class="text-sm text-gray-700">异常大类</span>
+              <input type="checkbox" checked class="w-4 h-4 text-blue-500 rounded" data-field="客诉大类">
+              <span class="text-sm text-gray-700">客诉大类</span>
               <span class="ml-auto text-sm text-gray-400">150px</span>
               <span class="text-xs text-orange-500">（固定列）</span>
             </div>
-            <div class="customize-item flex items-center gap-3 p-2.5 rounded-md bg-gray-50" data-field="异常小类" data-width="170" data-fixed="left">
+            <div class="customize-item flex items-center gap-3 p-2.5 rounded-md bg-gray-50" data-field="客诉小类" data-width="170" data-fixed="left">
               <div class="flex flex-col gap-0.5">
                 <svg class="w-4 h-3 text-gray-300 cursor-pointer btn-move-up" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
@@ -1134,8 +1134,8 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
               </div>
-              <input type="checkbox" checked class="w-4 h-4 text-blue-500 rounded" data-field="异常小类">
-              <span class="text-sm text-gray-700">异常小类</span>
+              <input type="checkbox" checked class="w-4 h-4 text-blue-500 rounded" data-field="客诉小类">
+              <span class="text-sm text-gray-700">客诉小类</span>
               <span class="ml-auto text-sm text-gray-400">170px</span>
               <span class="text-xs text-orange-500">（固定列）</span>
             </div>
@@ -1589,11 +1589,11 @@
                     <input type="text" readonly class="filter-input w-full bg-gray-50" value="张三">
                   </div>
                   <div>
-                    <label class="block text-sm text-gray-500 mb-1">异常大类</label>
+                    <label class="block text-sm text-gray-500 mb-1">客诉大类</label>
                     <input type="text" readonly class="filter-input w-full bg-gray-50" value="延误">
                   </div>
                   <div>
-                    <label class="block text-sm text-gray-500 mb-1">异常小类</label>
+                    <label class="block text-sm text-gray-500 mb-1">客诉小类</label>
                     <input type="text" readonly class="filter-input w-full bg-gray-50" value="派送延迟">
                   </div>
                   <div>
@@ -1890,11 +1890,11 @@
                     <input type="text" readonly class="filter-input w-full bg-gray-50" value="张三">
                   </div>
                   <div>
-                    <label class="block text-sm text-gray-500 mb-1">异常大类</label>
+                    <label class="block text-sm text-gray-500 mb-1">客诉大类</label>
                     <input type="text" readonly class="filter-input w-full bg-gray-50" value="延误">
                   </div>
                   <div>
-                    <label class="block text-sm text-gray-500 mb-1">异常小类</label>
+                    <label class="block text-sm text-gray-500 mb-1">客诉小类</label>
                     <input type="text" readonly class="filter-input w-full bg-gray-50" value="派送延迟">
                   </div>
                   <div>
@@ -2695,7 +2695,7 @@
                     </div>
                     <div class="grid grid-cols-3 gap-4">
                       <div>
-                        <label class="block text-sm text-gray-500 mb-1">异常大类 <span class="text-red-500">*</span></label>
+                        <label class="block text-sm text-gray-500 mb-1">客诉大类 <span class="text-red-500">*</span></label>
                         <select id="create-category" class="filter-input w-full">
                           <option value="">请选择</option>
                           <option value="包裹破损">包裹破损</option>
@@ -2705,7 +2705,7 @@
                         </select>
                       </div>
                       <div>
-                        <label class="block text-sm text-gray-500 mb-1">异常小类 <span class="text-red-500">*</span></label>
+                        <label class="block text-sm text-gray-500 mb-1">客诉小类 <span class="text-red-500">*</span></label>
                         <select id="create-subcategory" class="filter-input w-full">
                           <option value="">请选择</option>
                           <option value="内件缺失">内件缺失</option>
@@ -2748,8 +2748,8 @@
                             <th class="px-4 py-2 text-left font-medium text-gray-700 border-b border-gray-200">运单号</th>
                             <th class="px-4 py-2 text-left font-medium text-gray-700 border-b border-gray-200">客户号</th>
                             <th class="px-4 py-2 text-left font-medium text-gray-700 border-b border-gray-200">客户名称</th>
-                            <th class="px-4 py-2 text-left font-medium text-gray-700 border-b border-gray-200">异常大类</th>
-                            <th class="px-4 py-2 text-left font-medium text-gray-700 border-b border-gray-200">异常小类</th>
+                            <th class="px-4 py-2 text-left font-medium text-gray-700 border-b border-gray-200">客诉大类</th>
+                            <th class="px-4 py-2 text-left font-medium text-gray-700 border-b border-gray-200">客诉小类</th>
                             <th class="px-4 py-2 text-left font-medium text-gray-700 border-b border-gray-200">客诉内容</th>
                             <th class="px-4 py-2 text-left font-medium text-gray-700 border-b border-gray-200">流转方案</th>
                             <th class="px-4 py-2 text-left font-medium text-gray-700 border-b border-gray-200">创建时间</th>
@@ -3372,11 +3372,11 @@
                 <input type="text" readonly class="filter-input w-full bg-gray-50" value="张三">
               </div>
               <div>
-                <label class="block text-sm text-gray-500 mb-1">异常大类</label>
+                <label class="block text-sm text-gray-500 mb-1">客诉大类</label>
                 <input type="text" readonly class="filter-input w-full bg-gray-50" value="延误">
               </div>
               <div>
-                <label class="block text-sm text-gray-500 mb-1">异常小类</label>
+                <label class="block text-sm text-gray-500 mb-1">客诉小类</label>
                 <input type="text" readonly class="filter-input w-full bg-gray-50" value="派送延迟">
               </div>
               <div>
