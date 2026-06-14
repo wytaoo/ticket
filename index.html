@@ -257,6 +257,12 @@
             </svg>
             <span class="text-sm font-medium">客诉工单</span>
           </a>
+          <a href="#" class="menu-item flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition">
+            <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+            <span class="text-sm font-medium">监控查询</span>
+          </a>
 
           <div class="text-xs text-gray-400 px-3 py-2 mt-4">系统配置</div>
           <div class="menu-group">
@@ -273,26 +279,26 @@
               </svg>
             </div>
             <div class="menu-children hidden pl-6 mt-1 space-y-1">
-              <a href="#" class="sub-menu-item block px-3 py-2 rounded-lg hover:bg-gray-50 text-sm text-gray-600 transition">
-                客诉大类配置
+              <a href="#" class="menu-item block px-3 py-2 rounded-lg hover:bg-gray-50 text-sm text-gray-600 transition">
+                <span>客诉大类配置</span>
               </a>
-              <a href="#" class="sub-menu-item block px-3 py-2 rounded-lg hover:bg-gray-50 text-sm text-gray-600 transition">
-                客诉小类配置
+              <a href="#" class="menu-item block px-3 py-2 rounded-lg hover:bg-gray-50 text-sm text-gray-600 transition">
+                <span>客诉小类配置</span>
               </a>
-              <a href="#" class="sub-menu-item block px-3 py-2 rounded-lg hover:bg-gray-50 text-sm text-gray-600 transition">
-                自动流转方案配置
+              <a href="#" class="menu-item block px-3 py-2 rounded-lg hover:bg-gray-50 text-sm text-gray-600 transition">
+                <span>自动流转方案</span>
               </a>
-              <a href="#" class="sub-menu-item block px-3 py-2 rounded-lg hover:bg-gray-50 text-sm text-gray-600 transition">
-                时效配置
+              <a href="#" class="menu-item block px-3 py-2 rounded-lg hover:bg-gray-50 text-sm text-gray-600 transition">
+                <span>时效配置</span>
               </a>
-              <a href="#" class="sub-menu-item block px-3 py-2 rounded-lg hover:bg-gray-50 text-sm text-gray-600 transition">
-                DSP扣罚金额配置
+              <a href="#" class="menu-item block px-3 py-2 rounded-lg hover:bg-gray-50 text-sm text-gray-600 transition">
+                <span>DSP扣罚金额配置</span>
               </a>
-              <a href="#" class="sub-menu-item block px-3 py-2 rounded-lg hover:bg-gray-50 text-sm text-gray-600 transition">
-                节点配置
+              <a href="#" class="menu-item block px-3 py-2 rounded-lg hover:bg-gray-50 text-sm text-gray-600 transition">
+                <span>节点配置</span>
               </a>
-              <a href="#" class="sub-menu-item block px-3 py-2 rounded-lg hover:bg-gray-50 text-sm text-gray-600 transition">
-                本地字典表
+              <a href="#" class="menu-item block px-3 py-2 rounded-lg hover:bg-gray-50 text-sm text-gray-600 transition">
+                <span>本地字典表</span>
               </a>
             </div>
           </div>
@@ -334,7 +340,7 @@
         <div id="main-page" class="block">
           <div class="bg-white rounded-lg shadow-sm border border-gray-200 mb-4">
             <div class="p-4 border-b border-gray-100">
-              <div id="search-row-1" class="grid grid-cols-4 gap-4 mb-4">
+              <div id="search-row-1" class="grid grid-cols-6 gap-4 mb-4">
                 <div>
                   <label class="block text-xs text-gray-500 mb-1.5">运单号</label>
                   <input type="text" class="filter-input w-full" placeholder="支持批量（逗号分隔）或单个查询">
@@ -377,8 +383,6 @@
                     <option value="流转异常">流转异常</option>
                   </select>
                 </div>
-              </div>
-              <div id="search-row-2" class="grid grid-cols-4 gap-4 mb-4">
                 <div>
                   <label class="block text-xs text-gray-500 mb-1.5">工单来源</label>
                   <select class="filter-input w-full">
@@ -402,6 +406,8 @@
                     <option value="转司机查件">转司机查件</option>
                   </select>
                 </div>
+              </div>
+              <div id="search-row-2" class="grid grid-cols-6 gap-4 mb-4">
                 <div>
                   <label class="block text-xs text-gray-500 mb-1.5">最终处理结果</label>
                   <select class="filter-input w-full">
@@ -412,16 +418,6 @@
                     <option value="异常已解决">异常已解决</option>
                   </select>
                 </div>
-                <div>
-                  <label class="block text-xs text-gray-500 mb-1.5">创建时间</label>
-                  <div class="flex items-center gap-1">
-                    <input type="date" class="filter-input w-full text-xs">
-                    <span class="text-gray-400">-</span>
-                    <input type="date" class="filter-input w-full text-xs">
-                  </div>
-                </div>
-              </div>
-              <div id="search-row-3" class="grid grid-cols-4 gap-4 mb-4">
                 <div>
                   <label class="block text-xs text-gray-500 mb-1.5">客户号</label>
                   <input type="text" class="filter-input w-full" placeholder="请输入客户号">
@@ -435,15 +431,26 @@
                   </select>
                 </div>
                 <div>
-                  <label class="block text-xs text-gray-500 mb-1.5">最新流转回复人</label>
-                  <input type="text" class="filter-input w-full" placeholder="请输入最新流转回复人">
+                  <label class="block text-xs text-gray-500 mb-1.5">最新处理人</label>
+                  <input type="text" class="filter-input w-full" placeholder="请输入最新处理人">
                 </div>
                 <div>
                   <label class="block text-xs text-gray-500 mb-1.5">客服</label>
                   <input type="text" class="filter-input w-full" placeholder="请输入客服姓名">
                 </div>
+                <div>
+                  <label class="block text-xs text-gray-500 mb-1.5">创建时间</label>
+                  <div class="relative">
+                    <input type="text" class="filter-input w-full text-xs" placeholder="开始日期 ~ 结束日期">
+                    <button class="absolute right-1.5 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
               </div>
-              <div id="search-row-4" class="grid grid-cols-4 gap-4 mb-4 hidden">
+              <div id="search-row-3" class="grid grid-cols-6 gap-4 mb-4 hidden">
                 <div>
                   <label class="block text-xs text-gray-500 mb-1.5">工单号</label>
                   <input type="text" class="filter-input w-full" placeholder="请输入工单号">
@@ -472,8 +479,6 @@
                     <option value="否">否</option>
                   </select>
                 </div>
-              </div>
-              <div id="search-row-5" class="grid grid-cols-4 gap-4 mb-4 hidden">
                 <div>
                   <label class="block text-xs text-gray-500 mb-1.5">咨询人邮箱</label>
                   <input type="text" class="filter-input w-full" placeholder="请输入咨询人邮箱">
@@ -505,7 +510,12 @@
 
           <div class="bg-white rounded-lg shadow-sm border border-gray-200 mb-4">
             <div class="flex items-center justify-between px-4 py-3 border-b border-gray-100">
-              <div class="text-sm font-medium text-gray-700">工单列表</div>
+              <div class="flex items-center gap-6 text-sm">
+                <span class="text-gray-700">已创建：<span class="font-medium text-blue-600">1385</span></span>
+                <span class="text-gray-700">流转待回复：<span class="font-medium text-blue-600">283</span></span>
+                <span class="text-gray-700">待客服处理：<span class="font-medium text-blue-600">327</span></span>
+                <span class="text-gray-700">流转异常：<span class="font-medium text-red-600">179</span></span>
+              </div>
               <div class="flex items-center gap-2">
                 <button id="btn-customize" class="btn-action">
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -562,6 +572,7 @@
                     <th class="px-3 py-3 text-left font-medium text-gray-700 border-b border-gray-200 w-[200px]">客户诉求内容</th>
                     <th class="px-3 py-3 text-left font-medium text-gray-700 border-b border-gray-200 w-[160px]"><span class="inline-flex items-center gap-1">最终处理结果<span class="sort-icon"><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 5l5 7H5l5-7z"/></svg><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 15l-5-7h10l-5 7z"/></svg></span></span></th>
                     <th class="px-3 py-3 text-left font-medium text-gray-700 border-b border-gray-200 w-[200px]">最终处理结果说明</th>
+                    <th class="px-3 py-3 text-left font-medium text-gray-700 border-b border-gray-200 w-[100px]">最新处理人</th>
                     <th class="px-3 py-3 text-left font-medium text-gray-700 border-b border-gray-200 w-[120px]"><span class="inline-flex items-center gap-1">是否回复客户<span class="sort-icon"><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 5l5 7H5l5-7z"/></svg><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 15l-5-7h10l-5 7z"/></svg></span></span></th>
                     <th class="px-3 py-3 text-left font-medium text-gray-700 border-b border-gray-200 w-[120px]">回复客户方式</th>
                     <th class="px-3 py-3 text-left font-medium text-gray-700 border-b border-gray-200 w-[120px]"><span class="inline-flex items-center gap-1">流转方案<span class="sort-icon"><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 5l5 7H5l5-7z"/></svg><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 15l-5-7h10l-5 7z"/></svg></span></span></th>
@@ -602,6 +613,7 @@
                     <td class="px-3 py-3 border-b border-gray-100 text-xs">申请赔偿</td>
                     <td class="px-3 py-3 border-b border-gray-100">-</td>
                     <td class="px-3 py-3 border-b border-gray-100">-</td>
+                    <td class="px-3 py-3 border-b border-gray-100">杨凯</td>
                     <td class="px-3 py-3 border-b border-gray-100">否</td>
                     <td class="px-3 py-3 border-b border-gray-100">-</td>
                     <td class="px-3 py-3 border-b border-gray-100">客服处理</td>
@@ -626,7 +638,7 @@
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/4 12:00</td>
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/8 12:00</td>
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/6 12:00</td>
-                    <td class="px-3 py-3 border-b border-gray-100">程思敏</td>
+                    <td class="px-3 py-3 border-b border-gray-100">Ibtesam</td>
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/7 12:00</td>
                     <td class="px-3 py-3 border-b border-gray-100">K2026053000001</td>
                   </tr>
@@ -640,6 +652,7 @@
                     <td class="px-3 py-3 border-b border-gray-100 text-xs">投诉司机态度恶劣</td>
                     <td class="px-3 py-3 border-b border-gray-100">-</td>
                     <td class="px-3 py-3 border-b border-gray-100">-</td>
+                    <td class="px-3 py-3 border-b border-gray-100">李明</td>
                     <td class="px-3 py-3 border-b border-gray-100">否</td>
                     <td class="px-3 py-3 border-b border-gray-100">-</td>
                     <td class="px-3 py-3 border-b border-gray-100">转车队确认</td>
@@ -664,7 +677,7 @@
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/5 2:00</td>
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/9 2:00</td>
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/7 2:00</td>
-                    <td class="px-3 py-3 border-b border-gray-100">程思敏</td>
+                    <td class="px-3 py-3 border-b border-gray-100">Usama</td>
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/8 2:00</td>
                     <td class="px-3 py-3 border-b border-gray-100">K2026053000002</td>
                   </tr>
@@ -678,6 +691,7 @@
                     <td class="px-3 py-3 border-b border-gray-100 text-xs">申请赔偿</td>
                     <td class="px-3 py-3 border-b border-gray-100">联系发件人处理</td>
                     <td class="px-3 py-3 border-b border-gray-100 line-clamp-2 cursor-help" title="供应商确认无异议">供应商确认无异议</td>
+                    <td class="px-3 py-3 border-b border-gray-100">王芳</td>
                     <td class="px-3 py-3 border-b border-gray-100">是</td>
                     <td class="px-3 py-3 border-b border-gray-100">微信群</td>
                     <td class="px-3 py-3 border-b border-gray-100">转车队确认</td>
@@ -702,7 +716,7 @@
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/6 12:00</td>
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/10 12:00</td>
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/8 12:00</td>
-                    <td class="px-3 py-3 border-b border-gray-100">程思敏</td>
+                    <td class="px-3 py-3 border-b border-gray-100">Akash</td>
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/9 12:00</td>
                     <td class="px-3 py-3 border-b border-gray-100">K2026052900003</td>
                   </tr>
@@ -716,6 +730,7 @@
                     <td class="px-3 py-3 border-b border-gray-100 text-xs">派错地址，投诉司机，要求赔偿</td>
                     <td class="px-3 py-3 border-b border-gray-100">联系发件人处理</td>
                     <td class="px-3 py-3 border-b border-gray-100 line-clamp-2 cursor-help" title="供应商确认丢失">供应商确认丢失</td>
+                    <td class="px-3 py-3 border-b border-gray-100">李华</td>
                     <td class="px-3 py-3 border-b border-gray-100">是</td>
                     <td class="px-3 py-3 border-b border-gray-100">邮件</td>
                     <td class="px-3 py-3 border-b border-gray-100">转供应商门户</td>
@@ -740,7 +755,7 @@
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/6 12:00</td>
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/10 12:00</td>
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/8 12:00</td>
-                    <td class="px-3 py-3 border-b border-gray-100">程思敏</td>
+                    <td class="px-3 py-3 border-b border-gray-100">khudija</td>
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/9 12:00</td>
                     <td class="px-3 py-3 border-b border-gray-100">K2026052800004</td>
                   </tr>
@@ -754,6 +769,7 @@
                     <td class="px-3 py-3 border-b border-gray-100 text-xs">希望修改地址</td>
                     <td class="px-3 py-3 border-b border-gray-100">XXXXXX</td>
                     <td class="px-3 py-3 border-b border-gray-100 line-clamp-2 cursor-help" title="已回复咨询人，包裹派送中，无法修改地址">已回复咨询人，包裹派送中，无法修改地址</td>
+                    <td class="px-3 py-3 border-b border-gray-100">小米</td>
                     <td class="px-3 py-3 border-b border-gray-100">是</td>
                     <td class="px-3 py-3 border-b border-gray-100">电话</td>
                     <td class="px-3 py-3 border-b border-gray-100">客服处理</td>
@@ -778,7 +794,7 @@
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/4 1:00</td>
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/8 1:00</td>
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/6 1:00</td>
-                    <td class="px-3 py-3 border-b border-gray-100">黄燕株</td>
+                    <td class="px-3 py-3 border-b border-gray-100">Shahzaib</td>
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/7 1:00</td>
                     <td class="px-3 py-3 border-b border-gray-100">K2026052700005</td>
                   </tr>
@@ -792,6 +808,7 @@
                     <td class="px-3 py-3 border-b border-gray-100 text-xs">希望截留包裹，不要派送</td>
                     <td class="px-3 py-3 border-b border-gray-100">联系发件人处理</td>
                     <td class="px-3 py-3 border-b border-gray-100 line-clamp-2 cursor-help" title="已回复咨询人，需要联系发件人截留">已回复咨询人，需要联系发件人截留</td>
+                    <td class="px-3 py-3 border-b border-gray-100">杨凯</td>
                     <td class="px-3 py-3 border-b border-gray-100">是</td>
                     <td class="px-3 py-3 border-b border-gray-100">邮件</td>
                     <td class="px-3 py-3 border-b border-gray-100">客服处理</td>
@@ -816,7 +833,7 @@
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/4 12:00</td>
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/8 12:00</td>
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/6 12:00</td>
-                    <td class="px-3 py-3 border-b border-gray-100">黄燕株</td>
+                    <td class="px-3 py-3 border-b border-gray-100">tom</td>
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/7 12:00</td>
                     <td class="px-3 py-3 border-b border-gray-100">K2026052600006</td>
                   </tr>
@@ -830,6 +847,7 @@
                     <td class="px-3 py-3 border-b border-gray-100 text-xs">催促尽快派送</td>
                     <td class="px-3 py-3 border-b border-gray-100">-</td>
                     <td class="px-3 py-3 border-b border-gray-100">-</td>
+                    <td class="px-3 py-3 border-b border-gray-100">李明</td>
                     <td class="px-3 py-3 border-b border-gray-100">是</td>
                     <td class="px-3 py-3 border-b border-gray-100">其他渠道</td>
                     <td class="px-3 py-3 border-b border-gray-100">您好XXXXXXXXXX</td>
@@ -854,7 +872,7 @@
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/5 2:00</td>
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/9 2:00</td>
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/7 2:00</td>
-                    <td class="px-3 py-3 border-b border-gray-100">黄燕株</td>
+                    <td class="px-3 py-3 border-b border-gray-100">Ibtesam</td>
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/8 2:00</td>
                     <td class="px-3 py-3 border-b border-gray-100">K2026052500007</td>
                   </tr>
@@ -868,6 +886,7 @@
                     <td class="px-3 py-3 border-b border-gray-100 text-xs">申请赔偿，投诉时效慢</td>
                     <td class="px-3 py-3 border-b border-gray-100">-</td>
                     <td class="px-3 py-3 border-b border-gray-100">-</td>
+                    <td class="px-3 py-3 border-b border-gray-100">王芳</td>
                     <td class="px-3 py-3 border-b border-gray-100">否</td>
                     <td class="px-3 py-3 border-b border-gray-100">-</td>
                     <td class="px-3 py-3 border-b border-gray-100">您好XXXXXXXXXX</td>
@@ -892,7 +911,7 @@
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/5 2:00</td>
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/9 2:00</td>
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/7 2:00</td>
-                    <td class="px-3 py-3 border-b border-gray-100">黄燕株</td>
+                    <td class="px-3 py-3 border-b border-gray-100">Usama</td>
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/8 2:00</td>
                     <td class="px-3 py-3 border-b border-gray-100">K2026052500008</td>
                   </tr>
@@ -906,6 +925,7 @@
                     <td class="px-3 py-3 border-b border-gray-100 text-xs">申请赔偿，投诉时效慢</td>
                     <td class="px-3 py-3 border-b border-gray-100">确认赔偿发件人</td>
                     <td class="px-3 py-3 border-b border-gray-100">符合公司赔偿标准，已发起赔偿工单</td>
+                    <td class="px-3 py-3 border-b border-gray-100">杨凯</td>
                     <td class="px-3 py-3 border-b border-gray-100">否</td>
                     <td class="px-3 py-3 border-b border-gray-100">-</td>
                     <td class="px-3 py-3 border-b border-gray-100">您好XXXXXXXXXX</td>
@@ -930,7 +950,7 @@
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/5 2:00</td>
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/9 2:00</td>
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/7 2:00</td>
-                    <td class="px-3 py-3 border-b border-gray-100">黄燕株</td>
+                    <td class="px-3 py-3 border-b border-gray-100">Akash</td>
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/8 2:00</td>
                     <td class="px-3 py-3 border-b border-gray-100">K2026052500009</td>
                   </tr>
@@ -944,6 +964,7 @@
                     <td class="px-3 py-3 border-b border-gray-100 text-xs">申请赔偿，投诉时效慢</td>
                     <td class="px-3 py-3 border-b border-gray-100">确认赔偿发件人</td>
                     <td class="px-3 py-3 border-b border-gray-100">符合公司赔偿标准，已发起赔偿工单</td>
+                    <td class="px-3 py-3 border-b border-gray-100">杨凯</td>
                     <td class="px-3 py-3 border-b border-gray-100">否</td>
                     <td class="px-3 py-3 border-b border-gray-100">-</td>
                     <td class="px-3 py-3 border-b border-gray-100">您好XXXXXXXXXX</td>
@@ -968,7 +989,7 @@
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/5 2:00</td>
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/9 2:00</td>
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/7 2:00</td>
-                    <td class="px-3 py-3 border-b border-gray-100">黄燕株</td>
+                    <td class="px-3 py-3 border-b border-gray-100">khudija</td>
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/8 2:00</td>
                     <td class="px-3 py-3 border-b border-gray-100">K2026052500010</td>
                   </tr>
@@ -1000,6 +1021,609 @@
                 <span class="text-sm text-gray-400 mx-2">...</span>
                 <button class="pagination-btn px-3 py-1 rounded text-sm border border-gray-300">16</button>
                 <button class="pagination-btn px-3 py-1 rounded text-sm border border-gray-300">下一页</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="monitor-page" class="hidden">
+          <div class="bg-white rounded-lg shadow-sm border border-gray-200 mb-4">
+            <div class="border-b border-gray-200 bg-white">
+              <nav class="flex gap-1 px-5" aria-label="Tabs">
+                <button id="monitor-tab-modify" class="flex items-center gap-2 px-4 py-3 font-medium text-white bg-blue-500 rounded-t-lg text-sm">
+                  工单修改记录
+                </button>
+                <button id="monitor-tab-flow" class="flex items-center gap-2 px-4 py-3 font-medium text-black bg-gray-100 hover:bg-gray-200 rounded-t-lg text-sm">
+                  工单流转记录
+                </button>
+                <button id="monitor-tab-compensation" class="flex items-center gap-2 px-4 py-3 font-medium text-black bg-gray-100 hover:bg-gray-200 rounded-t-lg text-sm">
+                  客户赔偿记录
+                </button>
+                <button id="monitor-tab-claim" class="flex items-center gap-2 px-4 py-3 font-medium text-black bg-gray-100 hover:bg-gray-200 rounded-t-lg text-sm">
+                  索赔记录
+                </button>
+                <button id="monitor-tab-dsp" class="flex items-center gap-2 px-4 py-3 font-medium text-black bg-gray-100 hover:bg-gray-200 rounded-t-lg text-sm">
+                  DSP扣罚记录
+                </button>
+              </nav>
+            </div>
+            <div id="monitor-content-modify" class="p-0">
+              <div class="w-full bg-gray-50 border-b border-gray-200 px-6 py-4">
+                <div class="max-w-[100%] flex flex-wrap items-end gap-4">
+                  <div class="flex-1 min-w-[200px]">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">运单号</label>
+                    <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm" placeholder="请输入运单号">
+                  </div>
+                  <div class="flex-1 min-w-[200px]">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">工单号</label>
+                    <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm" placeholder="请输入工单号">
+                  </div>
+                  <div class="flex-1 min-w-[200px]">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">修改人</label>
+                    <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm" placeholder="请输入修改人">
+                  </div>
+                  <div class="flex-1 min-w-[280px]">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">修改时间</label>
+                    <div class="relative">
+                      <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm" placeholder="开始日期 ~ 结束日期">
+                      <button class="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="flex gap-2 pb-1">
+                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition text-sm font-medium">
+                      查询
+                    </button>
+                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition text-sm font-medium">
+                      导出
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="p-6">
+                <h3 class="font-medium text-gray-800 mb-4">修改明细</h3>
+                <div class="overflow-x-auto">
+                  <table class="w-full border-collapse">
+                    <thead>
+                      <tr class="bg-gray-50">
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">运单号</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">修改前</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">修改后</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">修改原因</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">修改人</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">修改时间</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">工单号</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="hover:bg-gray-50">
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">SF1234567890</td>
+                        <td class="px-4 py-3 text-sm text-gray-500 border-b">
+                          <div>最终处理结果：换单重派</div>
+                        </td>
+                        <td class="px-4 py-3 text-sm border-b">
+                          <div>最终处理结果：<span class="text-blue-600">新地址重派</span></div>
+                        </td>
+                        <td class="px-4 py-3 text-sm text-gray-600 border-b">客户第一次信息提供错误，希望修改为换新地址重派</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">杨凯</td>
+                        <td class="px-4 py-3 text-sm text-gray-600 border-b">2024-01-13 16:30:30</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">KT20240110001</td>
+                      </tr>
+                      <tr class="hover:bg-gray-50">
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">SF1234567890</td>
+                        <td class="px-4 py-3 text-sm text-gray-500 border-b">
+                          <div>客诉大类：包裹破损</div>
+                          <div>客诉小类：外包装破损</div>
+                        </td>
+                        <td class="px-4 py-3 text-sm border-b">
+                          <div>客诉大类：<span class="text-blue-600">派送问题</span></div>
+                          <div>客诉小类：<span class="text-blue-600">派送延迟</span></div>
+                        </td>
+                        <td class="px-4 py-3 text-sm text-gray-600 border-b">客户反馈实际是派送问题，不是包裹破损问题</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">杨凯</td>
+                        <td class="px-4 py-3 text-sm text-gray-600 border-b">2024-01-10 14:30:00</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">KT20240110001</td>
+                      </tr>
+                      <tr class="hover:bg-gray-50">
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">SF1234567890</td>
+                        <td class="px-4 py-3 text-sm text-gray-500 border-b">
+                          <div>客诉大类：司机问题</div>
+                          <div>客诉小类：态度恶劣</div>
+                        </td>
+                        <td class="px-4 py-3 text-sm border-b">
+                          <div>客诉大类：<span class="text-blue-600">包裹破损</span></div>
+                          <div>客诉小类：<span class="text-blue-600">外包装破损</span></div>
+                        </td>
+                        <td class="px-4 py-3 text-sm text-gray-600 border-b">批量创建工单，复制粘贴时操作错误，需要修改</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">杨凯</td>
+                        <td class="px-4 py-3 text-sm text-gray-600 border-b">2024-01-09 10:22:37</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">KT20240110001</td>
+                      </tr>
+                      <tr class="hover:bg-gray-50">
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">JD9876543210</td>
+                        <td class="px-4 py-3 text-sm text-gray-500 border-b">
+                          <div>工单状态：待处理</div>
+                        </td>
+                        <td class="px-4 py-3 text-sm border-b">
+                          <div>工单状态：<span class="text-blue-600">处理中</span></div>
+                        </td>
+                        <td class="px-4 py-3 text-sm text-gray-600 border-b">已分配客服处理</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">李明</td>
+                        <td class="px-4 py-3 text-sm text-gray-600 border-b">2024-01-10 15:45:00</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">KT20240110002</td>
+                      </tr>
+                      <tr class="hover:bg-gray-50">
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">YT5555666677</td>
+                        <td class="px-4 py-3 text-sm text-gray-500 border-b">
+                          <div>最终处理结果：待确认</div>
+                        </td>
+                        <td class="px-4 py-3 text-sm border-b">
+                          <div>最终处理结果：<span class="text-blue-600">确认赔偿客户</span></div>
+                        </td>
+                        <td class="px-4 py-3 text-sm text-gray-600 border-b">根据客户提供的照片，确认外包装破损，已安排赔偿</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">王芳</td>
+                        <td class="px-4 py-3 text-sm text-gray-600 border-b">2024-01-11 09:20:00</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">KT20240111003</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div id="monitor-content-flow" class="p-0 hidden">
+              <div class="w-full bg-gray-50 border-b border-gray-200 px-6 py-4">
+                <div class="max-w-[100%] flex flex-wrap items-end gap-4">
+                  <div class="flex-1 min-w-[200px]">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">运单号</label>
+                    <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm" placeholder="请输入运单号">
+                  </div>
+                  <div class="flex-1 min-w-[200px]">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">工单号</label>
+                    <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm" placeholder="请输入工单号">
+                  </div>
+                  <div class="flex-1 min-w-[200px]">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">流转仓库</label>
+                    <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm" placeholder="请输入流转仓库">
+                  </div>
+                  <div class="flex-1 min-w-[200px]">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">流转车队</label>
+                    <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm" placeholder="请输入流转车队">
+                  </div>
+                  <div class="flex-1 min-w-[200px]">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">流转发起人</label>
+                    <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm" placeholder="请输入流转发起人">
+                  </div>
+                  <div class="flex-1 min-w-[280px]">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">开始流转时间</label>
+                    <div class="relative">
+                      <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm" placeholder="开始日期 ~ 结束日期">
+                      <button class="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="flex gap-2 pb-1">
+                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition text-sm font-medium">
+                      查询
+                    </button>
+                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition text-sm font-medium">
+                      导出
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="p-6">
+                <h3 class="font-medium text-gray-800 mb-4">明细列表</h3>
+                <div class="overflow-x-auto">
+                  <table class="w-full border-collapse">
+                    <thead>
+                      <tr class="bg-gray-50">
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">运单号</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">流转方案</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">流转方案说明</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">流转回复方案</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">流转回复内容</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">是否有附件</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">流转仓库</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">流转车队</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">流转发起人</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">开始流转时间</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">流转截止时间</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">流转回复时间</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">流转回复人</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="hover:bg-gray-50">
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">SF1234567890</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">转车队查件</td>
+                        <td class="px-4 py-3 text-sm text-gray-500 border-b">客户投诉断更5天</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">包裹丢失</td>
+                        <td class="px-4 py-3 text-sm text-gray-500 border-b">-</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">否</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">-</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">LAX-Hi Horse</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">杨凯</td>
+                        <td class="px-4 py-3 text-sm text-gray-600 border-b">2024-01-11 09:30:00</td>
+                        <td class="px-4 py-3 text-sm text-gray-600 border-b">2024-01-15 16:00:00</td>
+                        <td class="px-4 py-3 text-sm text-gray-600 border-b">2024-01-12 15:45:00</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">Jenny</td>
+                      </tr>
+                      <tr class="hover:bg-gray-50">
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">SF1234567890</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">转仓库查件</td>
+                        <td class="px-4 py-3 text-sm text-gray-500 border-b">客户投诉断更5天</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">已找到</td>
+                        <td class="px-4 py-3 text-sm text-gray-500 border-b">-</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">是</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">LAX01</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">-</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">杨凯</td>
+                        <td class="px-4 py-3 text-sm text-gray-600 border-b">2024-01-1 09:30:00</td>
+                        <td class="px-4 py-3 text-sm text-gray-600 border-b">2024-01-5 16:00:00</td>
+                        <td class="px-4 py-3 text-sm text-gray-600 border-b">2024-01-3 15:45:00</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">Jenny</td>
+                      </tr>
+                      <tr class="hover:bg-gray-50">
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">JD9876543210</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">转车队查件</td>
+                        <td class="px-4 py-3 text-sm text-gray-500 border-b">客户投诉司机将包裹隔空扔到院内，导致包裹破损，并提供了监控视频</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">超期自动认可</td>
+                        <td class="px-4 py-3 text-sm text-gray-500 border-b">-</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">否</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">-</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">SFO-Baoxiang</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">李白</td>
+                        <td class="px-4 py-3 text-sm text-gray-600 border-b">2026-05-11 10:15:00</td>
+                        <td class="px-4 py-3 text-sm text-gray-600 border-b">2026-05-15 14:00:00</td>
+                        <td class="px-4 py-3 text-sm text-gray-600 border-b">2026-05-13 13:30:00</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">system</td>
+                      </tr>
+                      <tr class="hover:bg-gray-50">
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">YT5555666677</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">转车队查件</td>
+                        <td class="px-4 py-3 text-sm text-gray-500 border-b">客诉投诉司机虚假妥投，包裹POD不是收件人地址</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">超期自动认可</td>
+                        <td class="px-4 py-3 text-sm text-gray-500 border-b">-</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">否</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">-</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">SAT-GCE</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">王芳</td>
+                        <td class="px-4 py-3 text-sm text-gray-600 border-b">2024-01-13 14:20:00</td>
+                        <td class="px-4 py-3 text-sm text-gray-600 border-b">2024-01-14 10:00:00</td>
+                        <td class="px-4 py-3 text-sm text-gray-600 border-b">2024-01-14 09:45:00</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">Usama</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div id="monitor-content-compensation" class="p-0 hidden">
+              <div class="w-full bg-gray-50 border-b border-gray-200 px-6 py-4">
+                <div class="max-w-[100%] flex flex-wrap items-end gap-4">
+                  <div class="flex-1 min-w-[200px]">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">运单号</label>
+                    <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm" placeholder="请输入运单号">
+                  </div>
+                  <div class="flex-1 min-w-[200px]">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">工单号</label>
+                    <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm" placeholder="请输入工单号">
+                  </div>
+                  <div class="flex-1 min-w-[200px]">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">操作人</label>
+                    <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm" placeholder="请输入操作人">
+                  </div>
+                  <div class="flex-1 min-w-[280px]">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">操作时间</label>
+                    <div class="relative">
+                      <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm" placeholder="开始日期 ~ 结束日期">
+                      <button class="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="flex gap-2 pb-1">
+                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition text-sm font-medium">
+                      查询
+                    </button>
+                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition text-sm font-medium">
+                      导出
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="p-6">
+                <h3 class="font-medium text-gray-800 mb-4">赔偿列表</h3>
+                <div class="overflow-x-auto">
+                  <table class="w-full border-collapse">
+                    <thead>
+                      <tr class="bg-gray-50">
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">运单号</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">赔偿原因</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">赔偿项</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">最高赔偿金额</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">实际赔偿金额</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">是否有附件</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">客户号</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">客户名称</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">操作人</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">操作时间</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="hover:bg-gray-50">
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">SF1234567890</td>
+                        <td class="px-4 py-3 text-sm text-gray-500 border-b">外包装破损导致内物损坏</td>
+                        <td class="px-4 py-3 text-sm text-gray-500 border-b">申报价值</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">¥100.00</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">¥59.00</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">是</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">KH20240001</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">JD</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">杨凯</td>
+                        <td class="px-4 py-3 text-sm text-gray-600 border-b">2024-01-10 16:30:00</td>
+                      </tr>
+                      <tr class="hover:bg-gray-50">
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">JD9876543210</td>
+                        <td class="px-4 py-3 text-sm text-gray-500 border-b">包裹仓内断更20天</td>
+                        <td class="px-4 py-3 text-sm text-gray-500 border-b">运费+申报价值</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">¥100.00</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">¥100.00</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">否</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">KH20240002</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">windy</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">李明</td>
+                        <td class="px-4 py-3 text-sm text-gray-600 border-b">2024-01-11 14:20:00</td>
+                      </tr>
+                      <tr class="hover:bg-gray-50">
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">YT5555666677</td>
+                        <td class="px-4 py-3 text-sm text-gray-500 border-b">派错地址导致包裹丢失</td>
+                        <td class="px-4 py-3 text-sm text-gray-500 border-b">申报价值</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">¥100.00</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">¥80.00</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">是</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">KH20240003</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">hellwe</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">王芳</td>
+                        <td class="px-4 py-3 text-sm text-gray-600 border-b">2024-01-12 10:15:00</td>
+                      </tr>
+                      <tr class="hover:bg-gray-50">
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">SF1234567890</td>
+                        <td class="px-4 py-3 text-sm text-gray-500 border-b">包裹派送断更7天</td>
+                        <td class="px-4 py-3 text-sm text-gray-500 border-b">申报价值</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">¥100.00</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">¥12.00</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">否</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">KH20240001</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">张先生</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">陈客</td>
+                        <td class="px-4 py-3 text-sm text-gray-600 border-b">2024-01-12 11:30:00</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div id="monitor-content-claim" class="p-0 hidden">
+              <div class="w-full bg-gray-50 border-b border-gray-200 px-6 py-4">
+                <div class="max-w-[100%] flex flex-wrap items-end gap-4">
+                  <div class="flex-1 min-w-[200px]">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">运单号</label>
+                    <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm" placeholder="请输入运单号">
+                  </div>
+                  <div class="flex-1 min-w-[200px]">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">工单号</label>
+                    <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm" placeholder="请输入工单号">
+                  </div>
+                  <div class="flex-1 min-w-[200px]">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">仓库</label>
+                    <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm" placeholder="请输入仓库">
+                  </div>
+                  <div class="flex-1 min-w-[200px]">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">操作人</label>
+                    <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm" placeholder="请输入操作人">
+                  </div>
+                  <div class="flex-1 min-w-[280px]">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">操作时间</label>
+                    <div class="relative">
+                      <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm" placeholder="开始日期 ~ 结束日期">
+                      <button class="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="flex gap-2 pb-1">
+                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition text-sm font-medium">
+                      查询
+                    </button>
+                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition text-sm font-medium">
+                      导出
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="p-6">
+                <h3 class="font-medium text-gray-800 mb-4">索赔列表</h3>
+                <div class="overflow-x-auto">
+                  <table class="w-full border-collapse">
+                    <thead>
+                      <tr class="bg-gray-50">
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">运单号</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">仓库</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">索赔原因</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">操作人</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">操作时间</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">工单号</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="hover:bg-gray-50">
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">SF1234567890</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">LAX20</td>
+                        <td class="px-4 py-3 text-sm text-gray-500 border-b">派错地址导致包裹丢失</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">杨凯</td>
+                        <td class="px-4 py-3 text-sm text-gray-600 border-b">2024-01-10 17:00:00</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">KT20240110001</td>
+                      </tr>
+                      <tr class="hover:bg-gray-50">
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">JD9876543210</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">JFK21</td>
+                        <td class="px-4 py-3 text-sm text-gray-500 border-b">包裹在运输过程中发生破损</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">李明</td>
+                        <td class="px-4 py-3 text-sm text-gray-600 border-b">2024-01-11 15:30:00</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">KT20240111002</td>
+                      </tr>
+                      <tr class="hover:bg-gray-50">
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">YT5555666677</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">LAX21</td>
+                        <td class="px-4 py-3 text-sm text-gray-500 border-b">仓内断更20天</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">王芳</td>
+                        <td class="px-4 py-3 text-sm text-gray-600 border-b">2024-01-12 11:00:00</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">KT20240112003</td>
+                      </tr>
+                      <tr class="hover:bg-gray-50">
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">SF1234567890</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">DFW20</td>
+                        <td class="px-4 py-3 text-sm text-gray-500 border-b">包裹轨迹显示签收，但客户反馈未收到，POD无法证明妥投成功</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">陈岑</td>
+                        <td class="px-4 py-3 text-sm text-gray-600 border-b">2024-01-14 09:30:00</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">KT20240114004</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div id="monitor-content-dsp" class="p-0 hidden">
+              <div class="w-full bg-gray-50 border-b border-gray-200 px-6 py-4">
+                <div class="max-w-[100%] flex flex-wrap items-end gap-4">
+                  <div class="flex-1 min-w-[200px]">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">运单号</label>
+                    <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm" placeholder="请输入运单号">
+                  </div>
+                  <div class="flex-1 min-w-[200px]">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">工单号</label>
+                    <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm" placeholder="请输入工单号">
+                  </div>
+                  <div class="flex-1 min-w-[200px]">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">投诉类型</label>
+                    <select class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm">
+                      <option value="">请选择</option>
+                      <option value="派送延迟">派送延迟</option>
+                      <option value="服务态度">服务态度</option>
+                      <option value="货物破损">货物破损</option>
+                      <option value="签收异常">签收异常</option>
+                    </select>
+                  </div>
+                  <div class="flex-1 min-w-[200px]">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">车队号</label>
+                    <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm" placeholder="请输入车队号">
+                  </div>
+                  <div class="flex-1 min-w-[200px]">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">操作人</label>
+                    <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm" placeholder="请输入操作人">
+                  </div>
+                  <div class="flex-1 min-w-[280px]">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">操作时间</label>
+                    <div class="relative">
+                      <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm" placeholder="开始日期 ~ 结束日期">
+                      <button class="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="flex gap-2 pb-1">
+                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition text-sm font-medium">
+                      查询
+                    </button>
+                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition text-sm font-medium">
+                      导出
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="p-6">
+                <h3 class="font-medium text-gray-800 mb-4">扣罚列表</h3>
+                <div class="overflow-x-auto">
+                  <table class="w-full border-collapse">
+                    <thead>
+                      <tr class="bg-gray-50">
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">运单号</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">车队号</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">车队名称</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">投诉类型</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">投诉原因</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">扣罚金额</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">操作人</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">操作时间</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">工单号</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="hover:bg-gray-50">
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">SF1234567890</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">FLT000067</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">HOU-FASGO</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">暴力投递</td>
+                        <td class="px-4 py-3 text-sm text-gray-500 border-b">客户投诉司机将包裹隔空扔到院内，导致包裹破损，并提供了监控视频</td>
+                        <td class="px-4 py-3 text-sm text-red-600 border-b">¥100.00</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">杨凯</td>
+                        <td class="px-4 py-3 text-sm text-gray-600 border-b">2024-01-10 18:00:00</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">KT20240110001</td>
+                      </tr>
+                      <tr class="hover:bg-gray-50">
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">JD9876543210</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">FLT000233</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">SAT-GCE</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">服务态度</td>
+                        <td class="px-4 py-3 text-sm text-gray-500 border-b">客户反映快递员态度恶劣，与收件人发送争吵</td>
+                        <td class="px-4 py-3 text-sm text-red-600 border-b">¥100.00</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">李明</td>
+                        <td class="px-4 py-3 text-sm text-gray-600 border-b">2024-01-11 16:30:00</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">KT20240111002</td>
+                      </tr>
+                      <tr class="hover:bg-gray-50">
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">YT5555666677</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">FLT000380</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">HOU-LHC</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">包裹丢失</td>
+                        <td class="px-4 py-3 text-sm text-gray-500 border-b">派送过程中造成包裹丢失</td>
+                        <td class="px-4 py-3 text-sm text-red-600 border-b">¥100.00</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">王芳</td>
+                        <td class="px-4 py-3 text-sm text-gray-600 border-b">2024-01-12 14:00:00</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">KT20240112003</td>
+                      </tr>
+                      <tr class="hover:bg-gray-50">
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">SF1234567890</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">FLT000067</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">HOU-FASGO</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">虚假妥投</td>
+                        <td class="px-4 py-3 text-sm text-gray-500 border-b">客户投诉司机虚假妥投，实际POD显示与收件人地址不一致</td>
+                        <td class="px-4 py-3 text-sm text-red-600 border-b">¥200.00</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">陈升</td>
+                        <td class="px-4 py-3 text-sm text-gray-600 border-b">2024-01-13 10:30:00</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">KT20240113004</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </div>
@@ -1141,6 +1765,314 @@
             </div>
           </div>
         </div>
+
+        <div id="complaint-config-page" class="hidden">
+          <div class="bg-white rounded-lg shadow-sm border border-gray-200 mb-4">
+            <div class="w-full bg-gray-50 border-b border-gray-200 px-6 py-4">
+              <div class="grid grid-cols-4 gap-4">
+                <div>
+                  <label class="block text-xs text-gray-500 mb-1.5">客诉大类</label>
+                  <input type="text" class="filter-input w-full" placeholder="请输入客诉大类">
+                </div>
+                <div>
+                  <label class="block text-xs text-gray-500 mb-1.5">客诉大类中文</label>
+                  <input type="text" class="filter-input w-full" placeholder="请输入客诉大类中文">
+                </div>
+                <div>
+                  <label class="block text-xs text-gray-500 mb-1.5">客诉大类英文</label>
+                  <input type="text" class="filter-input w-full" placeholder="请输入客诉大类英文">
+                </div>
+                <div>
+                  <label class="block text-xs text-gray-500 mb-1.5">是否启用</label>
+                  <select class="filter-input w-full">
+                    <option value="">全部</option>
+                    <option value="yes">是</option>
+                    <option value="no">否</option>
+                  </select>
+                </div>
+              </div>
+              <div class="flex justify-end gap-4 pb-1 pt-4">
+                <button class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition text-sm">
+                  查询
+                </button>
+                <button class="px-4 py-2 border border-gray-300 text-gray-600 rounded-md hover:bg-gray-50 transition text-sm">
+                  重置
+                </button>
+                <button class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition text-sm">
+                  新增
+                </button>
+                <button class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition text-sm">
+                  导入
+                </button>
+                <button class="px-4 py-2 border border-gray-300 text-gray-600 rounded-md hover:bg-gray-50 transition text-sm">
+                  导出
+                </button>
+              </div>
+            </div>
+
+            <div class="p-6">
+              <div class="overflow-x-auto">
+                <table class="w-full border-collapse">
+                  <thead>
+                    <tr class="bg-gray-50">
+                      <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">客诉大类编号</th>
+                      <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">客诉大类中文</th>
+                      <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">客诉大类英文</th>
+                      <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">是否启用</th>
+                      <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">操作时间</th>
+                      <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">操作人</th>
+                      <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">操作</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="hover:bg-blue-50 transition">
+                      <td class="px-4 py-3 border-b border-gray-100">1</td>
+                      <td class="px-4 py-3 border-b border-gray-100">包裹破损</td>
+                      <td class="px-4 py-3 border-b border-gray-100">The package is damaged</td>
+                      <td class="px-4 py-3 border-b border-gray-100">是</td>
+                      <td class="px-4 py-3 border-b border-gray-100">2026/5/1 12:00</td>
+                      <td class="px-4 py-3 border-b border-gray-100">admin</td>
+                      <td class="px-4 py-3 border-b border-gray-100">
+                        <button class="text-blue-500 hover:text-blue-600 text-sm underline">编辑</button>
+                      </td>
+                    </tr>
+                    <tr class="hover:bg-blue-50 transition">
+                      <td class="px-4 py-3 border-b border-gray-100">2</td>
+                      <td class="px-4 py-3 border-b border-gray-100">包裹问题</td>
+                      <td class="px-4 py-3 border-b border-gray-100">Driver issue is damaged</td>
+                      <td class="px-4 py-3 border-b border-gray-100">是</td>
+                      <td class="px-4 py-3 border-b border-gray-100">2026/5/1 12:00</td>
+                      <td class="px-4 py-3 border-b border-gray-100">admin</td>
+                      <td class="px-4 py-3 border-b border-gray-100">
+                        <button class="text-blue-500 hover:text-blue-600 text-sm underline">编辑</button>
+                      </td>
+                    </tr>
+                    <tr class="hover:bg-blue-50 transition">
+                      <td class="px-4 py-3 border-b border-gray-100">3</td>
+                      <td class="px-4 py-3 border-b border-gray-100">司机问题</td>
+                      <td class="px-4 py-3 border-b border-gray-100">Driver issue</td>
+                      <td class="px-4 py-3 border-b border-gray-100">是</td>
+                      <td class="px-4 py-3 border-b border-gray-100">2026/5/1 12:00</td>
+                      <td class="px-4 py-3 border-b border-gray-100">admin</td>
+                      <td class="px-4 py-3 border-b border-gray-100">
+                        <button class="text-blue-500 hover:text-blue-600 text-sm underline">编辑</button>
+                      </td>
+                    </tr>
+                    <tr class="hover:bg-blue-50 transition">
+                      <td class="px-4 py-3 border-b border-gray-100">4</td>
+                      <td class="px-4 py-3 border-b border-gray-100">地址问题</td>
+                      <td class="px-4 py-3 border-b border-gray-100">Address issue</td>
+                      <td class="px-4 py-3 border-b border-gray-100">是</td>
+                      <td class="px-4 py-3 border-b border-gray-100">2026/5/1 12:00</td>
+                      <td class="px-4 py-3 border-b border-gray-100">admin</td>
+                      <td class="px-4 py-3 border-b border-gray-100">
+                        <button class="text-blue-500 hover:text-blue-600 text-sm underline">编辑</button>
+                      </td>
+                    </tr>
+                    <tr class="hover:bg-blue-50 transition">
+                      <td class="px-4 py-3 border-b border-gray-100">5</td>
+                      <td class="px-4 py-3 border-b border-gray-100">派错地址</td>
+                      <td class="px-4 py-3 border-b border-gray-100">Sent to the wrong address</td>
+                      <td class="px-4 py-3 border-b border-gray-100">是</td>
+                      <td class="px-4 py-3 border-b border-gray-100">2026/5/1 12:00</td>
+                      <td class="px-4 py-3 border-b border-gray-100">admin</td>
+                      <td class="px-4 py-3 border-b border-gray-100">
+                        <button class="text-blue-500 hover:text-blue-600 text-sm underline">编辑</button>
+                      </td>
+                    </tr>
+                    <tr class="hover:bg-blue-50 transition">
+                      <td class="px-4 py-3 border-b border-gray-100">6</td>
+                      <td class="px-4 py-3 border-b border-gray-100">申请赔偿</td>
+                      <td class="px-4 py-3 border-b border-gray-100">Claim compensation</td>
+                      <td class="px-4 py-3 border-b border-gray-100">否</td>
+                      <td class="px-4 py-3 border-b border-gray-100">2026/5/1 12:00</td>
+                      <td class="px-4 py-3 border-b border-gray-100">admin</td>
+                      <td class="px-4 py-3 border-b border-gray-100">
+                        <button class="text-blue-500 hover:text-blue-600 text-sm underline">编辑</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="config-subcategory-page" class="hidden">
+          <div class="bg-white rounded-lg shadow-sm border border-gray-200 mb-4">
+            <div class="w-full bg-gray-50 border-b border-gray-200 px-6 py-4">
+              <div class="grid grid-cols-6 gap-4">
+                <div>
+                  <label class="block text-xs text-gray-500 mb-1.5">客诉小类编号</label>
+                  <input type="text" class="filter-input w-full" placeholder="请输入客诉小类编号">
+                </div>
+                <div>
+                  <label class="block text-xs text-gray-500 mb-1.5">客诉小类中文</label>
+                  <input type="text" class="filter-input w-full" placeholder="请输入客诉小类中文">
+                </div>
+                <div>
+                  <label class="block text-xs text-gray-500 mb-1.5">客诉小类英文</label>
+                  <input type="text" class="filter-input w-full" placeholder="请输入客诉小类英文">
+                </div>
+                <div>
+                  <label class="block text-xs text-gray-500 mb-1.5">客诉大类中文</label>
+                  <input type="text" class="filter-input w-full" placeholder="请输入客诉大类中文">
+                </div>
+                <div>
+                  <label class="block text-xs text-gray-500 mb-1.5">客诉大类英文</label>
+                  <input type="text" class="filter-input w-full" placeholder="请输入客诉大类英文">
+                </div>
+                <div>
+                  <label class="block text-xs text-gray-500 mb-1.5">是否启用</label>
+                  <select class="filter-input w-full">
+                    <option value="">全部</option>
+                    <option value="yes">是</option>
+                    <option value="no">否</option>
+                  </select>
+                </div>
+              </div>
+              <div class="flex justify-end gap-4 pb-1 pt-4">
+                <button class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition text-sm">
+                  查询
+                </button>
+                <button class="px-4 py-2 border border-gray-300 text-gray-600 rounded-md hover:bg-gray-50 transition text-sm">
+                  重置
+                </button>
+                <button class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition text-sm">
+                  新增
+                </button>
+                <button class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition text-sm">
+                  导入
+                </button>
+                <button class="px-4 py-2 border border-gray-300 text-gray-600 rounded-md hover:bg-gray-50 transition text-sm">
+                  导出
+                </button>
+              </div>
+            </div>
+
+            <div class="p-6">
+              <div class="overflow-x-auto">
+                <table class="w-full border-collapse">
+                  <thead>
+                    <tr class="bg-gray-50">
+                      <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">客诉小类编号</th>
+                      <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">客诉小类中文</th>
+                      <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">客诉小类英文</th>
+                      <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">客诉大类编号</th>
+                      <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">客诉大类中文</th>
+                      <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">客诉大类英文</th>
+                      <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">是否启用</th>
+                      <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">操作时间</th>
+                      <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">操作人</th>
+                      <th class="px-4 py-3 text-left text-sm font-medium text-gray-600 border-b">操作</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="hover:bg-blue-50 transition">
+                      <td class="px-4 py-3 border-b border-gray-100">1001</td>
+                      <td class="px-4 py-3 border-b border-gray-100">内件缺失/少</td>
+                      <td class="px-4 py-3 border-b border-gray-100">The package is damaged</td>
+                      <td class="px-4 py-3 border-b border-gray-100">1</td>
+                      <td class="px-4 py-3 border-b border-gray-100">包裹破损</td>
+                      <td class="px-4 py-3 border-b border-gray-100">The package is damaged</td>
+                      <td class="px-4 py-3 border-b border-gray-100">是</td>
+                      <td class="px-4 py-3 border-b border-gray-100">2026/5/1 12:00:00</td>
+                      <td class="px-4 py-3 border-b border-gray-100">admin</td>
+                      <td class="px-4 py-3 border-b border-gray-100">
+                        <button class="text-blue-500 hover:text-blue-600 text-sm underline">编辑</button>
+                      </td>
+                    </tr>
+                    <tr class="hover:bg-blue-50 transition">
+                      <td class="px-4 py-3 border-b border-gray-100">1002</td>
+                      <td class="px-4 py-3 border-b border-gray-100">内件破损</td>
+                      <td class="px-4 py-3 border-b border-gray-100">Driver issue is damaged</td>
+                      <td class="px-4 py-3 border-b border-gray-100">1</td>
+                      <td class="px-4 py-3 border-b border-gray-100">包裹破损</td>
+                      <td class="px-4 py-3 border-b border-gray-100">Driver issue is damaged</td>
+                      <td class="px-4 py-3 border-b border-gray-100">是</td>
+                      <td class="px-4 py-3 border-b border-gray-100">2026/5/1 12:00:00</td>
+                      <td class="px-4 py-3 border-b border-gray-100">admin</td>
+                      <td class="px-4 py-3 border-b border-gray-100">
+                        <button class="text-blue-500 hover:text-blue-600 text-sm underline">编辑</button>
+                      </td>
+                    </tr>
+                    <tr class="hover:bg-blue-50 transition">
+                      <td class="px-4 py-3 border-b border-gray-100">1003</td>
+                      <td class="px-4 py-3 border-b border-gray-100">空包裹</td>
+                      <td class="px-4 py-3 border-b border-gray-100">Address issue</td>
+                      <td class="px-4 py-3 border-b border-gray-100">1</td>
+                      <td class="px-4 py-3 border-b border-gray-100">包裹破损</td>
+                      <td class="px-4 py-3 border-b border-gray-100">Address issue</td>
+                      <td class="px-4 py-3 border-b border-gray-100">是</td>
+                      <td class="px-4 py-3 border-b border-gray-100">2026/5/1 12:00:00</td>
+                      <td class="px-4 py-3 border-b border-gray-100">admin</td>
+                      <td class="px-4 py-3 border-b border-gray-100">
+                        <button class="text-blue-500 hover:text-blue-600 text-sm underline">编辑</button>
+                      </td>
+                    </tr>
+                    <tr class="hover:bg-blue-50 transition">
+                      <td class="px-4 py-3 border-b border-gray-100">1003</td>
+                      <td class="px-4 py-3 border-b border-gray-100">空包裹</td>
+                      <td class="px-4 py-3 border-b border-gray-100">Address issue</td>
+                      <td class="px-4 py-3 border-b border-gray-100">1</td>
+                      <td class="px-4 py-3 border-b border-gray-100">包裹破损</td>
+                      <td class="px-4 py-3 border-b border-gray-100">Address issue</td>
+                      <td class="px-4 py-3 border-b border-gray-100">是</td>
+                      <td class="px-4 py-3 border-b border-gray-100">2026/5/1 12:00:00</td>
+                      <td class="px-4 py-3 border-b border-gray-100">admin</td>
+                      <td class="px-4 py-3 border-b border-gray-100">
+                        <button class="text-blue-500 hover:text-blue-600 text-sm underline">编辑</button>
+                      </td>
+                    </tr>
+                    <tr class="hover:bg-blue-50 transition">
+                      <td class="px-4 py-3 border-b border-gray-100">1004</td>
+                      <td class="px-4 py-3 border-b border-gray-100">派错地址</td>
+                      <td class="px-4 py-3 border-b border-gray-100">Sent to the wrong address</td>
+                      <td class="px-4 py-3 border-b border-gray-100">4</td>
+                      <td class="px-4 py-3 border-b border-gray-100">派错地址</td>
+                      <td class="px-4 py-3 border-b border-gray-100">Sent to the wrong address</td>
+                      <td class="px-4 py-3 border-b border-gray-100">是</td>
+                      <td class="px-4 py-3 border-b border-gray-100">2026/5/1 12:00:00</td>
+                      <td class="px-4 py-3 border-b border-gray-100">admin</td>
+                      <td class="px-4 py-3 border-b border-gray-100">
+                        <button class="text-blue-500 hover:text-blue-600 text-sm underline">编辑</button>
+                      </td>
+                    </tr>
+                    <tr class="hover:bg-blue-50 transition">
+                      <td class="px-4 py-3 border-b border-gray-100">1005</td>
+                      <td class="px-4 py-3 border-b border-gray-100">派错包裹</td>
+                      <td class="px-4 py-3 border-b border-gray-100">Claim compensation</td>
+                      <td class="px-4 py-3 border-b border-gray-100">4</td>
+                      <td class="px-4 py-3 border-b border-gray-100">派错地址</td>
+                      <td class="px-4 py-3 border-b border-gray-100">Claim compensation</td>
+                      <td class="px-4 py-3 border-b border-gray-100">否</td>
+                      <td class="px-4 py-3 border-b border-gray-100">2026/5/1 12:00:00</td>
+                      <td class="px-4 py-3 border-b border-gray-100">admin</td>
+                      <td class="px-4 py-3 border-b border-gray-100">
+                        <button class="text-blue-500 hover:text-blue-600 text-sm underline">编辑</button>
+                      </td>
+                    </tr>
+                    <tr class="hover:bg-blue-50 transition">
+                      <td class="px-4 py-3 border-b border-gray-100">1005</td>
+                      <td class="px-4 py-3 border-b border-gray-100">派错包裹</td>
+                      <td class="px-4 py-3 border-b border-gray-100">Claim compensation</td>
+                      <td class="px-4 py-3 border-b border-gray-100">4</td>
+                      <td class="px-4 py-3 border-b border-gray-100">派错地址</td>
+                      <td class="px-4 py-3 border-b border-gray-100">Claim compensation</td>
+                      <td class="px-4 py-3 border-b border-gray-100">否</td>
+                      <td class="px-4 py-3 border-b border-gray-100">2026/5/1 12:00:00</td>
+                      <td class="px-4 py-3 border-b border-gray-100">admin</td>
+                      <td class="px-4 py-3 border-b border-gray-100">
+                        <button class="text-blue-500 hover:text-blue-600 text-sm underline">编辑</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </main>
     </div>
 
@@ -3520,10 +4452,10 @@
                       <h3 class="font-medium text-gray-800">修改工单信息</h3>
                     </div>
                     
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
                       <!-- 客诉大类 -->
                       <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">客诉大类 <span class="text-red-500">*</span></label>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">客诉大类</label>
                         <select class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm">
                           <option value="">请选择</option>
                           <option value="1">包裹破损</option>
@@ -3536,7 +4468,7 @@
                       
                       <!-- 客诉小类 -->
                       <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">客诉小类 <span class="text-red-500">*</span></label>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">客诉小类</label>
                         <select class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm">
                           <option value="">请选择</option>
                           <option value="1">外包装破损</option>
@@ -3545,6 +4477,24 @@
                           <option value="4">未按址配送</option>
                           <option value="5">其他</option>
                         </select>
+                      </div>
+                      
+                      <!-- 最终处理结果 -->
+                      <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">最终处理结果</label>
+                        <select class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm">
+                          <option value="">请选择</option>
+                          <option value="确认赔偿客户">确认赔偿客户</option>
+                          <option value="无效客诉">无效客诉</option>
+                          <option value="换单重派">换单重派</option>
+                          <option value="异常已解决">异常已解决</option>
+                        </select>
+                      </div>
+                      
+                      <!-- 最终处理结果说明 -->
+                      <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">最终处理结果说明</label>
+                        <textarea rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm" placeholder="请输入最终处理结果说明"></textarea>
                       </div>
                       
                       <!-- 修改原因 -->
@@ -4468,18 +5418,15 @@
         });
 
         const btnToggleSearch = document.getElementById('btn-toggle-search');
-        const searchRow4 = document.getElementById('search-row-4');
-        const searchRow5 = document.getElementById('search-row-5');
+        const searchRow3 = document.getElementById('search-row-3');
         
         btnToggleSearch.addEventListener('click', function() {
-          if (searchRow4.classList.contains('hidden')) {
-            searchRow4.classList.remove('hidden');
-            searchRow5.classList.remove('hidden');
+          if (searchRow3.classList.contains('hidden')) {
+            searchRow3.classList.remove('hidden');
             btnToggleSearch.querySelector('span').textContent = '收起更多';
             btnToggleSearch.querySelector('svg').classList.add('rotate-180');
           } else {
-            searchRow4.classList.add('hidden');
-            searchRow5.classList.add('hidden');
+            searchRow3.classList.add('hidden');
             btnToggleSearch.querySelector('span').textContent = '展开更多';
             btnToggleSearch.querySelector('svg').classList.remove('rotate-180');
           }
@@ -4488,6 +5435,113 @@
         document.getElementById('btn-export').addEventListener('click', function() {
           alert('导出功能开发中...');
         });
+
+        const menuItems = document.querySelectorAll('.menu-item');
+        const mainPage = document.getElementById('main-page');
+        const monitorPage = document.getElementById('monitor-page');
+        const complaintConfigPage = document.getElementById('complaint-config-page');
+        const subcategoryConfigPage = document.getElementById('config-subcategory-page');
+        const flowConfigPage = document.getElementById('config-flow-page');
+        const timeoutConfigPage = document.getElementById('config-timeout-page');
+        const dspConfigPage = document.getElementById('config-dsp-page');
+        const nodeConfigPage = document.getElementById('config-node-page');
+        const dictionaryConfigPage = document.getElementById('config-dictionary-page');
+        
+        const configPages = [
+          complaintConfigPage,
+          subcategoryConfigPage,
+          flowConfigPage,
+          timeoutConfigPage,
+          dspConfigPage,
+          nodeConfigPage,
+          dictionaryConfigPage
+        ];
+        
+        menuItems.forEach(function(item) {
+          item.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            menuItems.forEach(function(menu) {
+              menu.classList.remove('active');
+            });
+            this.classList.add('active');
+            
+            const menuText = this.querySelector('span').textContent;
+            
+            // 隐藏所有配置页面
+            configPages.forEach(page => page.classList.add('hidden'));
+            
+            if (menuText === '客诉工单') {
+              mainPage.classList.remove('hidden');
+              monitorPage.classList.add('hidden');
+            } else if (menuText === '监控查询') {
+              mainPage.classList.add('hidden');
+              monitorPage.classList.remove('hidden');
+            } else if (menuText === '客诉大类配置') {
+              mainPage.classList.add('hidden');
+              monitorPage.classList.add('hidden');
+              complaintConfigPage.classList.remove('hidden');
+            } else if (menuText === '客诉小类配置') {
+              mainPage.classList.add('hidden');
+              monitorPage.classList.add('hidden');
+              subcategoryConfigPage.classList.remove('hidden');
+            } else if (menuText === '自动流转方案') {
+              mainPage.classList.add('hidden');
+              monitorPage.classList.add('hidden');
+              flowConfigPage.classList.remove('hidden');
+            } else if (menuText === '时效配置') {
+              mainPage.classList.add('hidden');
+              monitorPage.classList.add('hidden');
+              timeoutConfigPage.classList.remove('hidden');
+            } else if (menuText === 'DSP扣罚金额配置') {
+              mainPage.classList.add('hidden');
+              monitorPage.classList.add('hidden');
+              dspConfigPage.classList.remove('hidden');
+            } else if (menuText === '节点配置') {
+              mainPage.classList.add('hidden');
+              monitorPage.classList.add('hidden');
+              nodeConfigPage.classList.remove('hidden');
+            } else if (menuText === '本地字典表') {
+              mainPage.classList.add('hidden');
+              monitorPage.classList.add('hidden');
+              dictionaryConfigPage.classList.remove('hidden');
+            }
+          });
+        });
+
+        const monitorTabModify = document.getElementById('monitor-tab-modify');
+        const monitorTabFlow = document.getElementById('monitor-tab-flow');
+        const monitorTabCompensation = document.getElementById('monitor-tab-compensation');
+        const monitorTabClaim = document.getElementById('monitor-tab-claim');
+        const monitorTabDsp = document.getElementById('monitor-tab-dsp');
+        const monitorContentModify = document.getElementById('monitor-content-modify');
+        const monitorContentFlow = document.getElementById('monitor-content-flow');
+        const monitorContentCompensation = document.getElementById('monitor-content-compensation');
+        const monitorContentClaim = document.getElementById('monitor-content-claim');
+        const monitorContentDsp = document.getElementById('monitor-content-dsp');
+        
+        const monitorTabs = [monitorTabModify, monitorTabFlow, monitorTabCompensation, monitorTabClaim, monitorTabDsp];
+        const monitorContents = [monitorContentModify, monitorContentFlow, monitorContentCompensation, monitorContentClaim, monitorContentDsp];
+        
+        function activateMonitorTab(tabIndex) {
+          monitorTabs.forEach(function(tab, index) {
+            if (index === tabIndex) {
+              tab.classList.add('text-white', 'bg-blue-500');
+              tab.classList.remove('text-black', 'bg-gray-100', 'hover:bg-gray-200');
+              monitorContents[index].classList.remove('hidden');
+            } else {
+              tab.classList.remove('text-white', 'bg-blue-500');
+              tab.classList.add('text-black', 'bg-gray-100', 'hover:bg-gray-200');
+              monitorContents[index].classList.add('hidden');
+            }
+          });
+        }
+        
+        monitorTabModify.addEventListener('click', function() { activateMonitorTab(0); });
+        monitorTabFlow.addEventListener('click', function() { activateMonitorTab(1); });
+        monitorTabCompensation.addEventListener('click', function() { activateMonitorTab(2); });
+        monitorTabClaim.addEventListener('click', function() { activateMonitorTab(3); });
+        monitorTabDsp.addEventListener('click', function() { activateMonitorTab(4); });
 
         const customizeList = document.getElementById('customize-list');
         const btnSaveCustomize = document.getElementById('btn-save-customize');
@@ -4809,10 +5863,14 @@
                     <td class="px-3 py-2">
                       <div class="text-gray-500">客诉大类：<span class="text-gray-800">包裹破损</span></div>
                       <div class="text-gray-500">客诉小类：<span class="text-gray-800">外包装破损</span></div>
+                      <div class="text-gray-500">最终处理结果：<span class="text-gray-800">确认赔偿客户</span></div>
+                      <div class="text-gray-500">最终处理结果说明：<span class="text-gray-800">根据客户提供的照片，确认外包装破损，已安排赔偿</span></div>
                     </td>
                     <td class="px-3 py-2">
                       <div class="text-gray-500">客诉大类：<span class="text-blue-600 font-medium">派送问题</span></div>
                       <div class="text-gray-500">客诉小类：<span class="text-blue-600 font-medium">派送延迟</span></div>
+                      <div class="text-gray-500">最终处理结果：<span class="text-blue-600 font-medium">异常已解决</span></div>
+                      <div class="text-gray-500">最终处理结果说明：<span class="text-blue-600 font-medium">经核实为派送延迟，已向客户致歉并赠送优惠券</span></div>
                     </td>
                     <td class="px-3 py-2 text-gray-600">客户反馈实际是派送问题，不是包裹破损问题</td>
                   </tr>
@@ -4968,46 +6026,10 @@
           </div>
         </div>
         
-        <div id="config-subcategory-page" class="hidden">
-          <div class="bg-white rounded-lg shadow-sm border border-gray-200">
-            <div class="p-4 border-b border-gray-100">
-              <h2 class="text-lg font-semibold text-gray-800">客诉小类配置</h2>
-            </div>
-            <div class="p-6">
-              <div class="flex justify-between items-center mb-4">
-                <button class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">新增客诉小类</button>
-              </div>
-              <table class="w-full">
-                <thead>
-                  <tr class="border-b border-gray-200">
-                    <th class="text-left py-3 px-4 text-sm font-medium text-gray-500">所属大类</th>
-                    <th class="text-left py-3 px-4 text-sm font-medium text-gray-500">小类名称</th>
-                    <th class="text-left py-3 px-4 text-sm font-medium text-gray-500">描述</th>
-                    <th class="text-left py-3 px-4 text-sm font-medium text-gray-500">状态</th>
-                    <th class="text-left py-3 px-4 text-sm font-medium text-gray-500">操作</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="border-b border-gray-100">
-                    <td class="py-3 px-4 text-sm text-gray-800">包裹破损</td>
-                    <td class="py-3 px-4 text-sm text-gray-800">外包装破损</td>
-                    <td class="py-3 px-4 text-sm text-gray-600">包裹外包装受损</td>
-                    <td class="py-3 px-4"><span class="px-2 py-1 text-xs bg-green-100 text-green-600 rounded">启用</span></td>
-                    <td class="py-3 px-4">
-                      <button class="text-blue-600 hover:text-blue-700 mr-3">编辑</button>
-                      <button class="text-red-600 hover:text-red-700">删除</button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        
         <div id="config-flow-page" class="hidden">
           <div class="bg-white rounded-lg shadow-sm border border-gray-200">
             <div class="p-4 border-b border-gray-100">
-              <h2 class="text-lg font-semibold text-gray-800">自动流转方案配置</h2>
+              <h2 class="text-lg font-semibold text-gray-800">自动流转方案</h2>
             </div>
             <div class="p-6">
               <div class="flex justify-between items-center mb-4">
@@ -5222,43 +6244,12 @@
         const menuArrow = menuParent.querySelector('svg:last-child');
         
         menuParent.addEventListener('click', function(e) {
-          // 阻止事件冒泡，只有点击父菜单图标或文字时才展开/收起
-          if (e.target === menuParent || e.target.closest('.menu-parent > div')) {
-            menuChildren.classList.toggle('hidden');
-            menuArrow.classList.toggle('rotate-180');
+          // 如果点击的是子菜单项，不触发展开/收起
+          if (e.target.closest('.menu-children')) {
+            return;
           }
-        });
-        
-        // 二级菜单点击事件
-        const subMenuItems = document.querySelectorAll('.sub-menu-item');
-        const mainPage = document.getElementById('main-page');
-        const configPages = [
-          document.getElementById('config-category-page'),
-          document.getElementById('config-subcategory-page'),
-          document.getElementById('config-flow-page'),
-          document.getElementById('config-timeout-page'),
-          document.getElementById('config-dsp-page'),
-          document.getElementById('config-node-page'),
-          document.getElementById('config-dictionary-page')
-        ];
-        
-        subMenuItems.forEach((item, index) => {
-          item.addEventListener('click', function(e) {
-            e.stopPropagation();
-            
-            // 隐藏主页面
-            mainPage.classList.add('hidden');
-            
-            // 隐藏所有配置页面
-            configPages.forEach(page => page.classList.add('hidden'));
-            
-            // 显示对应配置页面
-            configPages[index].classList.remove('hidden');
-            
-            // 激活当前二级菜单
-            subMenuItems.forEach(i => i.classList.remove('active'));
-            this.classList.add('active');
-          });
+          menuChildren.classList.toggle('hidden');
+          menuArrow.classList.toggle('rotate-180');
         });
       });
     </script>
