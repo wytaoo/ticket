@@ -515,9 +515,11 @@
             <div class="flex items-center justify-between px-4 py-3 border-b border-gray-100">
               <div class="flex items-center gap-6 text-sm">
                 <span class="text-gray-700">已创建：<span class="font-medium text-blue-600">1385</span></span>
-                <span class="text-gray-700">已流转待回复：<span class="font-medium text-blue-600">283</span></span>
                 <span class="text-gray-700">待客服处理：<span class="font-medium text-blue-600">327</span></span>
+                <span class="text-gray-700">已流转已回复：<span class="font-medium text-blue-600">283</span></span>
+                <span class="text-gray-700">再次流转已回复：<span class="font-medium text-blue-600">26</span></span>
                 <span class="text-gray-700">流转异常：<span class="font-medium text-red-600">179</span></span>
+                <span class="text-gray-700">处理结果异常：<span class="font-medium text-red-600">12</span></span>
               </div>
               <div class="flex items-center gap-2">
                 <button id="btn-customize" class="btn-action">
@@ -1126,11 +1128,11 @@
                       <span class="text-sm font-semibold text-green-600 ml-2">327</span>
                     </div>
                     <div class="bg-yellow-50 px-4 py-2 rounded-lg">
-                      <span class="text-sm text-gray-600">已流转待回复</span>
+                      <span class="text-sm text-gray-600">已流转已回复</span>
                       <span class="text-sm font-semibold text-yellow-600 ml-2">283</span>
                     </div>
                     <div class="bg-purple-50 px-4 py-2 rounded-lg">
-                      <span class="text-sm text-gray-600">再次处理待回复</span>
+                      <span class="text-sm text-gray-600">再次处理已回复</span>
                       <span class="text-sm font-semibold text-purple-600 ml-2">72</span>
                     </div>
                   </div>
@@ -1146,6 +1148,10 @@
                     <div class="bg-red-50 px-4 py-2 rounded-lg">
                       <span class="text-sm text-gray-600">流转异常</span>
                       <span class="text-sm font-semibold text-red-600 ml-2">179</span>
+                    </div>
+                    <div class="bg-red-50 px-4 py-2 rounded-lg">
+                      <span class="text-sm text-gray-600">处理结果异常</span>
+                      <span class="text-sm font-semibold text-red-600 ml-2">12</span>
                     </div>
                     <div class="bg-orange-50 px-4 py-2 rounded-lg">
                       <span class="text-sm text-gray-600">超时工单数</span>
@@ -1168,6 +1174,7 @@
                         <th class="px-4 py-3 text-center text-sm font-medium text-gray-600 border-b">再次处理已回复</th>
                         <th class="px-4 py-3 text-center text-sm font-medium text-gray-600 border-b">已完结</th>
                         <th class="px-4 py-3 text-center text-sm font-medium text-gray-600 border-b sortable cursor-pointer" data-sort="abnormal"><span class="inline-flex items-center justify-center gap-1">流转异常<span class="sort-icon"><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 5l5 7H5l5-7z"/></svg><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 15l-5-7h10l-5 7z"/></svg></span></span></th>
+                        <th class="px-4 py-3 text-center text-sm font-medium text-gray-600 border-b">处理结果异常</th>
                         <th class="px-4 py-3 text-center text-sm font-medium text-gray-600 border-b sortable cursor-pointer" data-sort="total"><span class="inline-flex items-center justify-center gap-1">总工单量<span class="sort-icon"><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 5l5 7H5l5-7z"/></svg><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 15l-5-7h10l-5 7z"/></svg></span></span></th>
                         <th class="px-4 py-3 text-center text-sm font-medium text-gray-600 border-b sortable cursor-pointer" data-sort="completion"><span class="inline-flex items-center justify-center gap-1">已完结占比<span class="sort-icon"><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 5l5 7H5l5-7z"/></svg><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 15l-5-7h10l-5 7z"/></svg></span></span></th>
                         <th class="px-4 py-3 text-center text-sm font-medium text-gray-600 border-b sortable cursor-pointer" data-sort="duration"><span class="inline-flex items-center justify-center gap-1">已完结平均时效/H<span class="sort-icon"><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 5l5 7H5l5-7z"/></svg><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 15l-5-7h10l-5 7z"/></svg></span></span></th>
@@ -1187,6 +1194,7 @@
                         <td class="px-4 py-3 text-sm text-center text-gray-800 border-b">18</td>
                         <td class="px-4 py-3 text-sm text-center text-gray-800 border-b">285</td>
                         <td class="px-4 py-3 text-sm text-center text-red-600 border-b">1</td>
+                        <td class="px-4 py-3 text-sm text-center text-red-600 border-b">2</td>
                         <td class="px-4 py-3 text-sm text-center text-gray-800 border-b">301</td>
                         <td class="px-4 py-3 text-sm text-center text-green-600 border-b">94.7%</td>
                         <td class="px-4 py-3 text-sm text-center text-gray-800 border-b">1.8</td>
@@ -1204,6 +1212,7 @@
                         <td class="px-4 py-3 text-sm text-center text-gray-800 border-b">15</td>
                         <td class="px-4 py-3 text-sm text-center text-gray-800 border-b">267</td>
                         <td class="px-4 py-3 text-sm text-center text-red-600 border-b">2</td>
+                        <td class="px-4 py-3 text-sm text-center text-red-600 border-b">3</td>
                         <td class="px-4 py-3 text-sm text-center text-gray-800 border-b">292</td>
                         <td class="px-4 py-3 text-sm text-center text-green-600 border-b">91.4%</td>
                         <td class="px-4 py-3 text-sm text-center text-gray-800 border-b">2.1</td>
@@ -1221,6 +1230,7 @@
                         <td class="px-4 py-3 text-sm text-center text-gray-800 border-b">12</td>
                         <td class="px-4 py-3 text-sm text-center text-gray-800 border-b">256</td>
                         <td class="px-4 py-3 text-sm text-center text-gray-800 border-b">0</td>
+                        <td class="px-4 py-3 text-sm text-center text-red-600 border-b">1</td>
                         <td class="px-4 py-3 text-sm text-center text-gray-800 border-b">275</td>
                         <td class="px-4 py-3 text-sm text-center text-green-600 border-b">93.1%</td>
                         <td class="px-4 py-3 text-sm text-center text-gray-800 border-b">2.0</td>
@@ -1238,6 +1248,7 @@
                         <td class="px-4 py-3 text-sm text-center text-gray-800 border-b">9</td>
                         <td class="px-4 py-3 text-sm text-center text-gray-800 border-b">189</td>
                         <td class="px-4 py-3 text-sm text-center text-gray-800 border-b">0</td>
+                        <td class="px-4 py-3 text-sm text-center text-red-600 border-b">4</td>
                         <td class="px-4 py-3 text-sm text-center text-gray-800 border-b">199</td>
                         <td class="px-4 py-3 text-sm text-center text-green-600 border-b">94.9%</td>
                         <td class="px-4 py-3 text-sm text-center text-gray-800 border-b">1.5</td>
@@ -1255,6 +1266,7 @@
                         <td class="px-4 py-3 text-sm text-center text-gray-800 border-b">14</td>
                         <td class="px-4 py-3 text-sm text-center text-gray-800 border-b">234</td>
                         <td class="px-4 py-3 text-sm text-center text-red-600 border-b">3</td>
+                        <td class="px-4 py-3 text-sm text-center text-red-600 border-b">2</td>
                         <td class="px-4 py-3 text-sm text-center text-gray-800 border-b">265</td>
                         <td class="px-4 py-3 text-sm text-center text-red-600 border-b">88.3%</td>
                         <td class="px-4 py-3 text-sm text-center text-gray-800 border-b">2.8</td>
