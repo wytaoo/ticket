@@ -858,7 +858,7 @@
                   <span class="text-gray-700">已流转已回复：<span class="font-medium text-blue-600">283</span></span>
                   <span class="text-gray-700">再次流转已回复：<span class="font-medium text-blue-600">26</span></span>
                   <span class="text-gray-700">流转异常：<span class="font-medium text-red-600">179</span></span>
-                  <span class="text-gray-700">处理结果异常：<span class="font-medium text-red-600">12</span></span>
+                  <span class="text-gray-700">回复异常：<span class="font-medium text-red-600">12</span></span>
                 </div>
                 <div class="flex items-center gap-3">
                   <button class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition text-sm">查询</button>
@@ -1630,7 +1630,7 @@
                   <span class="text-sm text-gray-600">待处理：<span class="font-medium text-blue-600">1279</span></span>
                   <span class="text-sm text-gray-600">待再次处理：<span class="font-medium text-blue-600">23</span></span>
                   <span class="text-sm text-gray-600">流转异常：<span class="font-medium text-red-600">7</span></span>
-                  <span class="text-sm text-gray-600">处理结果异常：<span class="font-medium text-red-600">12</span></span>
+                  <span class="text-sm text-gray-600">回复异常：<span class="font-medium text-red-600">12</span></span>
                 </div>
                 <div class="flex items-center">
                   <div class="flex gap-2.5">
@@ -2005,7 +2005,19 @@
               </div>
             </div>
             <div class="p-4 border-t border-gray-100 flex items-center justify-between">
-              <span class="text-sm text-gray-500">显示 1-3 条，共 156 条</span>
+              <div class="flex items-center gap-4">
+                <span class="text-sm text-gray-500">共 156 条记录</span>
+                <div class="flex items-center gap-2">
+                  <span class="text-sm text-gray-500">每页</span>
+                  <select class="filter-input w-16">
+                    <option value="10" selected>10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="50">50</option>
+                  </select>
+                  <span class="text-sm text-gray-500">条</span>
+                </div>
+              </div>
               <div class="flex items-center gap-2">
                 <button class="pagination-btn px-3 py-1 rounded text-sm border border-gray-300 disabled">上一页</button>
                 <button class="pagination-btn px-3 py-1 rounded text-sm border border-gray-300 bg-blue-500 text-white">1</button>
@@ -2144,7 +2156,10 @@
                       <option value="no">否</option>
                     </select>
                   </div>
-                  <div></div>
+                  <div>
+                    <label class="block text-xs text-gray-500 mb-1.5">司机编号</label>
+                    <input type="text" class="filter-input w-full" placeholder="请输入司机编号">
+                  </div>
                   <div></div>
                   <div></div>
                 </div>
@@ -2441,7 +2456,10 @@
             <div class="border-b border-gray-200 bg-white">
               <nav class="flex gap-1 px-5" aria-label="Tabs">
                 <button id="monitor-tab-efficiency" class="flex items-center gap-2 px-4 py-3 font-medium text-white bg-blue-500 rounded-t-lg text-sm">
-                  客服人效
+                  客诉人效
+                </button>
+                <button id="monitor-tab-yw-efficiency" class="flex items-center gap-2 px-4 py-3 font-medium text-black bg-gray-100 hover:bg-gray-200 rounded-t-lg text-sm">
+                  YW查件人效
                 </button>
                 <button id="monitor-tab-modify" class="flex items-center gap-2 px-4 py-3 font-medium text-black bg-gray-100 hover:bg-gray-200 rounded-t-lg text-sm">
                   工单修改记录
@@ -2500,49 +2518,6 @@
               </div>
               
               <div class="p-6">
-                <div class="flex justify-between items-center mb-4">
-                  <div class="flex gap-3">
-                    <div class="bg-blue-50 px-4 py-2 rounded-lg">
-                      <span class="text-sm text-gray-600">已创建</span>
-                      <span class="text-sm font-semibold text-blue-600 ml-2">1235</span>
-                    </div>
-                    <div class="bg-green-50 px-4 py-2 rounded-lg">
-                      <span class="text-sm text-gray-600">待客服处理</span>
-                      <span class="text-sm font-semibold text-green-600 ml-2">327</span>
-                    </div>
-                    <div class="bg-yellow-50 px-4 py-2 rounded-lg">
-                      <span class="text-sm text-gray-600">已流转已回复</span>
-                      <span class="text-sm font-semibold text-yellow-600 ml-2">283</span>
-                    </div>
-                    <div class="bg-purple-50 px-4 py-2 rounded-lg">
-                      <span class="text-sm text-gray-600">再次处理已回复</span>
-                      <span class="text-sm font-semibold text-purple-600 ml-2">72</span>
-                    </div>
-                  </div>
-                  <div class="flex gap-3">
-                    <div class="bg-gray-50 px-4 py-2 rounded-lg">
-                      <span class="text-sm text-gray-600">总工单量</span>
-                      <span class="text-sm font-semibold text-gray-700 ml-2">5899</span>
-                    </div>
-                    <div class="bg-teal-50 px-4 py-2 rounded-lg">
-                      <span class="text-sm text-gray-600">已完结</span>
-                      <span class="text-sm font-semibold text-teal-600 ml-2">3281</span>
-                    </div>
-                    <div class="bg-red-50 px-4 py-2 rounded-lg">
-                      <span class="text-sm text-gray-600">流转异常</span>
-                      <span class="text-sm font-semibold text-red-600 ml-2">179</span>
-                    </div>
-                    <div class="bg-red-50 px-4 py-2 rounded-lg">
-                      <span class="text-sm text-gray-600">处理结果异常</span>
-                      <span class="text-sm font-semibold text-red-600 ml-2">12</span>
-                    </div>
-                    <div class="bg-orange-50 px-4 py-2 rounded-lg">
-                      <span class="text-sm text-gray-600">超时工单数</span>
-                      <span class="text-sm font-semibold text-red-600 ml-2">162</span>
-                    </div>
-                  </div>
-                </div>
-
                 <div class="overflow-x-auto">
                   <table class="w-full border-collapse">
                     <thead>
@@ -2557,7 +2532,7 @@
                         <th class="px-4 py-3 text-center text-sm font-medium text-black border-b">再次处理已回复</th>
                         <th class="px-4 py-3 text-center text-sm font-medium text-black border-b">已完结</th>
                         <th class="px-4 py-3 text-center text-sm font-medium text-black border-b sortable cursor-pointer" data-sort="abnormal"><span class="inline-flex items-center justify-center gap-1">流转异常<span class="sort-icon"><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 5l5 7H5l5-7z"/></svg><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 15l-5-7h10l-5 7z"/></svg></span></span></th>
-                        <th class="px-4 py-3 text-center text-sm font-medium text-black border-b">处理结果异常</th>
+                        <th class="px-4 py-3 text-center text-sm font-medium text-black border-b">回复异常</th>
                         <th class="px-4 py-3 text-center text-sm font-medium text-black border-b sortable cursor-pointer" data-sort="total"><span class="inline-flex items-center justify-center gap-1">总工单量<span class="sort-icon"><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 5l5 7H5l5-7z"/></svg><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 15l-5-7h10l-5 7z"/></svg></span></span></th>
                         <th class="px-4 py-3 text-center text-sm font-medium text-black border-b sortable cursor-pointer" data-sort="completion"><span class="inline-flex items-center justify-center gap-1">已完结占比<span class="sort-icon"><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 5l5 7H5l5-7z"/></svg><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 15l-5-7h10l-5 7z"/></svg></span></span></th>
                         <th class="px-4 py-3 text-center text-sm font-medium text-black border-b sortable cursor-pointer" data-sort="duration"><span class="inline-flex items-center justify-center gap-1">已完结平均时效/H<span class="sort-icon"><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 5l5 7H5l5-7z"/></svg><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 15l-5-7h10l-5 7z"/></svg></span></span></th>
@@ -2566,6 +2541,24 @@
                       </tr>
                     </thead>
                     <tbody>
+                      <tr class="total-row bg-gray-100 font-semibold">
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">合计</td>
+                        <td class="px-4 py-3 text-sm text-gray-600 border-b">-</td>
+                        <td class="px-4 py-3 text-sm text-center text-gray-800 border-b">20</td>
+                        <td class="px-4 py-3 text-sm text-center text-gray-800 border-b">50</td>
+                        <td class="px-4 py-3 text-sm text-center text-gray-800 border-b">75</td>
+                        <td class="px-4 py-3 text-sm text-center text-gray-800 border-b">97</td>
+                        <td class="px-4 py-3 text-sm text-center text-gray-800 border-b">32</td>
+                        <td class="px-4 py-3 text-sm text-center text-gray-800 border-b">68</td>
+                        <td class="px-4 py-3 text-sm text-center text-gray-800 border-b">1231</td>
+                        <td class="px-4 py-3 text-sm text-center text-red-600 border-b">6</td>
+                        <td class="px-4 py-3 text-sm text-center text-red-600 border-b">12</td>
+                        <td class="px-4 py-3 text-sm text-center text-gray-800 border-b">1332</td>
+                        <td class="px-4 py-3 text-sm text-center text-green-600 border-b">92.4%</td>
+                        <td class="px-4 py-3 text-sm text-center text-gray-800 border-b">2.0</td>
+                        <td class="px-4 py-3 text-sm text-center text-red-600 border-b">94</td>
+                        <td class="px-4 py-3 text-sm text-center text-red-600 border-b">7.1%</td>
+                      </tr>
                       <tr class="hover:bg-gray-50" data-group="客服一组" data-abnormal="1" data-total="301" data-completion="94.7" data-duration="1.8" data-timeout="13" data-timeoutrate="4.3">
                         <td class="px-4 py-3 text-sm text-gray-800 border-b font-medium">杨凯</td>
                         <td class="px-4 py-3 text-sm text-gray-600 border-b">客服一组</td>
@@ -2669,6 +2662,222 @@
                         <option value="20">20</option>
                         <option value="50">50</option>
                         <option value="100">100</option>
+                      </select>
+                      <span class="text-sm text-gray-600">条</span>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-1">
+                    <button class="pagination-btn px-3 py-1 rounded text-sm border border-gray-300 disabled:opacity-50">上一页</button>
+                    <button class="pagination-btn pagination-active px-3 py-1 rounded text-sm border border-gray-300">1</button>
+                    <button class="pagination-btn px-3 py-1 rounded text-sm border border-gray-300">2</button>
+                    <button class="pagination-btn px-3 py-1 rounded text-sm border border-gray-300">3</button>
+                    <button class="pagination-btn px-3 py-1 rounded text-sm border border-gray-300">4</button>
+                    <button class="pagination-btn px-3 py-1 rounded text-sm border border-gray-300">5</button>
+                    <span class="text-sm text-gray-400 mx-2">...</span>
+                    <button class="pagination-btn px-3 py-1 rounded text-sm border border-gray-300">16</button>
+                    <button class="pagination-btn px-3 py-1 rounded text-sm border border-gray-300">下一页</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="monitor-content-yw-efficiency" class="p-0 hidden">
+              <div class="w-full bg-gray-50 border-b border-gray-200 px-6 py-4">
+                <div class="max-w-[100%] flex flex-wrap items-end gap-4">
+                  <div class="flex-1 min-w-[200px]">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">客服姓名</label>
+                    <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm" placeholder="请输入客服姓名">
+                  </div>
+                  <div class="flex-1 min-w-[200px]">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">客服组别</label>
+                    <select class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm">
+                      <option value="">请选择客服组别</option>
+                      <option value="客服一组">客服一组</option>
+                      <option value="客服二组">客服二组</option>
+                      <option value="客服三组">客服三组</option>
+                      <option value="VIP客服组">VIP客服组</option>
+                    </select>
+                  </div>
+                  <div class="flex-1 min-w-[280px]">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">工单创建时间</label>
+                    <div class="relative">
+                      <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm" placeholder="开始日期 ~ 结束日期">
+                      <button class="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="flex gap-2 pb-1">
+                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition text-sm font-medium">
+                      查询
+                    </button>
+                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition text-sm font-medium">
+                      导出
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="p-4 overflow-auto" style="height: calc(100vh - 280px);">
+                <div class="overflow-x-auto">
+                  <table class="w-full border-collapse" style="table-layout: fixed;">
+                    <thead>
+                      <tr class="bg-gray-50 sticky top-0">
+                        <th class="px-3 py-2 text-left text-xs font-medium text-black border-b" style="width: 8%;">客服姓名</th>
+                        <th class="px-3 py-2 text-left text-xs font-medium text-black border-b sortable cursor-pointer" data-sort="group" style="width: 8%;"><span class="inline-flex items-center gap-1">客服组别<span class="sort-icon"><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 5l5 7H5l5-7z"/></svg><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 15l-5-7h10l-5 7z"/></svg></span></span></th>
+                        <th class="px-3 py-2 text-center text-xs font-medium text-black border-b" style="width: 6%;">待处理</th>
+                        <th class="px-3 py-2 text-center text-xs font-medium text-black border-b" style="width: 6%;">已首次回复</th>
+                        <th class="px-3 py-2 text-center text-xs font-medium text-black border-b" style="width: 6%;">已再次回复</th>
+                        <th class="px-3 py-2 text-center text-xs font-medium text-black border-b" style="width: 5%;">已流转</th>
+                        <th class="px-3 py-2 text-center text-xs font-medium text-black border-b" style="width: 5%;">已完结</th>
+                        <th class="px-3 py-2 text-center text-xs font-medium text-black border-b sortable cursor-pointer" data-sort="flowAbnormal" style="width: 6%;"><span class="inline-flex items-center justify-center gap-1">流转异常<span class="sort-icon"><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 5l5 7H5l5-7z"/></svg><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 15l-5-7h10l-5 7z"/></svg></span></span></th>
+                        <th class="px-3 py-2 text-center text-xs font-medium text-black border-b sortable cursor-pointer" data-sort="replyAbnormal" style="width: 6%;"><span class="inline-flex items-center justify-center gap-1">回复异常<span class="sort-icon"><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 5l5 7H5l5-7z"/></svg><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 15l-5-7h10l-5 7z"/></svg></span></span></th>
+                        <th class="px-3 py-2 text-center text-xs font-medium text-black border-b sortable cursor-pointer" data-sort="total" style="width: 6%;"><span class="inline-flex items-center justify-center gap-1">总工单量<span class="sort-icon"><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 5l5 7H5l5-7z"/></svg><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 15l-5-7h10l-5 7z"/></svg></span></span></th>
+                        <th class="px-3 py-2 text-center text-xs font-medium text-black border-b sortable cursor-pointer" data-sort="completionRate" style="width: 7%;"><span class="inline-flex items-center justify-center gap-1">已完结占比<span class="sort-icon"><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 5l5 7H5l5-7z"/></svg><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 15l-5-7h10l-5 7z"/></svg></span></span></th>
+                        <th class="px-3 py-2 text-center text-xs font-medium text-black border-b sortable cursor-pointer" data-sort="completionDuration" style="width: 8%;"><span class="inline-flex items-center justify-center gap-1">已完结平均时效/H<span class="sort-icon"><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 5l5 7H5l5-7z"/></svg><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 15l-5-7h10l-5 7z"/></svg></span></span></th>
+                        <th class="px-3 py-2 text-center text-xs font-medium text-black border-b sortable cursor-pointer" data-sort="flowRate" style="width: 6%;"><span class="inline-flex items-center justify-center gap-1">已流转占比<span class="sort-icon"><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 5l5 7H5l5-7z"/></svg><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 15l-5-7h10l-5 7z"/></svg></span></span></th>
+                        <th class="px-3 py-2 text-center text-xs font-medium text-black border-b sortable cursor-pointer" data-sort="flowDuration" style="width: 8%;"><span class="inline-flex items-center justify-center gap-1">已流转平均时效/H<span class="sort-icon"><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 5l5 7H5l5-7z"/></svg><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 15l-5-7h10l-5 7z"/></svg></span></span></th>
+                        <th class="px-3 py-2 text-center text-xs font-medium text-black border-b sortable cursor-pointer" data-sort="completionTimeout" style="width: 8%;"><span class="inline-flex items-center justify-center gap-1">完结超时工单数<span class="sort-icon"><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 5l5 7H5l5-7z"/></svg><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 15l-5-7h10l-5 7z"/></svg></span></span></th>
+                        <th class="px-3 py-2 text-center text-xs font-medium text-black border-b sortable cursor-pointer" data-sort="completionTimeoutRate" style="width: 6%;"><span class="inline-flex items-center justify-center gap-1">完结超时占比<span class="sort-icon"><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 5l5 7H5l5-7z"/></svg><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 15l-5-7h10l-5 7z"/></svg></span></span></th>
+                        <th class="px-3 py-2 text-center text-xs font-medium text-black border-b sortable cursor-pointer" data-sort="flowTimeout" style="width: 6%;"><span class="inline-flex items-center justify-center gap-1">流转超时数<span class="sort-icon"><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 5l5 7H5l5-7z"/></svg><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 15l-5-7h10l-5 7z"/></svg></span></span></th>
+                        <th class="px-3 py-2 text-center text-xs font-medium text-black border-b sortable cursor-pointer" data-sort="flowTimeoutRate" style="width: 6%;"><span class="inline-flex items-center justify-center gap-1">流转超时占比<span class="sort-icon"><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 5l5 7H5l5-7z"/></svg><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 15l-5-7h10l-5 7z"/></svg></span></span></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="total-row bg-gray-100 font-semibold">
+                        <td class="px-3 py-2 text-xs text-gray-800 border-b">合计</td>
+                        <td class="px-3 py-2 text-xs text-gray-600 border-b">-</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">45</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">234</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">89</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">156</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">521</td>
+                        <td class="px-3 py-2 text-xs text-center text-red-600 border-b">8</td>
+                        <td class="px-3 py-2 text-xs text-center text-red-600 border-b">15</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">654</td>
+                        <td class="px-3 py-2 text-xs text-center text-green-600 border-b">79.7%</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">1.5</td>
+                        <td class="px-3 py-2 text-xs text-center text-green-600 border-b">23.8%</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">2.1</td>
+                        <td class="px-3 py-2 text-xs text-center text-red-600 border-b">32</td>
+                        <td class="px-3 py-2 text-xs text-center text-red-600 border-b">5.0%</td>
+                        <td class="px-3 py-2 text-xs text-center text-red-600 border-b">28</td>
+                        <td class="px-3 py-2 text-xs text-center text-red-600 border-b">17.9%</td>
+                      </tr>
+                      <tr class="hover:bg-gray-50" data-group="客服一组" data-flowabnormal="2" data-replyabnormal="3" data-total="156" data-completionrate="82.1" data-completionduration="1.2" data-flowrate="25.0" data-flowduration="1.8" data-completiontimeout="8" data-completiontimeoutrate="5.1" data-flowtimeout="6" data-flowtimeoutrate="15.4">
+                        <td class="px-3 py-2 text-xs text-gray-800 border-b font-medium">杨凯</td>
+                        <td class="px-3 py-2 text-xs text-gray-600 border-b">客服一组</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">12</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">56</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">23</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">39</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">128</td>
+                        <td class="px-3 py-2 text-xs text-center text-red-600 border-b">2</td>
+                        <td class="px-3 py-2 text-xs text-center text-red-600 border-b">3</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">156</td>
+                        <td class="px-3 py-2 text-xs text-center text-green-600 border-b">82.1%</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">1.2</td>
+                        <td class="px-3 py-2 text-xs text-center text-green-600 border-b">25.0%</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">1.8</td>
+                        <td class="px-3 py-2 text-xs text-center text-red-600 border-b">8</td>
+                        <td class="px-3 py-2 text-xs text-center text-red-600 border-b">5.1%</td>
+                        <td class="px-3 py-2 text-xs text-center text-red-600 border-b">6</td>
+                        <td class="px-3 py-2 text-xs text-center text-red-600 border-b">15.4%</td>
+                      </tr>
+                      <tr class="hover:bg-gray-50" data-group="客服二组" data-flowabnormal="3" data-replyabnormal="4" data-total="168" data-completionrate="78.6" data-completionduration="1.6" data-flowrate="22.6" data-flowduration="2.2" data-completiontimeout="10" data-completiontimeoutrate="6.0" data-flowtimeout="9" data-flowtimeoutrate="18.4">
+                        <td class="px-3 py-2 text-xs text-gray-800 border-b font-medium">李明</td>
+                        <td class="px-3 py-2 text-xs text-gray-600 border-b">客服二组</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">15</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">62</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">25</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">38</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">132</td>
+                        <td class="px-3 py-2 text-xs text-center text-red-600 border-b">3</td>
+                        <td class="px-3 py-2 text-xs text-center text-red-600 border-b">4</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">168</td>
+                        <td class="px-3 py-2 text-xs text-center text-green-600 border-b">78.6%</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">1.6</td>
+                        <td class="px-3 py-2 text-xs text-center text-green-600 border-b">22.6%</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">2.2</td>
+                        <td class="px-3 py-2 text-xs text-center text-red-600 border-b">10</td>
+                        <td class="px-3 py-2 text-xs text-center text-red-600 border-b">6.0%</td>
+                        <td class="px-3 py-2 text-xs text-center text-red-600 border-b">9</td>
+                        <td class="px-3 py-2 text-xs text-center text-red-600 border-b">18.4%</td>
+                      </tr>
+                      <tr class="hover:bg-gray-50" data-group="客服一组" data-flowabnormal="1" data-replyabnormal="3" data-total="145" data-completionrate="81.4" data-completionduration="1.4" data-flowrate="24.1" data-flowduration="2.0" data-completiontimeout="7" data-completiontimeoutrate="4.8" data-flowtimeout="7" data-flowtimeoutrate="17.1">
+                        <td class="px-3 py-2 text-xs text-gray-800 border-b font-medium">王芳</td>
+                        <td class="px-3 py-2 text-xs text-gray-600 border-b">客服一组</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">10</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">54</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">21</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">35</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">118</td>
+                        <td class="px-3 py-2 text-xs text-center text-red-600 border-b">1</td>
+                        <td class="px-3 py-2 text-xs text-center text-red-600 border-b">3</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">145</td>
+                        <td class="px-3 py-2 text-xs text-center text-green-600 border-b">81.4%</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">1.4</td>
+                        <td class="px-3 py-2 text-xs text-center text-green-600 border-b">24.1%</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">2.0</td>
+                        <td class="px-3 py-2 text-xs text-center text-red-600 border-b">7</td>
+                        <td class="px-3 py-2 text-xs text-center text-red-600 border-b">4.8%</td>
+                        <td class="px-3 py-2 text-xs text-center text-red-600 border-b">7</td>
+                        <td class="px-3 py-2 text-xs text-center text-red-600 border-b">17.1%</td>
+                      </tr>
+                      <tr class="hover:bg-gray-50" data-group="VIP客服组" data-flowabnormal="1" data-replyabnormal="2" data-total="102" data-completionrate="85.3" data-completionduration="1.1" data-flowrate="26.5" data-flowduration="1.7" data-completiontimeout="4" data-completiontimeoutrate="3.9" data-flowtimeout="3" data-flowtimeoutrate="11.1">
+                        <td class="px-3 py-2 text-xs text-gray-800 border-b font-medium">张磊</td>
+                        <td class="px-3 py-2 text-xs text-gray-600 border-b">VIP客服组</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">5</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">31</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">12</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">27</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">87</td>
+                        <td class="px-3 py-2 text-xs text-center text-red-600 border-b">1</td>
+                        <td class="px-3 py-2 text-xs text-center text-red-600 border-b">2</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">102</td>
+                        <td class="px-3 py-2 text-xs text-center text-green-600 border-b">85.3%</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">1.1</td>
+                        <td class="px-3 py-2 text-xs text-center text-green-600 border-b">26.5%</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">1.7</td>
+                        <td class="px-3 py-2 text-xs text-center text-red-600 border-b">4</td>
+                        <td class="px-3 py-2 text-xs text-center text-red-600 border-b">3.9%</td>
+                        <td class="px-3 py-2 text-xs text-center text-red-600 border-b">3</td>
+                        <td class="px-3 py-2 text-xs text-center text-red-600 border-b">11.1%</td>
+                      </tr>
+                      <tr class="hover:bg-gray-50" data-group="客服三组" data-flowabnormal="1" data-replyabnormal="3" data-total="83" data-completionrate="73.5" data-completionduration="2.0" data-flowrate="20.5" data-flowduration="2.5" data-completiontimeout="3" data-completiontimeoutrate="3.6" data-flowtimeout="3" data-flowtimeoutrate="17.6">
+                        <td class="px-3 py-2 text-xs text-gray-800 border-b font-medium">陈静</td>
+                        <td class="px-3 py-2 text-xs text-gray-600 border-b">客服三组</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">3</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">31</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">8</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">17</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">61</td>
+                        <td class="px-3 py-2 text-xs text-center text-red-600 border-b">1</td>
+                        <td class="px-3 py-2 text-xs text-center text-red-600 border-b">3</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">83</td>
+                        <td class="px-3 py-2 text-xs text-center text-green-600 border-b">73.5%</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">2.0</td>
+                        <td class="px-3 py-2 text-xs text-center text-green-600 border-b">20.5%</td>
+                        <td class="px-3 py-2 text-xs text-center text-gray-800 border-b">2.5</td>
+                        <td class="px-3 py-2 text-xs text-center text-red-600 border-b">3</td>
+                        <td class="px-3 py-2 text-xs text-center text-red-600 border-b">3.6%</td>
+                        <td class="px-3 py-2 text-xs text-center text-red-600 border-b">3</td>
+                        <td class="px-3 py-2 text-xs text-center text-red-600 border-b">17.6%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="flex items-center justify-between px-4 py-3 bg-gray-50 border-t border-gray-200">
+                  <div class="flex items-center gap-4">
+                    <span class="text-sm text-gray-600">共 <span class="font-medium">156</span> 条记录</span>
+                    <div class="flex items-center gap-2">
+                      <span class="text-sm text-gray-600">每页</span>
+                      <select class="filter-input w-20">
+                        <option>10</option>
+                        <option>20</option>
+                        <option>50</option>
+                        <option>100</option>
                       </select>
                       <span class="text-sm text-gray-600">条</span>
                     </div>
@@ -2896,7 +3105,7 @@
                         <th class="px-4 py-3 text-left text-sm font-medium text-black border-b">流转方案说明</th>
                         <th class="px-4 py-3 text-left text-sm font-medium text-black border-b">流转回复方案</th>
                         <th class="px-4 py-3 text-left text-sm font-medium text-black border-b">流转回复内容</th>
-                        <th class="px-4 py-3 text-left text-sm font-medium text-black border-b">是否有附件</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-black border-b">回复附件</th>
                         <th class="px-4 py-3 text-left text-sm font-medium text-black border-b">流转仓库</th>
                         <th class="px-4 py-3 text-left text-sm font-medium text-black border-b">流转车队</th>
                         <th class="px-4 py-3 text-left text-sm font-medium text-black border-b">流转发起人</th>
@@ -2913,7 +3122,7 @@
                         <td class="px-4 py-3 text-sm text-gray-500 border-b">客户投诉断更5天</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">包裹丢失</td>
                         <td class="px-4 py-3 text-sm text-gray-500 border-b">-</td>
-                        <td class="px-4 py-3 text-sm text-gray-800 border-b">否</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">-</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">-</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">LAX-Hi Horse</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">杨凯</td>
@@ -2928,7 +3137,7 @@
                         <td class="px-4 py-3 text-sm text-gray-500 border-b">客户投诉断更5天</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">已找到</td>
                         <td class="px-4 py-3 text-sm text-gray-500 border-b">-</td>
-                        <td class="px-4 py-3 text-sm text-gray-800 border-b">是</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b text-blue-500">附件</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">LAX01</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">-</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">杨凯</td>
@@ -2943,7 +3152,7 @@
                         <td class="px-4 py-3 text-sm text-gray-500 border-b">客户投诉司机将包裹隔空扔到院内，导致包裹破损，并提供了监控视频</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">超期自动认可</td>
                         <td class="px-4 py-3 text-sm text-gray-500 border-b">-</td>
-                        <td class="px-4 py-3 text-sm text-gray-800 border-b">否</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">-</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">-</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">SFO-Baoxiang</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">李白</td>
@@ -2958,7 +3167,7 @@
                         <td class="px-4 py-3 text-sm text-gray-500 border-b">客诉投诉司机虚假妥投，包裹POD不是收件人地址</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">超期自动认可</td>
                         <td class="px-4 py-3 text-sm text-gray-500 border-b">-</td>
-                        <td class="px-4 py-3 text-sm text-gray-800 border-b">否</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">-</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">-</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">SAT-GCE</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">王芳</td>
@@ -3046,7 +3255,7 @@
                         <th class="px-4 py-3 text-left text-sm font-medium text-black border-b">赔偿项</th>
                         <th class="px-4 py-3 text-left text-sm font-medium text-black border-b">最高赔偿金额</th>
                         <th class="px-4 py-3 text-left text-sm font-medium text-black border-b">实际赔偿金额</th>
-                        <th class="px-4 py-3 text-left text-sm font-medium text-black border-b">是否有附件</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-black border-b">附件</th>
                         <th class="px-4 py-3 text-left text-sm font-medium text-black border-b">客户号</th>
                         <th class="px-4 py-3 text-left text-sm font-medium text-black border-b">客户名称</th>
                         <th class="px-4 py-3 text-left text-sm font-medium text-black border-b">操作人</th>
@@ -3060,7 +3269,7 @@
                         <td class="px-4 py-3 text-sm text-gray-500 border-b">申报价值</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">¥100.00</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">¥59.00</td>
-                        <td class="px-4 py-3 text-sm text-gray-800 border-b">是</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">附件</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">KH20240001</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">JD</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">杨凯</td>
@@ -3072,7 +3281,7 @@
                         <td class="px-4 py-3 text-sm text-gray-500 border-b">运费+申报价值</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">¥100.00</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">¥100.00</td>
-                        <td class="px-4 py-3 text-sm text-gray-800 border-b">否</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">-</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">KH20240002</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">windy</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">李明</td>
@@ -3084,7 +3293,7 @@
                         <td class="px-4 py-3 text-sm text-gray-500 border-b">申报价值</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">¥100.00</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">¥80.00</td>
-                        <td class="px-4 py-3 text-sm text-gray-800 border-b">是</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">附件</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">KH20240003</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">hellwe</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">王芳</td>
@@ -3096,7 +3305,7 @@
                         <td class="px-4 py-3 text-sm text-gray-500 border-b">申报价值</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">¥100.00</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">¥12.00</td>
-                        <td class="px-4 py-3 text-sm text-gray-800 border-b">否</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">-</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">KH20240001</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">张先生</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">陈客</td>
@@ -3369,6 +3578,10 @@
                       <option value="no">否</option>
                     </select>
                   </div>
+                  <div class="flex-1 min-w-[200px]">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">司机编号</label>
+                    <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm" placeholder="请输入司机编号">
+                  </div>
                 </div>
                 
                 <!-- 展开/收起按钮 -->
@@ -3399,6 +3612,7 @@
                         <th class="px-4 py-3 text-left text-sm font-medium text-black border-b">运单号</th>
                         <th class="px-4 py-3 text-left text-sm font-medium text-black border-b">车队号</th>
                         <th class="px-4 py-3 text-left text-sm font-medium text-black border-b">车队名称</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-black border-b">司机编号</th>
                         <th class="px-4 py-3 text-left text-sm font-medium text-black border-b">投诉类型</th>
                         <th class="px-4 py-3 text-left text-sm font-medium text-black border-b">投诉原因</th>
                         <th class="px-4 py-3 text-left text-sm font-medium text-black border-b">扣罚金额</th>
@@ -3423,6 +3637,7 @@
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">SF1234567890</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">FLT000067</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">HOU-FASGO</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">DRIVER000001</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">暴力投递</td>
                         <td class="px-4 py-3 text-sm text-gray-500 border-b">客户投诉司机将包裹隔空扔到院内，导致包裹破损，并提供了监控视频</td>
                         <td class="px-4 py-3 text-sm text-red-600 border-b">¥100.00</td>
@@ -3445,6 +3660,7 @@
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">JD9876543210</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">FLT000233</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">SAT-GCE</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">DRIVER000002</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">服务态度</td>
                         <td class="px-4 py-3 text-sm text-gray-500 border-b">客户反映快递员态度恶劣，与收件人发送争吵</td>
                         <td class="px-4 py-3 text-sm text-red-600 border-b">¥100.00</td>
@@ -3467,6 +3683,7 @@
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">YT5555666677</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">FLT000380</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">HOU-LHC</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">DRIVER000003</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">包裹丢失</td>
                         <td class="px-4 py-3 text-sm text-gray-500 border-b">派送过程中造成包裹丢失</td>
                         <td class="px-4 py-3 text-sm text-red-600 border-b">¥100.00</td>
@@ -3489,6 +3706,7 @@
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">SF1234567890</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">FLT000067</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">HOU-FASGO</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">DRIVER000004</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">虚假妥投</td>
                         <td class="px-4 py-3 text-sm text-gray-500 border-b">客户投诉司机虚假妥投，实际POD显示与收件人地址不一致</td>
                         <td class="px-4 py-3 text-sm text-red-600 border-b">¥200.00</td>
@@ -3511,6 +3729,7 @@
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">SF1234567890</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">FLT000067</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">HOU-FASGO</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">DRIVER000005</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">包裹破损</td>
                         <td class="px-4 py-3 text-sm text-gray-500 border-b">客户投诉司机暴力投递导致包裹破损</td>
                         <td class="px-4 py-3 text-sm text-red-600 border-b">¥100.00</td>
@@ -3686,16 +3905,16 @@
                           <td class="px-4 py-3 text-sm text-gray-800 border-b">YWMIA0100756666354</td>
                           <td class="px-4 py-3 text-sm text-gray-800 border-b">VR770202879YP</td>
                           <td class="px-4 py-3 text-sm text-gray-800 border-b">
-                            <span class="desensitize-text cursor-pointer select-none" data-full="Ruth Rodriguez">****</span>
+                            <span class="desensitize-text cursor-pointer select-none" data-full="Ruth Rodriguez" data-masked="R****z">R****z</span>
                           </td>
                           <td class="px-4 py-3 text-sm text-gray-800 border-b">
-                            <span class="desensitize-text cursor-pointer select-none" data-full="+1 619-829-0933">****</span>
+                            <span class="desensitize-text cursor-pointer select-none" data-full="+1 619-829-0933" data-masked="+1 *******0933">+1 *******0933</span>
                           </td>
                           <td class="px-4 py-3 text-sm text-gray-800 border-b">
-                            <span class="desensitize-text cursor-pointer select-none" data-full="ruthrdz80@icloud.com">****</span>
+                            <span class="desensitize-text cursor-pointer select-none" data-full="ruthrdz80@icloud.com" data-masked="rut****@icloud.com">rut****@icloud.com</span>
                           </td>
                           <td class="px-4 py-3 text-sm text-gray-800 border-b">
-                            <span class="desensitize-text cursor-pointer select-none" data-full="92117">****</span>
+                            <span class="desensitize-text cursor-pointer select-none" data-full="92117" data-masked="92***">92***</span>
                           </td>
                           <td class="px-4 py-3 text-sm text-gray-800 border-b">3130 Cowley Way, San Diego, CA 92117, US</td>
                           <td class="px-4 py-3 text-sm text-gray-800 border-b">待出库</td>
@@ -6802,7 +7021,7 @@
                     </div>
                   </div>
                   <!-- 已选择工单 -->
-                  <div class="p-4 bg-blue-50 rounded-md">
+                  <div class="mt-16 p-4 bg-blue-50 rounded-md">
                     <p class="text-sm text-blue-800 font-medium mb-2">已选择 <span class="font-bold">${checkedCount}</span> 个工单：</p>
                     <table class="min-w-full text-sm mt-2 border border-gray-300">
                       <thead>
@@ -6966,7 +7185,7 @@
                     </div>
                   </div>
                   <!-- 已选择工单 -->
-                  <div class="p-4 bg-blue-50 rounded-md">
+                  <div class="mt-16 p-4 bg-blue-50 rounded-md">
                     <p class="text-sm text-blue-800 font-medium mb-2">已选择 <span class="font-bold">${checkedCount}</span> 个工单：</p>
                     <table class="min-w-full text-sm mt-2 border border-gray-300">
                       <thead>
@@ -8610,20 +8829,22 @@
         });
 
         const monitorTabEfficiency = document.getElementById('monitor-tab-efficiency');
+        const monitorTabYwEfficiency = document.getElementById('monitor-tab-yw-efficiency');
         const monitorTabModify = document.getElementById('monitor-tab-modify');
         const monitorTabFlow = document.getElementById('monitor-tab-flow');
         const monitorTabCompensation = document.getElementById('monitor-tab-compensation');
         const monitorTabClaim = document.getElementById('monitor-tab-claim');
         const monitorTabDsp = document.getElementById('monitor-tab-dsp');
         const monitorContentEfficiency = document.getElementById('monitor-content-efficiency');
+        const monitorContentYwEfficiency = document.getElementById('monitor-content-yw-efficiency');
         const monitorContentModify = document.getElementById('monitor-content-modify');
         const monitorContentFlow = document.getElementById('monitor-content-flow');
         const monitorContentCompensation = document.getElementById('monitor-content-compensation');
         const monitorContentClaim = document.getElementById('monitor-content-claim');
         const monitorContentDsp = document.getElementById('monitor-content-dsp');
         
-        const monitorTabs = [monitorTabEfficiency, monitorTabModify, monitorTabFlow, monitorTabCompensation, monitorTabClaim, monitorTabDsp];
-        const monitorContents = [monitorContentEfficiency, monitorContentModify, monitorContentFlow, monitorContentCompensation, monitorContentClaim, monitorContentDsp];
+        const monitorTabs = [monitorTabEfficiency, monitorTabYwEfficiency, monitorTabModify, monitorTabFlow, monitorTabCompensation, monitorTabClaim, monitorTabDsp];
+        const monitorContents = [monitorContentEfficiency, monitorContentYwEfficiency, monitorContentModify, monitorContentFlow, monitorContentCompensation, monitorContentClaim, monitorContentDsp];
         
         function activateMonitorTab(tabIndex) {
           monitorTabs.forEach(function(tab, index) {
@@ -8640,11 +8861,12 @@
         }
         
         monitorTabEfficiency.addEventListener('click', function() { activateMonitorTab(0); });
-        monitorTabModify.addEventListener('click', function() { activateMonitorTab(1); });
-        monitorTabFlow.addEventListener('click', function() { activateMonitorTab(2); });
-        monitorTabCompensation.addEventListener('click', function() { activateMonitorTab(3); });
-        monitorTabClaim.addEventListener('click', function() { activateMonitorTab(4); });
-        monitorTabDsp.addEventListener('click', function() { activateMonitorTab(5); });
+        monitorTabYwEfficiency.addEventListener('click', function() { activateMonitorTab(1); });
+        monitorTabModify.addEventListener('click', function() { activateMonitorTab(2); });
+        monitorTabFlow.addEventListener('click', function() { activateMonitorTab(3); });
+        monitorTabCompensation.addEventListener('click', function() { activateMonitorTab(4); });
+        monitorTabClaim.addEventListener('click', function() { activateMonitorTab(5); });
+        monitorTabDsp.addEventListener('click', function() { activateMonitorTab(6); });
         
         // DSP扣罚与申诉审批查询栏展开/收起
         const dspToggleSearch = document.getElementById('dsp-toggle-search');
@@ -10048,10 +10270,10 @@
                       <p class="text-sm text-orange-800 font-medium">已选择 <span class="font-bold">${checkedCount}</span> 个工单</p>
                       <div class="flex flex-wrap gap-3 mt-3">
                         <span class="inline-flex items-center px-3 py-1.5 rounded bg-white border border-orange-200 text-sm text-gray-700">
-                          未收到 (3)
+                          包裹未收到 (3)
                         </span>
                         <span class="inline-flex items-center px-3 py-1.5 rounded bg-white border border-orange-200 text-sm text-gray-700">
-                          派送延迟 (2)
+                          包裹轨迹长时间未更新 (2)
                         </span>
                       </div>
                     </div>
@@ -10684,37 +10906,20 @@
               <table class="w-full text-sm">
                 <thead>
                   <tr class="bg-gray-50">
-                    <th class="px-4 py-3 text-left font-medium text-black">操作类型</th>
-                    <th class="px-4 py-3 text-left font-medium text-black">操作人</th>
-                    <th class="px-4 py-3 text-left font-medium text-black">操作时间</th>
-                    <th class="px-4 py-3 text-left font-medium text-black">操作描述</th>
+                    <th class="px-4 py-3 text-left font-medium text-black border-b border-gray-200 w-28">操作类型</th>
+                    <th class="px-4 py-3 text-left font-medium text-black border-b border-gray-200 w-80">描述</th>
+                    <th class="px-4 py-3 text-left font-medium text-black border-b border-gray-200 w-24">状态</th>
+                    <th class="px-4 py-3 text-left font-medium text-black border-b border-gray-200 w-40">错误信息</th>
+                    <th class="px-4 py-3 text-left font-medium text-black border-b border-gray-200 w-24">操作人</th>
+                    <th class="px-4 py-3 text-left font-medium text-black border-b border-gray-200 w-40">操作时间</th>
                   </tr>
                 </thead>
-                <tbody class="divide-y divide-gray-100">
-                  <tr>
-                    <td class="px-4 py-3 text-gray-800">创建工单</td>
-                    <td class="px-4 py-3 text-gray-800">杨凯</td>
-                    <td class="px-4 py-3 text-gray-500">2024-01-10 10:30:00</td>
-                    <td class="px-4 py-3 text-gray-600">创建YW查件工单，运单号：UL143023488YP</td>
-                  </tr>
-                  <tr>
-                    <td class="px-4 py-3 text-gray-800">分配处理人</td>
-                    <td class="px-4 py-3 text-gray-800">系统</td>
-                    <td class="px-4 py-3 text-gray-500">2024-01-10 10:31:00</td>
-                    <td class="px-4 py-3 text-gray-600">自动分配处理人：刘一帆</td>
-                  </tr>
-                  <tr>
-                    <td class="px-4 py-3 text-gray-800">流转</td>
-                    <td class="px-4 py-3 text-gray-800">刘一帆</td>
-                    <td class="px-4 py-3 text-gray-500">2024-01-10 11:00:00</td>
-                    <td class="px-4 py-3 text-gray-600">转车队查件</td>
-                  </tr>
-                  <tr>
-                    <td class="px-4 py-3 text-gray-800">回复</td>
-                    <td class="px-4 py-3 text-gray-800">DFW-STROUD</td>
-                    <td class="px-4 py-3 text-gray-500">2024-01-12 14:30:00</td>
-                    <td class="px-4 py-3 text-gray-600">已联系车队确认派送安排</td>
-                  </tr>
+                <tbody>
+                  <tr class="hover:bg-blue-50 transition"><td class="px-4 py-3 border-b border-gray-100">创建工单</td><td class="px-4 py-3 border-b border-gray-100">客服徐帆创建客诉工单，异常类型：延误-派送延迟</td><td class="px-4 py-3 border-b border-gray-100"><span class="status-completed">成功</span></td><td class="px-4 py-3 border-b border-gray-100">-</td><td class="px-4 py-3 border-b border-gray-100">徐帆</td><td class="px-4 py-3 border-b border-gray-100">2024-01-15 10:30:00</td></tr>
+                  <tr class="bg-gray-50 hover:bg-blue-50 transition"><td class="px-4 py-3 border-b border-gray-100">分配处理</td><td class="px-4 py-3 border-b border-gray-100">工单分配给客服杨凯处理</td><td class="px-4 py-3 border-b border-gray-100"><span class="status-completed">成功</span></td><td class="px-4 py-3 border-b border-gray-100">-</td><td class="px-4 py-3 border-b border-gray-100">系统自动</td><td class="px-4 py-3 border-b border-gray-100">2024-01-15 10:31:00</td></tr>
+                  <tr class="hover:bg-blue-50 transition"><td class="px-4 py-3 border-b border-gray-100">查询物流</td><td class="px-4 py-3 border-b border-gray-100">查询USPS物流状态，确认包裹在派送中心滞留</td><td class="px-4 py-3 border-b border-gray-100"><span class="status-completed">成功</span></td><td class="px-4 py-3 border-b border-gray-100">-</td><td class="px-4 py-3 border-b border-gray-100">杨凯</td><td class="px-4 py-3 border-b border-gray-100">2024-01-15 11:00:00</td></tr>
+                  <tr class="bg-gray-50 hover:bg-blue-50 transition"><td class="px-4 py-3 border-b border-gray-100">联系快递</td><td class="px-4 py-3 border-b border-gray-100">联系USPS客服催促派送</td><td class="px-4 py-3 border-b border-gray-100"><span class="status-completed">成功</span></td><td class="px-4 py-3 border-b border-gray-100">-</td><td class="px-4 py-3 border-b border-gray-100">杨凯</td><td class="px-4 py-3 border-b border-gray-100">2024-01-15 11:30:00</td></tr>
+                  <tr class="hover:bg-blue-50 transition"><td class="px-4 py-3 border-b border-gray-100">回复客户</td><td class="px-4 py-3 border-b border-gray-100">已通过邮件回复客户，告知正在处理中</td><td class="px-4 py-3 border-b border-gray-100"><span class="status-completed">成功</span></td><td class="px-4 py-3 border-b border-gray-100">-</td><td class="px-4 py-3 border-b border-gray-100">杨凯</td><td class="px-4 py-3 border-b border-gray-100">2024-01-15 14:00:00</td></tr>
                 </tbody>
               </table>
             </div>
@@ -11346,7 +11551,7 @@
           menuArrow.classList.toggle('rotate-180');
         });
         
-        // 客服人效表格排序功能
+        // 客诉人效表格排序功能
         const sortableHeaders = document.querySelectorAll('.sortable');
         let currentSortField = '';
         let currentSortOrder = 'asc';
@@ -11364,7 +11569,8 @@
             }
             
             const tbody = this.closest('table').querySelector('tbody');
-            const rows = Array.from(tbody.querySelectorAll('tr'));
+            const totalRow = tbody.querySelector('.total-row');
+            const rows = Array.from(tbody.querySelectorAll('tr:not(.total-row)'));
             
             // 获取当前列索引
             const thIndex = Array.from(this.parentElement.children).indexOf(this);
@@ -11398,7 +11604,10 @@
               }
             });
             
-            // 重新排列行
+            // 重新排列行，保持合计行在顶部
+            if (totalRow) {
+              tbody.appendChild(totalRow);
+            }
             rows.forEach(row => tbody.appendChild(row));
             
             // 更新排序图标（上下箭头格式）
