@@ -852,13 +852,22 @@
                 </div>
               </div>
               <div class="flex items-center justify-between mt-3 gap-3">
-                <div class="flex items-center gap-6 text-sm">
-                  <span class="text-gray-700">已创建：<span class="font-medium text-blue-600">1385</span></span>
-                  <span class="text-gray-700">待客服处理：<span class="font-medium text-blue-600">327</span></span>
-                  <span class="text-gray-700">已流转已回复：<span class="font-medium text-blue-600">283</span></span>
-                  <span class="text-gray-700">再次流转已回复：<span class="font-medium text-blue-600">26</span></span>
-                  <span class="text-gray-700">流转异常：<span class="font-medium text-red-600">179</span></span>
-                  <span class="text-gray-700">回复异常：<span class="font-medium text-red-600">12</span></span>
+                <div class="flex items-center gap-2">
+                  <button id="ticket-status-created" class="ticket-tab active px-4 py-2 rounded-md text-sm font-semibold bg-blue-500 text-white shadow-sm">
+                    已创建 <span class="ml-1 text-white font-bold">1385</span>
+                  </button>
+                  <button id="ticket-status-pending" class="ticket-tab px-4 py-2 rounded-md text-sm font-semibold bg-white border border-gray-200 text-gray-700 hover:bg-blue-50 hover:border-blue-300">
+                    待客服处理 <span class="ml-1 text-gray-600 font-semibold">327</span>
+                  </button>
+                  <button id="ticket-status-replied" class="ticket-tab px-4 py-2 rounded-md text-sm font-semibold bg-white border border-gray-200 text-gray-700 hover:bg-blue-50 hover:border-blue-300">
+                    已回复 <span class="ml-1 text-gray-600 font-semibold">309</span>
+                  </button>
+                  <button id="ticket-status-abnormal" class="ticket-tab px-4 py-2 rounded-md text-sm font-semibold bg-white border border-gray-200 text-gray-700 hover:bg-red-50 hover:border-red-300">
+                    处理异常 <span class="ml-1 text-red-500 font-bold">191</span>
+                  </button>
+                  <button id="ticket-status-all" class="ticket-tab px-4 py-2 rounded-md text-sm font-semibold bg-white border border-gray-200 text-gray-700 hover:bg-blue-50 hover:border-blue-300">
+                    全部 <span class="ml-1 text-gray-600 font-semibold">2212</span>
+                  </button>
                 </div>
                 <div class="flex items-center gap-3">
                   <button class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition text-sm">查询</button>
@@ -926,6 +935,12 @@
                   </svg>
                   <span>创建工单</span>
                 </button>
+                <button id="btn-desensitize" class="btn-action">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                  </svg>
+                  <span>脱敏</span>
+                </button>
               </div>
             </div>
 
@@ -978,13 +993,13 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr class="hover:bg-blue-50 transition">
+                  <tr class="hover:bg-blue-50 transition" data-ticket-status="created">
                     <td class="table-frozen-left-1 px-3 py-3 border-b border-gray-100"><input type="checkbox" class="w-4 h-4"></td>
                     <td class="table-frozen-left-2 px-3 py-3 border-b border-gray-100"><a href="#" class="btn-detail mr-2 text-blue-500 hover:underline">详情</a><a href="#" class="btn-handle text-blue-500 hover:underline">处理</a></td>
                     <td class="table-frozen-left-3 px-3 py-3 border-b border-gray-100 font-medium">YWLAX010170819358</td>
                     <td class="table-frozen-left-4 px-3 py-3 border-b border-gray-100">包裹破损</td>
                     <td class="table-frozen-left-5 px-3 py-3 border-b border-gray-100">内件缺失</td>
-                    <td class="px-3 py-3 border-b border-gray-100"><span class="status-pending">待处理</span></td>
+                    <td class="px-3 py-3 border-b border-gray-100"><span class="status-pending">已创建</span></td>
                     <td class="px-3 py-3 border-b border-gray-100 text-xs">申请赔偿</td>
                     <td class="px-3 py-3 border-b border-gray-100">-</td>
                     <td class="px-3 py-3 border-b border-gray-100">-</td>
@@ -1020,13 +1035,13 @@
                     <td class="px-3 py-3 border-b border-gray-100 text-red-500">是</td>
                     <td class="px-3 py-3 border-b border-gray-100">K2026053000001</td>
                   </tr>
-                  <tr class="bg-gray-50 hover:bg-blue-50 transition">
+                  <tr class="bg-gray-50 hover:bg-blue-50 transition" data-ticket-status="pending">
                     <td class="table-frozen-left-1 px-3 py-3 border-b border-gray-100"><input type="checkbox" class="w-4 h-4"></td>
                     <td class="table-frozen-left-2 px-3 py-3 border-b border-gray-100"><a href="#" class="btn-detail mr-2 text-blue-500 hover:underline">详情</a><a href="#" class="btn-handle text-blue-500 hover:underline">处理</a></td>
                     <td class="table-frozen-left-3 px-3 py-3 border-b border-gray-100 font-medium">YWDFW010101444475</td>
                     <td class="table-frozen-left-4 px-3 py-3 border-b border-gray-100">司机问题</td>
                     <td class="table-frozen-left-5 px-3 py-3 border-b border-gray-100">态度恶劣</td>
-                    <td class="px-3 py-3 border-b border-gray-100"><span class="status-pending">待确认</span></td>
+                    <td class="px-3 py-3 border-b border-gray-100"><span class="status-pending">待客服处理</span></td>
                     <td class="px-3 py-3 border-b border-gray-100 text-xs">投诉司机态度恶劣</td>
                     <td class="px-3 py-3 border-b border-gray-100">-</td>
                     <td class="px-3 py-3 border-b border-gray-100">-</td>
@@ -1062,13 +1077,13 @@
                     <td class="px-3 py-3 border-b border-gray-100 text-green-500">否</td>
                     <td class="px-3 py-3 border-b border-gray-100">K2026053000002</td>
                   </tr>
-                  <tr class="hover:bg-blue-50 transition">
+                  <tr class="hover:bg-blue-50 transition" data-ticket-status="replied">
                     <td class="table-frozen-left-1 px-3 py-3 border-b border-gray-100"><input type="checkbox" class="w-4 h-4"></td>
                     <td class="table-frozen-left-2 px-3 py-3 border-b border-gray-100"><a href="#" class="btn-detail mr-2 text-blue-500 hover:underline">详情</a><a href="#" class="btn-handle text-blue-500 hover:underline">处理</a></td>
                     <td class="table-frozen-left-3 px-3 py-3 border-b border-gray-100 font-medium">YWPHX010039026767</td>
                     <td class="table-frozen-left-4 px-3 py-3 border-b border-gray-100">司机问题</td>
                     <td class="table-frozen-left-5 px-3 py-3 border-b border-gray-100">损坏草坪</td>
-                    <td class="px-3 py-3 border-b border-gray-100"><span class="status-completed">已确认</span></td>
+                    <td class="px-3 py-3 border-b border-gray-100"><span class="status-completed">已流转已回复</span></td>
                     <td class="px-3 py-3 border-b border-gray-100 text-xs">申请赔偿</td>
                     <td class="px-3 py-3 border-b border-gray-100">联系发件人处理</td>
                     <td class="px-3 py-3 border-b border-gray-100 line-clamp-2 cursor-help" title="供应商确认无异议">供应商确认无异议</td>
@@ -1104,13 +1119,13 @@
                     <td class="px-3 py-3 border-b border-gray-100 text-red-500">是</td>
                     <td class="px-3 py-3 border-b border-gray-100">K2026052900003</td>
                   </tr>
-                  <tr class="bg-gray-50 hover:bg-blue-50 transition">
+                  <tr class="bg-gray-50 hover:bg-blue-50 transition" data-ticket-status="abnormal">
                     <td class="table-frozen-left-1 px-3 py-3 border-b border-gray-100"><input type="checkbox" class="w-4 h-4"></td>
                     <td class="table-frozen-left-2 px-3 py-3 border-b border-gray-100"><a href="#" class="btn-detail mr-2 text-blue-500 hover:underline">详情</a><a href="#" class="btn-handle text-blue-500 hover:underline">处理</a></td>
                     <td class="table-frozen-left-3 px-3 py-3 border-b border-gray-100 font-medium">YWLAS010017502320</td>
                     <td class="table-frozen-left-4 px-3 py-3 border-b border-gray-100">司机问题</td>
                     <td class="table-frozen-left-5 px-3 py-3 border-b border-gray-100">已妥投未收到</td>
-                    <td class="px-3 py-3 border-b border-gray-100"><span class="status-completed">已确认</span></td>
+                    <td class="px-3 py-3 border-b border-gray-100"><span class="status-completed">流转异常</span></td>
                     <td class="px-3 py-3 border-b border-gray-100 text-xs">派错地址，投诉司机，要求赔偿</td>
                     <td class="px-3 py-3 border-b border-gray-100">联系发件人处理</td>
                     <td class="px-3 py-3 border-b border-gray-100 line-clamp-2 cursor-help" title="供应商确认丢失">供应商确认丢失</td>
@@ -1146,7 +1161,7 @@
                     <td class="px-3 py-3 border-b border-gray-100 text-green-500">否</td>
                     <td class="px-3 py-3 border-b border-gray-100">K2026052800004</td>
                   </tr>
-                  <tr class="hover:bg-blue-50 transition">
+                  <tr class="hover:bg-blue-50 transition" data-ticket-status="other">
                     <td class="table-frozen-left-1 px-3 py-3 border-b border-gray-100"><input type="checkbox" class="w-4 h-4"></td>
                     <td class="table-frozen-left-2 px-3 py-3 border-b border-gray-100"><a href="#" class="btn-detail mr-2 text-blue-500 hover:underline">详情</a><a href="#" class="btn-handle text-blue-500 hover:underline">处理</a></td>
                     <td class="table-frozen-left-3 px-3 py-3 border-b border-gray-100 font-medium">YWLAX010170237848</td>
@@ -1188,7 +1203,7 @@
                     <td class="px-3 py-3 border-b border-gray-100 text-green-500">否</td>
                     <td class="px-3 py-3 border-b border-gray-100">K2026052700005</td>
                   </tr>
-                  <tr class="bg-gray-50 hover:bg-blue-50 transition">
+                  <tr class="bg-gray-50 hover:bg-blue-50 transition" data-ticket-status="other">
                     <td class="table-frozen-left-1 px-3 py-3 border-b border-gray-100"><input type="checkbox" class="w-4 h-4"></td>
                     <td class="table-frozen-left-2 px-3 py-3 border-b border-gray-100"><a href="#" class="btn-detail mr-2 text-blue-500 hover:underline">详情</a><a href="#" class="btn-handle text-blue-500 hover:underline">处理</a></td>
                     <td class="table-frozen-left-3 px-3 py-3 border-b border-gray-100 font-medium">YWSAN010023848498</td>
@@ -1230,13 +1245,13 @@
                     <td class="px-3 py-3 border-b border-gray-100 text-green-500">否</td>
                     <td class="px-3 py-3 border-b border-gray-100">K2026052600006</td>
                   </tr>
-                  <tr class="hover:bg-blue-50 transition">
+                  <tr class="hover:bg-blue-50 transition" data-ticket-status="pending">
                     <td class="table-frozen-left-1 px-3 py-3 border-b border-gray-100"><input type="checkbox" class="w-4 h-4"></td>
                     <td class="table-frozen-left-2 px-3 py-3 border-b border-gray-100"><a href="#" class="btn-detail mr-2 text-blue-500 hover:underline">详情</a><a href="#" class="btn-handle text-blue-500 hover:underline">处理</a></td>
                     <td class="table-frozen-left-3 px-3 py-3 border-b border-gray-100 font-medium">YWSAN010023848047</td>
                     <td class="table-frozen-left-4 px-3 py-3 border-b border-gray-100">轨迹断更</td>
                     <td class="table-frozen-left-5 px-3 py-3 border-b border-gray-100">仓库断更3天</td>
-                    <td class="px-3 py-3 border-b border-gray-100"><span class="status-processing">处理中</span></td>
+                    <td class="px-3 py-3 border-b border-gray-100"><span class="status-processing">待客服处理</span></td>
                     <td class="px-3 py-3 border-b border-gray-100 text-xs">催促尽快派送</td>
                     <td class="px-3 py-3 border-b border-gray-100">-</td>
                     <td class="px-3 py-3 border-b border-gray-100">-</td>
@@ -1272,13 +1287,13 @@
                     <td class="px-3 py-3 border-b border-gray-100 text-red-500">是</td>
                     <td class="px-3 py-3 border-b border-gray-100">K2026052500007</td>
                   </tr>
-                  <tr class="bg-gray-50 hover:bg-blue-50 transition">
+                  <tr class="bg-gray-50 hover:bg-blue-50 transition" data-ticket-status="pending">
                     <td class="table-frozen-left-1 px-3 py-3 border-b border-gray-100"><input type="checkbox" class="w-4 h-4"></td>
                     <td class="table-frozen-left-2 px-3 py-3 border-b border-gray-100"><a href="#" class="btn-detail mr-2 text-blue-500 hover:underline">详情</a><a href="#" class="btn-handle text-blue-500 hover:underline">处理</a></td>
                     <td class="table-frozen-left-3 px-3 py-3 border-b border-gray-100 font-medium">YWATL010035667407</td>
                     <td class="table-frozen-left-4 px-3 py-3 border-b border-gray-100">轨迹断更</td>
                     <td class="table-frozen-left-5 px-3 py-3 border-b border-gray-100">派送断更5天</td>
-                    <td class="px-3 py-3 border-b border-gray-100"><span class="status-processing">处理中</span></td>
+                    <td class="px-3 py-3 border-b border-gray-100"><span class="status-processing">待客服处理</span></td>
                     <td class="px-3 py-3 border-b border-gray-100 text-xs">申请赔偿，投诉时效慢</td>
                     <td class="px-3 py-3 border-b border-gray-100">-</td>
                     <td class="px-3 py-3 border-b border-gray-100">-</td>
@@ -1314,7 +1329,7 @@
                     <td class="px-3 py-3 border-b border-gray-100 text-green-500">否</td>
                     <td class="px-3 py-3 border-b border-gray-100">K2026052500008</td>
                   </tr>
-                  <tr class="hover:bg-blue-50 transition">
+                  <tr class="hover:bg-blue-50 transition" data-ticket-status="other">
                     <td class="table-frozen-left-1 px-3 py-3 border-b border-gray-100"><input type="checkbox" class="w-4 h-4"></td>
                     <td class="table-frozen-left-2 px-3 py-3 border-b border-gray-100"><a href="#" class="btn-detail mr-2 text-blue-500 hover:underline">详情</a><a href="#" class="btn-handle text-blue-500 hover:underline">处理</a></td>
                     <td class="table-frozen-left-3 px-3 py-3 border-b border-gray-100 font-medium">YWATL010035603849</td>
@@ -1356,7 +1371,7 @@
                     <td class="px-3 py-3 border-b border-gray-100 text-red-500">是</td>
                     <td class="px-3 py-3 border-b border-gray-100">K2026052500009</td>
                   </tr>
-                  <tr class="bg-gray-50 hover:bg-blue-50 transition">
+                  <tr class="bg-gray-50 hover:bg-blue-50 transition" data-ticket-status="other">
                     <td class="table-frozen-left-1 px-3 py-3 border-b border-gray-100"><input type="checkbox" class="w-4 h-4"></td>
                     <td class="table-frozen-left-2 px-3 py-3 border-b border-gray-100"><a href="#" class="btn-detail mr-2 text-blue-500 hover:underline">详情</a><a href="#" class="btn-handle text-blue-500 hover:underline">处理</a></td>
                     <td class="table-frozen-left-3 px-3 py-3 border-b border-gray-100 font-medium">YWATL010035603849</td>
@@ -1626,11 +1641,19 @@
               
               <!-- 展开/收起按钮和操作按钮 -->
               <div class="flex items-center justify-between">
-                <div class="flex items-center gap-6">
-                  <span class="text-sm text-gray-600">待处理：<span class="font-medium text-blue-600">1279</span></span>
-                  <span class="text-sm text-gray-600">待再次处理：<span class="font-medium text-blue-600">23</span></span>
-                  <span class="text-sm text-gray-600">流转异常：<span class="font-medium text-red-600">7</span></span>
-                  <span class="text-sm text-gray-600">回复异常：<span class="font-medium text-red-600">12</span></span>
+                <div class="flex items-center gap-2">
+                  <button id="domestic-status-pending" class="domestic-tab active px-4 py-2 rounded-md text-sm font-semibold bg-blue-500 text-white shadow-sm">
+                    待处理 <span class="ml-1 text-white font-bold">1279</span>
+                  </button>
+                  <button id="domestic-status-reprocess" class="domestic-tab px-4 py-2 rounded-md text-sm font-semibold bg-white border border-gray-200 text-gray-700 hover:bg-blue-50 hover:border-blue-300">
+                    待再次处理 <span class="ml-1 text-gray-600 font-semibold">23</span>
+                  </button>
+                  <button id="domestic-status-flow-error" class="domestic-tab px-4 py-2 rounded-md text-sm font-semibold bg-white border border-gray-200 text-gray-700 hover:bg-red-50 hover:border-red-300">
+                    处理异常 <span class="ml-1 text-red-500 font-bold">7</span>
+                  </button>
+                  <button id="domestic-status-all" class="domestic-tab px-4 py-2 rounded-md text-sm font-semibold bg-white border border-gray-200 text-gray-700 hover:bg-blue-50 hover:border-blue-300">
+                    全部 <span class="ml-1 text-gray-600 font-semibold">1321</span>
+                  </button>
                 </div>
                 <div class="flex items-center">
                   <div class="flex gap-2.5">
@@ -1745,7 +1768,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr class="hover:bg-blue-50 transition">
+                    <tr class="hover:bg-blue-50 transition" data-domestic-status="pending">
                       <td class="table-frozen-left-1 px-3 py-3 border-b border-gray-100"><input type="checkbox" class="w-4 h-4"></td>
                       <td class="table-frozen-left-2 px-3 py-3 border-b border-gray-100"><a href="#" class="btn-detail mr-2 text-blue-500 hover:underline">详情</a><a href="#" class="process-single-btn text-blue-500 hover:underline">处理</a></td>
                       <td class="table-frozen-left-3 px-3 py-3 border-b border-gray-100 break-all font-medium">UL143023488YP</td>
@@ -1796,7 +1819,7 @@
                       <td class="px-3 py-3 border-b border-gray-100 break-all">KJCX8755135139338452992783</td>
                       <td class="px-3 py-3 border-b border-gray-100">-</td>
                     </tr>
-                    <tr class="hover:bg-blue-50 transition">
+                    <tr class="hover:bg-blue-50 transition" data-domestic-status="reprocess">
                       <td class="table-frozen-left-1 px-3 py-3 border-b border-gray-100"><input type="checkbox" class="w-4 h-4"></td>
                       <td class="table-frozen-left-2 px-3 py-3 border-b border-gray-100"><a href="#" class="btn-detail mr-2 text-blue-500 hover:underline">详情</a><a href="#" class="process-single-btn text-blue-500 hover:underline">处理</a></td>
                       <td class="table-frozen-left-3 px-3 py-3 border-b border-gray-100 break-all font-medium">UL143023488YP</td>
@@ -1847,7 +1870,7 @@
                       <td class="px-3 py-3 border-b border-gray-100 break-all">KJCX8753613159745388544847</td>
                       <td class="px-3 py-3 border-b border-gray-100">-</td>
                     </tr>
-                    <tr class="hover:bg-blue-50 transition">
+                    <tr class="hover:bg-blue-50 transition" data-domestic-status="reprocess">
                       <td class="table-frozen-left-1 px-3 py-3 border-b border-gray-100"><input type="checkbox" class="w-4 h-4"></td>
                       <td class="table-frozen-left-2 px-3 py-3 border-b border-gray-100"><a href="#" class="btn-detail mr-2 text-blue-500 hover:underline">详情</a><a href="#" class="process-single-btn text-blue-500 hover:underline">处理</a></td>
                       <td class="table-frozen-left-3 px-3 py-3 border-b border-gray-100 break-all font-medium">UL184960679YP</td>
@@ -1898,7 +1921,7 @@
                       <td class="px-3 py-3 border-b border-gray-100 break-all">KJCX875513062591922176091</td>
                       <td class="px-3 py-3 border-b border-gray-100">-</td>
                     </tr>
-                    <tr class="hover:bg-blue-50 transition">
+                    <tr class="hover:bg-blue-50 transition" data-domestic-status="other">
                       <td class="table-frozen-left-1 px-3 py-3 border-b border-gray-100"><input type="checkbox" class="w-4 h-4"></td>
                       <td class="table-frozen-left-2 px-3 py-3 border-b border-gray-100"><a href="#" class="btn-detail mr-2 text-blue-500 hover:underline">详情</a><a href="#" class="process-single-btn text-blue-500 hover:underline">处理</a></td>
                       <td class="table-frozen-left-3 px-3 py-3 border-b border-gray-100 break-all font-medium">UL184960679YP</td>
@@ -1949,7 +1972,7 @@
                       <td class="px-3 py-3 border-b border-gray-100 break-all">KJCX8745618369254719488808</td>
                       <td class="px-3 py-3 border-b border-gray-100">K0000000008</td>
                     </tr>
-                    <tr class="hover:bg-blue-50 transition">
+                    <tr class="hover:bg-blue-50 transition" data-domestic-status="pending">
                       <td class="table-frozen-left-1 px-3 py-3 border-b border-gray-100"><input type="checkbox" class="w-4 h-4"></td>
                       <td class="table-frozen-left-2 px-3 py-3 border-b border-gray-100"><a href="#" class="btn-detail mr-2 text-blue-500 hover:underline">详情</a><a href="#" class="process-single-btn text-blue-500 hover:underline">处理</a></td>
                       <td class="table-frozen-left-3 px-3 py-3 border-b border-gray-100 break-all font-medium">UL184960679YP</td>
@@ -2183,10 +2206,19 @@
               </div>
               
               <div class="flex items-center justify-between px-4 py-3 border-b border-gray-100">
-                <div class="flex items-center gap-6 text-sm">
-                  <span class="text-gray-700">待审批：<span class="font-medium text-blue-600">157</span></span>
-                  <span class="text-gray-700">审批通过：<span class="font-medium text-green-600">115</span></span>
-                  <span class="text-gray-700">审批拒绝：<span class="font-medium text-red-600">27</span></span>
+                <div class="flex items-center gap-2">
+                  <button id="approval-status-pending" class="status-tab active px-4 py-2 rounded-md text-sm font-semibold bg-blue-500 text-white shadow-sm">
+                    待审批 <span class="ml-1 text-white font-bold">157</span>
+                  </button>
+                  <button id="approval-status-approved" class="status-tab px-4 py-2 rounded-md text-sm font-semibold bg-white border border-gray-200 text-gray-700 hover:bg-blue-50 hover:border-blue-300">
+                    审批通过 <span class="ml-1 text-gray-600 font-semibold">115</span>
+                  </button>
+                  <button id="approval-status-rejected" class="status-tab px-4 py-2 rounded-md text-sm font-semibold bg-white border border-gray-200 text-gray-700 hover:bg-red-50 hover:border-red-300">
+                    审批拒绝 <span class="ml-1 text-red-500 font-bold">27</span>
+                  </button>
+                  <button id="approval-status-all" class="status-tab px-4 py-2 rounded-md text-sm font-semibold bg-white border border-gray-200 text-gray-700 hover:bg-blue-50 hover:border-blue-300">
+                    全部 <span class="ml-1 text-gray-600 font-semibold">299</span>
+                  </button>
                 </div>
                 <div class="flex items-center gap-2">
                   <button id="btn-approval-customize" class="btn-action" onclick="showApprovalCustomizeModal()">
@@ -2253,7 +2285,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr class="hover:bg-blue-50 transition">
+                      <tr class="hover:bg-blue-50 transition" data-approval-status="pending">
                         <td class="table-frozen-left-0 px-3 py-3 border-b border-gray-100">
                           <input type="checkbox" class="approval-row-checkbox w-4 h-4 text-blue-500 border-gray-300 rounded" data-waybill="YWLAX010170819358">
                         </td>
@@ -2287,7 +2319,7 @@
                         <td class="px-3 py-3 border-b border-gray-100">K2026053000001</td>
                         <td class="px-3 py-3 border-b border-gray-100">S2026050800001</td>
                       </tr>
-                      <tr class="hover:bg-blue-50 transition bg-gray-50">
+                      <tr class="hover:bg-blue-50 transition bg-gray-50" data-approval-status="pending">
                         <td class="table-frozen-left-0 px-3 py-3 border-b border-gray-100">
                           <input type="checkbox" class="approval-row-checkbox w-4 h-4 text-blue-500 border-gray-300 rounded" data-waybill="YWDFW010101444475" data-assigned-approver="李四">
                         </td>
@@ -2321,7 +2353,7 @@
                         <td class="px-3 py-3 border-b border-gray-100">K2026052800002</td>
                         <td class="px-3 py-3 border-b border-gray-100">S2026050700002</td>
                       </tr>
-                      <tr class="hover:bg-blue-50 transition">
+                      <tr class="hover:bg-blue-50 transition" data-approval-status="rejected">
                         <td class="table-frozen-left-0 px-3 py-3 border-b border-gray-100">
                           <input type="checkbox" class="approval-row-checkbox w-4 h-4 text-blue-500 border-gray-300 rounded" data-waybill="YWSH010198765432">
                         </td>
@@ -2353,7 +2385,7 @@
                         <td class="px-3 py-3 border-b border-gray-100">K2026052500003</td>
                         <td class="px-3 py-3 border-b border-gray-100">S2026050600003</td>
                       </tr>
-                      <tr class="hover:bg-blue-50 transition">
+                      <tr class="hover:bg-blue-50 transition" data-approval-status="rejected">
                         <td class="table-frozen-left-0 px-3 py-3 border-b border-gray-100">
                           <input type="checkbox" class="approval-row-checkbox w-4 h-4 text-blue-500 border-gray-300 rounded" data-waybill="YWPHX010039026767">
                         </td>
@@ -2385,7 +2417,7 @@
                         <td class="px-3 py-3 border-b border-gray-100">K2026052500004</td>
                         <td class="px-3 py-3 border-b border-gray-100">S2026050600004</td>
                       </tr>
-                      <tr class="hover:bg-blue-50 transition">
+                      <tr class="hover:bg-blue-50 transition" data-approval-status="approved">
                         <td class="table-frozen-left-0 px-3 py-3 border-b border-gray-100">
                           <input type="checkbox" class="approval-row-checkbox w-4 h-4 text-blue-500 border-gray-300 rounded" data-waybill="YWLAS010017502320" data-assigned-approver="王五">
                         </td>
@@ -3873,6 +3905,12 @@
                     </button>
                     <button class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition text-sm font-medium">
                       导出
+                    </button>
+                    <button id="tracking-desensitize-btn" class="px-4 py-2 border border-gray-300 text-gray-600 rounded-lg hover:bg-gray-50 transition text-sm font-medium flex items-center gap-1">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                      </svg>
+                      <span>脱敏</span>
                     </button>
                   </div>
                 </div>
@@ -6369,9 +6407,16 @@
             <!-- 咨询人客诉记录 -->
             <div id="tab-content-customer-record" class="hidden">
               <div class="mb-4">
-                <div class="text-base font-medium text-gray-700 mb-3">
-                  邮箱：<span class="desensitize-text cursor-pointer hover:text-blue-500 font-bold text-gray-900 text-lg" data-full="john.smith@email.com" data-masked="joh***@email.com">joh***@email.com</span> | 
-                  电话：<span class="desensitize-text cursor-pointer hover:text-blue-500 font-bold text-gray-900 text-lg" data-full="+1-555-0123" data-masked="+1-***-***-0123">+1-***-***-0123</span>
+                <div class="text-base font-medium text-gray-700 mb-3 flex items-center gap-3">
+                  <span>邮箱：<span class="desensitize-text cursor-pointer hover:text-blue-500 font-bold text-gray-900 text-lg" data-full="john.smith@email.com" data-masked="joh***@email.com">joh***@email.com</span></span>
+                  <span>|</span>
+                  <span>电话：<span class="desensitize-text cursor-pointer hover:text-blue-500 font-bold text-gray-900 text-lg" data-full="+1-555-0123" data-masked="+1-***-***-0123">+1-***-***-0123</span></span>
+                  <button id="modal-desensitize-btn" class="ml-auto px-3 py-1.5 border border-gray-300 rounded-md text-sm text-gray-600 hover:bg-gray-50 transition flex items-center gap-1">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                    </svg>
+                    <span>脱敏</span>
+                  </button>
                 </div>
                 <div class="bg-gray-50 rounded-lg p-4">
                   <div class="relative">
@@ -6666,6 +6711,29 @@
           });
         }
 
+        // 咨询人客诉记录脱敏按钮
+        const modalDesensitizeBtn = document.getElementById('modal-desensitize-btn');
+        let isModalDesensitized = true;
+
+        if (modalDesensitizeBtn) {
+          modalDesensitizeBtn.addEventListener('click', function() {
+            isModalDesensitized = !isModalDesensitized;
+            const customerRecordDesensitizeTexts = document.querySelectorAll('#tab-content-customer-record .desensitize-text');
+            
+            customerRecordDesensitizeTexts.forEach(function(el) {
+              const full = el.getAttribute('data-full');
+              const masked = el.getAttribute('data-masked');
+              if (isModalDesensitized) {
+                el.textContent = masked;
+              } else {
+                el.textContent = full;
+              }
+            });
+
+            modalDesensitizeBtn.querySelector('span').textContent = isModalDesensitized ? '脱敏' : '加密';
+          });
+        }
+
         // 处理结果登记中的赔偿与投诉处理复选框切换
         const compensationCheckboxes = document.querySelectorAll('input[type="checkbox"][name="compensation-option"]');
         const customerForm = document.getElementById('result-customer-compensation-form');
@@ -6806,7 +6874,15 @@
                     </button>
                   </div>
                   <div class="p-6">
-                    <p class="text-sm text-gray-500 mb-4">已选择 <span class="font-bold text-blue-500">${checkedCount}</span> 个工单</p>
+                    <div class="flex items-center justify-between mb-4">
+                      <p class="text-sm text-gray-500">已选择 <span class="font-bold text-blue-500">${checkedCount}</span> 个工单</p>
+                      <button class="btn-email-desensitize px-4 py-2 border border-gray-300 text-gray-600 rounded-lg hover:bg-gray-50 transition text-sm font-medium flex items-center gap-1">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                        </svg>
+                        <span>脱敏</span>
+                      </button>
+                    </div>
                     
                     <!-- 收件人邮箱 -->
                     <div class="mb-4">
@@ -6932,6 +7008,28 @@
 
               emailModal.querySelector('.btn-email-close').addEventListener('click', function() {
                 document.body.removeChild(emailModal);
+              });
+
+              // 脱敏/加密按钮切换
+              const btnDesensitize = emailModal.querySelector('.btn-email-desensitize');
+              let isDesensitized = true;
+              btnDesensitize.addEventListener('click', function() {
+                isDesensitized = !isDesensitized;
+                if (isDesensitized) {
+                  this.querySelector('span').textContent = '脱敏';
+                  emailModal.querySelectorAll('.email-item').forEach(item => {
+                    const emailText = item.querySelector('.email-text');
+                    emailText.textContent = item.dataset.masked;
+                    emailText.classList.remove('text-blue-600', 'font-medium');
+                  });
+                } else {
+                  this.querySelector('span').textContent = '加密';
+                  emailModal.querySelectorAll('.email-item').forEach(item => {
+                    const emailText = item.querySelector('.email-text');
+                    emailText.textContent = item.dataset.full;
+                    emailText.classList.add('text-blue-600', 'font-medium');
+                  });
+                }
               });
 
               emailModal.querySelector('.btn-email-cancel').addEventListener('click', function() {
@@ -8031,6 +8129,26 @@
           });
         });
 
+        const btnDesensitize = document.getElementById('btn-desensitize');
+        let isDesensitized = true;
+
+        btnDesensitize.addEventListener('click', function() {
+          isDesensitized = !isDesensitized;
+          const desensitizeTexts = document.querySelectorAll('.desensitize-text');
+          
+          desensitizeTexts.forEach(function(el) {
+            const full = el.getAttribute('data-full');
+            const masked = el.getAttribute('data-masked');
+            if (isDesensitized) {
+              el.textContent = masked;
+            } else {
+              el.textContent = full;
+            }
+          });
+
+          btnDesensitize.querySelector('span').textContent = isDesensitized ? '脱敏' : '加密';
+        });
+
         const btnBatchUpload = document.getElementById('btn-batch-upload');
 
         btnBatchUpload.addEventListener('click', function() {
@@ -8829,6 +8947,168 @@
             btnToggleApprovalSearch.innerHTML = '<span>展开更多</span><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>';
           }
         });
+
+        // 审批状态标签切换
+        const statusTabs = document.querySelectorAll('.status-tab');
+        const approvalRows = document.querySelectorAll('#approval-table tbody tr[data-approval-status]');
+
+        function filterApprovalRows(status) {
+          approvalRows.forEach(function(row) {
+            if (status === 'all') {
+              row.classList.remove('hidden');
+            } else {
+              if (row.getAttribute('data-approval-status') === status) {
+                row.classList.remove('hidden');
+              } else {
+                row.classList.add('hidden');
+              }
+            }
+          });
+        }
+
+        statusTabs.forEach(function(tab) {
+          tab.addEventListener('click', function() {
+            statusTabs.forEach(function(t) {
+              t.classList.remove('active', 'bg-blue-500', 'text-white', 'shadow-sm');
+              t.classList.add('bg-white', 'border', 'border-gray-200', 'text-gray-700');
+              
+              const span = t.querySelector('span');
+              if (span) {
+                if (t.id === 'approval-status-rejected') {
+                  span.classList.remove('text-white', 'font-bold');
+                  span.classList.add('text-red-500', 'font-bold');
+                } else {
+                  span.classList.remove('text-white', 'font-bold');
+                  span.classList.add('text-gray-600', 'font-semibold');
+                }
+              }
+            });
+            this.classList.add('active', 'bg-blue-500', 'text-white', 'shadow-sm');
+            this.classList.remove('bg-white', 'border', 'border-gray-200', 'text-gray-700');
+            
+            const activeSpan = this.querySelector('span');
+            if (activeSpan) {
+              activeSpan.classList.remove('text-gray-600', 'text-red-500', 'font-semibold');
+              activeSpan.classList.add('text-white', 'font-bold');
+            }
+
+            const status = this.id.replace('approval-status-', '');
+            filterApprovalRows(status);
+          });
+        });
+
+        // 默认显示待审批数据
+        filterApprovalRows('pending');
+
+        // YW查件工单状态标签切换
+        const domesticTabs = document.querySelectorAll('.domestic-tab');
+        const domesticRows = document.querySelectorAll('#domestic-inquiry-table tbody tr[data-domestic-status]');
+
+        function filterDomesticRows(status) {
+          domesticRows.forEach(function(row) {
+            if (status === 'all') {
+              row.classList.remove('hidden');
+            } else {
+              if (row.getAttribute('data-domestic-status') === status) {
+                row.classList.remove('hidden');
+              } else {
+                row.classList.add('hidden');
+              }
+            }
+          });
+        }
+
+        domesticTabs.forEach(function(tab) {
+          tab.addEventListener('click', function() {
+            domesticTabs.forEach(function(t) {
+              t.classList.remove('active', 'bg-blue-500', 'text-white', 'shadow-sm');
+              t.classList.add('bg-white', 'border', 'border-gray-200', 'text-gray-700');
+              
+              const span = t.querySelector('span');
+              if (span) {
+                if (t.id === 'domestic-status-flow-error') {
+                  span.classList.remove('text-white', 'font-bold');
+                  span.classList.add('text-red-500', 'font-bold');
+                } else {
+                  span.classList.remove('text-white', 'font-bold');
+                  span.classList.add('text-gray-600', 'font-semibold');
+                }
+              }
+            });
+            this.classList.add('active', 'bg-blue-500', 'text-white', 'shadow-sm');
+            this.classList.remove('bg-white', 'border', 'border-gray-200', 'text-gray-700');
+            
+            const activeSpan = this.querySelector('span');
+            if (activeSpan) {
+              activeSpan.classList.remove('text-gray-600', 'text-red-500', 'font-semibold');
+              activeSpan.classList.add('text-white', 'font-bold');
+            }
+
+            const status = this.id.replace('domestic-status-', '');
+            filterDomesticRows(status);
+          });
+        });
+
+        // 默认显示待处理数据
+        filterDomesticRows('pending');
+
+        // 客诉工单状态标签切换
+        const ticketTabs = document.querySelectorAll('.ticket-tab');
+        const ticketRows = document.querySelectorAll('#ticket-table tbody tr[data-ticket-status]');
+
+        function filterTicketRows(status) {
+          ticketRows.forEach(function(row) {
+            if (status === 'all') {
+              row.classList.remove('hidden');
+            } else if (status === 'abnormal') {
+              if (row.getAttribute('data-ticket-status') === 'abnormal') {
+                row.classList.remove('hidden');
+              } else {
+                row.classList.add('hidden');
+              }
+            } else {
+              if (row.getAttribute('data-ticket-status') === status) {
+                row.classList.remove('hidden');
+              } else {
+                row.classList.add('hidden');
+              }
+            }
+          });
+        }
+
+        ticketTabs.forEach(function(tab) {
+          tab.addEventListener('click', function() {
+            ticketTabs.forEach(function(t) {
+              t.classList.remove('active', 'bg-blue-500', 'text-white', 'shadow-sm');
+              t.classList.add('bg-white', 'border', 'border-gray-200', 'text-gray-700');
+              
+              const span = t.querySelector('span');
+              if (span) {
+                if (t.id === 'ticket-status-abnormal') {
+                  span.classList.remove('text-white', 'font-bold');
+                  span.classList.add('text-red-500', 'font-bold');
+                } else {
+                  span.classList.remove('text-white', 'font-bold');
+                  span.classList.add('text-gray-600', 'font-semibold');
+                }
+              }
+            });
+            this.classList.add('active', 'bg-blue-500', 'text-white', 'shadow-sm');
+            this.classList.remove('bg-white', 'border', 'border-gray-200', 'text-gray-700');
+            
+            const activeSpan = this.querySelector('span');
+            if (activeSpan) {
+              activeSpan.classList.remove('text-gray-600', 'text-red-500', 'font-semibold');
+              activeSpan.classList.add('text-white', 'font-bold');
+            }
+
+            const status = this.id.replace('ticket-status-', '');
+            filterTicketRows(status);
+          });
+        });
+
+        // 默认显示已创建数据
+        filterTicketRows('created');
 
         const monitorTabEfficiency = document.getElementById('monitor-tab-efficiency');
         const monitorTabYwEfficiency = document.getElementById('monitor-tab-yw-efficiency');
@@ -10576,6 +10856,30 @@
             trackingContentBatch.classList.add('hidden');
           });
 
+          // 订单轨迹查询脱敏按钮
+          const trackingDesensitizeBtn = document.getElementById('tracking-desensitize-btn');
+          let isTrackingDesensitized = true;
+
+          if (trackingDesensitizeBtn) {
+            trackingDesensitizeBtn.addEventListener('click', function() {
+              isTrackingDesensitized = !isTrackingDesensitized;
+              const trackingDesensitizeTexts = document.querySelectorAll('#tracking-content-main .desensitize-text');
+              
+              trackingDesensitizeTexts.forEach(function(el) {
+                const full = el.getAttribute('data-full');
+                const masked = el.getAttribute('data-masked');
+                if (isTrackingDesensitized) {
+                  el.textContent = masked;
+                } else {
+                  el.textContent = full;
+                }
+              });
+
+              trackingDesensitizeBtn.querySelector('span').textContent = isTrackingDesensitized ? '脱敏' : '加密';
+            });
+          }
+        }
+
         // 脱敏字段：按住显示完整信息，松开恢复脱敏
         document.querySelectorAll('.desensitize-text').forEach(item => {
           item.addEventListener('mousedown', function() {
@@ -10591,7 +10895,6 @@
             this.classList.remove('text-blue-600', 'font-medium');
           });
         });
-        }
       });
     </script>
 
