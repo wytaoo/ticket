@@ -1480,7 +1480,7 @@
                   <input type="text" class="filter-input w-full" placeholder="请输入YWE最新处理结果">
                 </div>
                 <div>
-                  <label class="block text-xs text-gray-500 mb-1.5">YWE工单状态</label>
+                  <label class="block text-xs text-gray-500 mb-1.5">工单状态</label>
                   <select class="filter-input w-full">
                     <option value="">请选择</option>
                     <option value="待回复">待分配处理人</option>
@@ -1616,7 +1616,7 @@
                   <input type="text" class="filter-input w-full" placeholder="请输入工单创建人">
                 </div>
                 <div>
-                  <label class="block text-xs text-gray-500 mb-1.5">YW查件工单状态</label>
+                  <label class="block text-xs text-gray-500 mb-1.5">YW工单状态</label>
                   <select class="filter-input w-full">
                     <option value="">请选择</option>
                     <option value="待处理">待处理</option>
@@ -1651,6 +1651,9 @@
                   </button>
                   <button id="domestic-status-reprocess" class="domestic-tab px-4 py-2 rounded-md text-sm font-semibold bg-white border border-gray-200 text-gray-700 hover:bg-blue-50 hover:border-blue-300">
                     待再次处理 <span class="ml-1 text-gray-600 font-semibold">23</span>
+                  </button>
+                  <button id="domestic-status-unassigned" class="domestic-tab px-4 py-2 rounded-md text-sm font-semibold bg-white border border-gray-200 text-gray-700 hover:bg-blue-50 hover:border-blue-300">
+                    待分配 <span class="ml-1 text-gray-600 font-semibold">0</span>
                   </button>
                   <button id="domestic-status-flow-error" class="domestic-tab px-4 py-2 rounded-md text-sm font-semibold bg-white border border-gray-200 text-gray-700 hover:bg-red-50 hover:border-red-300">
                     处理异常 <span class="ml-1 text-red-500 font-bold">7</span>
@@ -9441,9 +9444,9 @@
                     <button class="btn-move-up p-1 text-gray-400 hover:text-gray-600">↑</button>
                     <button class="btn-move-down p-1 text-gray-400 hover:text-gray-600">↓</button>
                   </div>
-                  <div class="flex items-center gap-3 p-3 bg-gray-50 rounded-md customize-item" data-field="YWE工单状态">
+                  <div class="flex items-center gap-3 p-3 bg-gray-50 rounded-md customize-item" data-field="工单状态">
                     <input type="checkbox" checked class="w-4 h-4 text-blue-500">
-                    <span class="text-sm text-gray-700 flex-1">YWE工单状态</span>
+                    <span class="text-sm text-gray-700 flex-1">工单状态</span>
                     <button class="btn-move-up p-1 text-gray-400 hover:text-gray-600">↑</button>
                     <button class="btn-move-down p-1 text-gray-400 hover:text-gray-600">↓</button>
                   </div>
