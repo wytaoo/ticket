@@ -705,7 +705,7 @@
           </div>
           <div class="flex items-center gap-4">
             <div class="flex items-center gap-2">
-            <span class="px-2 py-0.5 bg-red-100 text-red-600 text-xs rounded font-medium">v20260717-15-test</span>
+            <span class="px-2 py-0.5 bg-red-100 text-red-600 text-xs rounded font-medium hidden">v20260717-17-test</span>
             <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
@@ -10043,7 +10043,7 @@
                 </div>
                 <div id="single-create-form">
                   <div class="space-y-4">
-                    <div class="grid grid-cols-3 gap-4">
+                    <div class="grid grid-cols-5 gap-4">
                       <div>
                         <label class="block text-sm text-gray-500 mb-1">运单号 <span class="text-red-500">*</span></label>
                         <input type="text" id="create-waybill" class="filter-input w-full" placeholder="请输入运单号">
@@ -10056,8 +10056,6 @@
                         <label class="block text-sm text-gray-500 mb-1">客户名称</label>
                         <input type="text" id="create-customer-name" class="filter-input w-full bg-gray-100" placeholder="根据运单号自动带出" readonly>
                       </div>
-                    </div>
-                    <div class="grid grid-cols-3 gap-4">
                       <div>
                         <label class="block text-sm text-gray-500 mb-1">客诉大类 <span class="text-red-500">*</span></label>
                         <select id="create-category" class="filter-input w-full">
@@ -10082,6 +10080,8 @@
                           <option value="断更35天">断更35天</option>
                         </select>
                       </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-4">
                       <div>
                         <label class="block text-sm text-gray-500 mb-1">流转方案 <span class="text-red-500">*</span></label>
                         <select id="create-transfer" class="filter-input w-full">
@@ -10089,6 +10089,24 @@
                           <option value="客服处理">客服处理</option>
                           <option value="转车队确认">转车队确认</option>
                           <option value="转仓库查件">转仓库查件</option>
+                        </select>
+                      </div>
+                      <div class="create-extra-field" style="display:none;">
+                        <label class="block text-sm text-gray-500 mb-1">超期默认结果 <span class="text-red-500">*</span></label>
+                        <select id="create-overdue-result" class="filter-input w-full">
+                          <option value="">请选择</option>
+                          <option value="包裹丢失">包裹丢失</option>
+                          <option value="包裹破损">包裹破损</option>
+                          <option value="找到包裹">找到包裹</option>
+                        </select>
+                      </div>
+                      <div class="create-extra-field" style="display:none;">
+                        <label class="block text-sm text-gray-500 mb-1">处理方案 <span class="text-red-500">*</span></label>
+                        <select id="create-handle-plan" class="filter-input w-full">
+                          <option value="">请选择</option>
+                          <option value="退回">退回</option>
+                          <option value="再次派送">再次派送</option>
+                          <option value="上架暂存">上架暂存</option>
                         </select>
                       </div>
                     </div>
@@ -10115,6 +10133,8 @@
                             <th class="px-4 py-2 text-left font-medium text-gray-700 border-b border-gray-200">客诉小类</th>
                             <th class="px-4 py-2 text-left font-medium text-gray-700 border-b border-gray-200">客诉内容</th>
                             <th class="px-4 py-2 text-left font-medium text-gray-700 border-b border-gray-200">流转方案</th>
+                            <th class="px-4 py-2 text-left font-medium text-gray-700 border-b border-gray-200">超期默认结果</th>
+                            <th class="px-4 py-2 text-left font-medium text-gray-700 border-b border-gray-200">处理方案</th>
                             <th class="px-4 py-2 text-left font-medium text-gray-700 border-b border-gray-200">创建时间</th>
                             <th class="px-4 py-2 text-left font-medium text-gray-700 border-b border-gray-200">创建人</th>
                             <th class="px-4 py-2 text-left font-medium text-gray-700 border-b border-gray-200">操作</th>
@@ -10129,6 +10149,8 @@
                             <td class="px-4 py-2">内件缺失</td>
                             <td class="px-4 py-2">申请赔偿</td>
                             <td class="px-4 py-2">客服处理</td>
+                            <td class="px-4 py-2 text-gray-400">-</td>
+                            <td class="px-4 py-2 text-gray-400">-</td>
                             <td class="px-4 py-2">2026-05-30 10:30:00</td>
                             <td class="px-4 py-2">程思敏</td>
                             <td class="px-4 py-2">
@@ -10144,6 +10166,8 @@
                             <td class="px-4 py-2">态度恶劣</td>
                             <td class="px-4 py-2">投诉司机态度恶劣</td>
                             <td class="px-4 py-2">转车队确认</td>
+                            <td class="px-4 py-2">找到包裹</td>
+                            <td class="px-4 py-2">再次派送</td>
                             <td class="px-4 py-2">2026-05-29 15:20:00</td>
                             <td class="px-4 py-2">黄燕株</td>
                             <td class="px-4 py-2">
@@ -10159,6 +10183,8 @@
                             <td class="px-4 py-2">损坏草坪</td>
                             <td class="px-4 py-2">申请赔偿</td>
                             <td class="px-4 py-2">转车队确认</td>
+                            <td class="px-4 py-2">包裹丢失</td>
+                            <td class="px-4 py-2">退回</td>
                             <td class="px-4 py-2">2026-05-28 09:10:00</td>
                             <td class="px-4 py-2">杨海舟</td>
                             <td class="px-4 py-2">
@@ -10315,6 +10341,18 @@
             }
           });
 
+          createTicketModal.querySelector('#create-transfer').addEventListener('change', function() {
+            const val = this.value;
+            const extraFieldDivs = createTicketModal.querySelectorAll('.create-extra-field');
+            if (val === '转车队确认' || val === '转仓库查件') {
+              extraFieldDivs.forEach(div => div.style.display = '');
+            } else {
+              extraFieldDivs.forEach(div => div.style.display = 'none');
+              createTicketModal.querySelector('#create-overdue-result').value = '';
+              createTicketModal.querySelector('#create-handle-plan').value = '';
+            }
+          });
+
           createTicketModal.querySelector('#btn-add-ticket').addEventListener('click', function() {
             const waybill = createTicketModal.querySelector('#create-waybill').value.trim();
             const category = createTicketModal.querySelector('#create-category').value;
@@ -10322,9 +10360,16 @@
             const content = createTicketModal.querySelector('#create-content').value.trim();
             const transfer = createTicketModal.querySelector('#create-transfer').value;
             const status = createTicketModal.querySelector('#create-status').value;
+            const overdueResult = createTicketModal.querySelector('#create-overdue-result').value;
+            const handlePlan = createTicketModal.querySelector('#create-handle-plan').value;
 
             if (!waybill || !category || !subcategory || !content || !transfer) {
               alert('请填写必填字段');
+              return;
+            }
+
+            if ((transfer === '转车队确认' || transfer === '转仓库查件') && (!overdueResult || !handlePlan)) {
+              alert('请填写超期默认结果和处理方案');
               return;
             }
 
@@ -10336,6 +10381,8 @@
               subcategory: subcategory,
               content: content,
               transfer: transfer,
+              overdueResult: (transfer === '转车队确认' || transfer === '转仓库查件') ? overdueResult : '-',
+              handlePlan: (transfer === '转车队确认' || transfer === '转仓库查件') ? handlePlan : '-',
               status: status
             };
 
@@ -10349,6 +10396,9 @@
             createTicketModal.querySelector('#create-subcategory').value = '';
             createTicketModal.querySelector('#create-content').value = '';
             createTicketModal.querySelector('#create-transfer').value = '';
+            createTicketModal.querySelector('#create-overdue-result').value = '';
+            createTicketModal.querySelector('#create-handle-plan').value = '';
+            createTicketModal.querySelectorAll('.create-extra-field').forEach(div => div.style.display = 'none');
             createTicketModal.querySelector('#create-status').value = '新建';
             createTicketModal.querySelector('#create-waybill').focus();
           });
@@ -10356,7 +10406,7 @@
           function renderTicketList() {
             const tbody = createTicketModal.querySelector('#ticket-list-body');
             if (addedTickets.length === 0) {
-              tbody.innerHTML = '<tr><td colspan="9" class="px-4 py-8 text-center text-gray-400">暂无添加的工单</td></tr>';
+              tbody.innerHTML = '<tr><td colspan="11" class="px-4 py-8 text-center text-gray-400">暂无添加的工单</td></tr>';
             } else {
               tbody.innerHTML = addedTickets.map((t, index) => `
                 <tr class="border-b border-gray-100">
@@ -10367,6 +10417,8 @@
                   <td class="px-4 py-2">${t.subcategory}</td>
                   <td class="px-4 py-2">${t.content}</td>
                   <td class="px-4 py-2">${t.transfer}</td>
+                  <td class="px-4 py-2">${t.overdueResult || '-'}</td>
+                  <td class="px-4 py-2">${t.handlePlan || '-'}</td>
                   <td class="px-4 py-2"><span class="status-pending">${t.status}</span></td>
                   <td class="px-4 py-2"><button class="text-red-500 hover:underline" onclick="removeTicket(${index})">删除</button></td>
                 </tr>
