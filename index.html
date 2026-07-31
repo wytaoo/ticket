@@ -3459,7 +3459,7 @@
                       <tr class="bg-gray-50">
                         <th class="px-4 py-3 text-left text-sm font-medium text-black border-b">运单号</th>
                         <th class="px-4 py-3 text-left text-sm font-medium text-black border-b">仓库</th>
-                        <th class="px-4 py-3 text-left text-sm font-medium text-black border-b">索赔原因</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-black border-b">索赔类型</th>
                         <th class="px-4 py-3 text-left text-sm font-medium text-black border-b">操作人</th>
                         <th class="px-4 py-3 text-left text-sm font-medium text-black border-b">操作时间</th>
                         <th class="px-4 py-3 text-left text-sm font-medium text-black border-b">工单号</th>
@@ -7442,11 +7442,7 @@
                   </label>
                   <!-- 客户赔偿工单表单 -->
                   <div id="result-customer-compensation-form" class="hidden p-4 bg-gray-50 rounded-md">
-                    <div class="grid grid-cols-2 gap-4 mb-4">
-                      <div>
-                        <label class="block text-sm text-gray-500 mb-1">赔偿原因</label>
-                        <textarea class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm resize-y h-24" placeholder="请输入赔偿原因"></textarea>
-                      </div>
+                    <div class="grid grid-cols-5 gap-4 mb-4">
                       <div>
                         <label class="block text-sm text-gray-500 mb-1">赔偿项</label>
                         <select class="filter-input w-full">
@@ -7456,8 +7452,6 @@
                           <option value="申报价值">赔偿申报价值</option>
                         </select>
                       </div>
-                    </div>
-                    <div class="grid grid-cols-2 gap-4 mb-4">
                       <div>
                         <label class="block text-sm text-gray-500 mb-1">最高赔偿金额</label>
                         <input type="text" readonly class="filter-input w-full bg-gray-200" value="¥150.00">
@@ -7466,6 +7460,27 @@
                         <label class="block text-sm text-gray-500 mb-1">实际赔偿金额</label>
                         <input type="number" class="filter-input w-full" placeholder="请输入实际赔偿金额">
                       </div>
+                      <div>
+                        <label class="block text-sm text-gray-500 mb-1">责任部门</label>
+                        <select class="filter-input w-full">
+                          <option value="">请选择</option>
+                          <option value="仓库">仓库</option>
+                          <option value="DSP">DSP</option>
+                          <option value="供应商">供应商</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label class="block text-sm text-gray-500 mb-1">责任环节</label>
+                        <select class="filter-input w-full">
+                          <option value="">请选择</option>
+                          <option value="仓内操作">仓内操作</option>
+                          <option value="司机派送">司机派送</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="mb-4">
+                      <label class="block text-sm text-gray-500 mb-1">赔偿原因</label>
+                      <textarea class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm resize-y h-24" placeholder="请输入赔偿原因"></textarea>
                     </div>
                     <div>
                       <label class="block text-sm text-gray-500 mb-1">上传附件</label>
@@ -7488,9 +7503,15 @@
                   </label>
                   <!-- 供应商索赔工单表单 -->
                   <div id="result-supplier-claim-form" class="hidden p-4 bg-gray-50 rounded-md">
-                    <div>
-                      <label class="block text-sm text-gray-500 mb-1">索赔原因</label>
-                      <textarea class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm resize-y h-24" placeholder="请输入索赔原因"></textarea>
+                    <div class="grid grid-cols-2 gap-4">
+                      <div>
+                        <label class="block text-sm text-gray-500 mb-1">索赔类型</label>
+                        <textarea class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm resize-y h-24" placeholder="请输入索赔类型"></textarea>
+                      </div>
+                      <div>
+                        <label class="block text-sm text-gray-500 mb-1">备注</label>
+                        <textarea class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm resize-y h-24" placeholder="请输入备注"></textarea>
+                      </div>
                     </div>
                   </div>
                   <!-- DSP投诉扣罚 -->
@@ -7868,7 +7889,7 @@
                             </h5>
                             <div class="text-sm">
                               <div>
-                                <span class="text-gray-500">索赔原因：</span>
+                                <span class="text-gray-500">索赔类型：</span>
                                 <span class="text-gray-800">供应商车队派送延误3天，导致客户投诉</span>
                               </div>
                             </div>
@@ -8102,7 +8123,7 @@
                           <div class="bg-green-50 rounded-lg p-3">
                             <h5 class="text-sm font-medium text-green-800 mb-2">供应商索赔工单</h5>
                             <div class="text-sm">
-                              <span class="text-gray-500">索赔原因：</span>
+                              <span class="text-gray-500">索赔类型：</span>
                               <span class="text-gray-800">司机服务态度恶劣，导致客户投诉</span>
                             </div>
                           </div>
@@ -8771,11 +8792,7 @@
                       </label>
                       <!-- 客户赔偿工单表单 -->
                       <div id="batch-result-customer-compensation-form" class="hidden p-4 bg-gray-50 rounded-md">
-                        <div class="grid grid-cols-2 gap-4 mb-4">
-                          <div>
-                            <label class="block text-sm text-gray-500 mb-1">赔偿原因</label>
-                            <textarea class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm resize-y h-24" placeholder="请输入赔偿原因"></textarea>
-                          </div>
+                        <div class="grid grid-cols-5 gap-4 mb-4">
                           <div>
                             <label class="block text-sm text-gray-500 mb-1">赔偿项</label>
                             <select class="filter-input w-full">
@@ -8785,8 +8802,6 @@
                               <option value="申报价值">赔偿申报价值</option>
                             </select>
                           </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4 mb-4">
                           <div>
                             <label class="block text-sm text-gray-500 mb-1">最高赔偿金额</label>
                             <input type="text" readonly class="filter-input w-full bg-gray-200" value="¥150.00">
@@ -8795,6 +8810,27 @@
                             <label class="block text-sm text-gray-500 mb-1">实际赔偿金额</label>
                             <input type="number" class="filter-input w-full" placeholder="请输入实际赔偿金额">
                           </div>
+                          <div>
+                            <label class="block text-sm text-gray-500 mb-1">责任部门</label>
+                            <select class="filter-input w-full">
+                              <option value="">请选择</option>
+                              <option value="仓库">仓库</option>
+                              <option value="DSP">DSP</option>
+                              <option value="供应商">供应商</option>
+                            </select>
+                          </div>
+                          <div>
+                            <label class="block text-sm text-gray-500 mb-1">责任环节</label>
+                            <select class="filter-input w-full">
+                              <option value="">请选择</option>
+                              <option value="仓内操作">仓内操作</option>
+                              <option value="司机派送">司机派送</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="mb-4">
+                          <label class="block text-sm text-gray-500 mb-1">赔偿原因</label>
+                          <textarea class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm resize-y h-24" placeholder="请输入赔偿原因"></textarea>
                         </div>
                         <div>
                           <label class="block text-sm text-gray-500 mb-1">上传附件</label>
@@ -8817,9 +8853,15 @@
                       </label>
                       <!-- 供应商索赔工单表单 -->
                       <div id="batch-result-supplier-claim-form" class="hidden p-4 bg-gray-50 rounded-md">
-                        <div>
-                          <label class="block text-sm text-gray-500 mb-1">索赔原因</label>
-                          <textarea class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm resize-y h-24" placeholder="请输入索赔原因"></textarea>
+                        <div class="grid grid-cols-2 gap-4">
+                          <div>
+                            <label class="block text-sm text-gray-500 mb-1">索赔类型</label>
+                            <textarea class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm resize-y h-24" placeholder="请输入索赔类型"></textarea>
+                          </div>
+                          <div>
+                            <label class="block text-sm text-gray-500 mb-1">备注</label>
+                            <textarea class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm resize-y h-24" placeholder="请输入备注"></textarea>
+                          </div>
                         </div>
                       </div>
                       <!-- DSP投诉扣罚 -->
@@ -9080,7 +9122,7 @@
                                 </h5>
                                 <div class="text-sm">
                                   <div>
-                                    <span class="text-gray-500">索赔原因：</span>
+                                    <span class="text-gray-500">索赔类型：</span>
                                     <span class="text-gray-800">供应商车队派送延误3天，导致客户投诉</span>
                                   </div>
                                 </div>
@@ -9303,7 +9345,7 @@
                               <div class="bg-green-50 rounded-lg p-3">
                                 <h5 class="text-sm font-medium text-green-800 mb-2">供应商索赔工单</h5>
                                 <div class="text-sm">
-                                  <span class="text-gray-500">索赔原因：</span>
+                                  <span class="text-gray-500">索赔类型：</span>
                                   <span class="text-gray-800">司机服务态度恶劣，导致客户投诉</span>
                                 </div>
                               </div>
@@ -11995,7 +12037,7 @@
                                 </h5>
                                 <div class="text-sm">
                                   <div>
-                                    <span class="text-gray-500">索赔原因：</span>
+                                    <span class="text-gray-500">索赔类型：</span>
                                     <span class="text-gray-800">运输过程中外包装破损</span>
                                   </div>
                                 </div>
