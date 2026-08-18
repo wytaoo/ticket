@@ -3184,6 +3184,10 @@
                       <tr class="bg-gray-50">
                         <th class="px-4 py-3 text-left text-sm font-medium text-black border-b">运单号</th>
                         <th class="px-4 py-3 text-left text-sm font-medium text-black border-b">流转方案</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-black border-b">查件仓库</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-black border-b">查件车队</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-black border-b">找到包裹处理方式</th>
+                        <th class="px-4 py-3 text-left text-sm font-medium text-black border-b">超期默认结果</th>
                         <th class="px-4 py-3 text-left text-sm font-medium text-black border-b">流转方案说明</th>
                         <th class="px-4 py-3 text-left text-sm font-medium text-black border-b">流转回复方案</th>
                         <th class="px-4 py-3 text-left text-sm font-medium text-black border-b">流转回复内容</th>
@@ -3201,6 +3205,10 @@
                       <tr class="hover:bg-gray-50">
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">SF1234567890</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">转车队查件</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">-</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">FLT000398</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">退回</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">包裹丢失</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">客户投诉断更5天</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">包裹丢失</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">-</td>
@@ -3216,6 +3224,10 @@
                       <tr class="hover:bg-gray-50">
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">SF1234567890</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">转仓库查件</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">ORD01</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">-</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">退回</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">包裹丢失</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">客户投诉断更5天</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">已找到</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">-</td>
@@ -3231,6 +3243,10 @@
                       <tr class="hover:bg-gray-50">
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">JD9876543210</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">转车队查件</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">-</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">FLT000398</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">退回</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">包裹丢失</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">客户投诉司机将包裹隔空扔到院内，导致包裹破损，并提供了监控视频</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">超期自动认可</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">-</td>
@@ -3246,6 +3262,10 @@
                       <tr class="hover:bg-gray-50">
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">YT5555666677</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">转车队查件</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">-</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">FLT000398</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">退回</td>
+                        <td class="px-4 py-3 text-sm text-gray-800 border-b">包裹丢失</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">客诉投诉司机虚假妥投，包裹POD不是收件人地址</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">超期自动认可</td>
                         <td class="px-4 py-3 text-sm text-gray-800 border-b">-</td>
@@ -7316,15 +7336,15 @@
                       </select>
                     </div>
                     <div id="handle-warehouse-container" class="hidden">
-                      <label class="block text-sm text-gray-500 mb-1">查件仓库 <span class="text-red-500">*</span></label>
+                      <label class="block text-sm text-gray-500 mb-1">查件仓库</label>
                       <input type="text" id="handle-warehouse" class="filter-input w-full" placeholder="请输入查件仓库" value="ORD01" autocomplete="off">
                     </div>
                     <div id="handle-fleet-container" class="hidden">
-                      <label class="block text-sm text-gray-500 mb-1">查件车队 <span class="text-red-500">*</span></label>
+                      <label class="block text-sm text-gray-500 mb-1">查件车队</label>
                       <input type="text" id="handle-fleet" class="filter-input w-full" placeholder="请输入查件车队" value="FLT000398" autocomplete="off">
                     </div>
                     <div id="handle-processing-plan-container" class="hidden">
-                      <label class="block text-sm text-gray-500 mb-1">找到包裹处理方式 <span class="text-red-500">*</span></label>
+                      <label class="block text-sm text-gray-500 mb-1">找到包裹处理方式</label>
                       <select id="handle-processing-plan" class="filter-input w-full">
                         <option value="">请选择</option>
                         <option value="return">退回</option>
@@ -7392,6 +7412,26 @@
                     <input type="text" readonly class="filter-input w-full bg-gray-50" value="派送延迟">
                   </div>
                   <div>
+                    <label class="block text-sm text-gray-500 mb-1">揽收仓</label>
+                    <input type="text" readonly class="filter-input w-full bg-gray-50" value="LAX01">
+                  </div>
+                  <div>
+                    <label class="block text-sm text-gray-500 mb-1">派送仓</label>
+                    <input type="text" readonly class="filter-input w-full bg-gray-50" value="ORD01">
+                  </div>
+                  <div>
+                    <label class="block text-sm text-gray-500 mb-1">车队编号</label>
+                    <input type="text" readonly class="filter-input w-full bg-gray-50" value="FLT000398">
+                  </div>
+                  <div>
+                    <label class="block text-sm text-gray-500 mb-1">车队名称</label>
+                    <input type="text" readonly class="filter-input w-full bg-gray-50" value="LAX-Hi Horse">
+                  </div>
+                  <div>
+                    <label class="block text-sm text-gray-500 mb-1">司机编号</label>
+                    <input type="text" readonly class="filter-input w-full bg-gray-50" value="DRV001">
+                  </div>
+                  <div>
                     <label class="block text-sm text-gray-500 mb-1">工单来源</label>
                     <input type="text" readonly class="filter-input w-full bg-gray-50" value="客诺电话">
                   </div>
@@ -7440,10 +7480,26 @@
                 </h4>
                 <div class="space-y-3">
                   <div class="p-4 bg-gray-50 rounded-md">
-                    <div class="grid grid-cols-9 gap-4">
+                    <div class="grid gap-4" style="grid-template-columns: repeat(13, minmax(0, 1fr));">
                       <div>
                         <span class="text-sm text-gray-500">流转方案</span>
                         <p class="text-sm text-gray-800 mt-1">转仓库查件</p>
+                      </div>
+                      <div>
+                        <span class="text-sm text-gray-500">查件仓库</span>
+                        <p class="text-sm text-gray-800 mt-1">ORD01</p>
+                      </div>
+                      <div>
+                        <span class="text-sm text-gray-500">查件车队</span>
+                        <p class="text-sm text-gray-800 mt-1">-</p>
+                      </div>
+                      <div>
+                        <span class="text-sm text-gray-500">找到包裹处理方式</span>
+                        <p class="text-sm text-gray-800 mt-1">退回</p>
+                      </div>
+                      <div>
+                        <span class="text-sm text-gray-500">超期默认结果</span>
+                        <p class="text-sm text-gray-800 mt-1">包裹丢失</p>
                       </div>
                       <div>
                         <span class="text-sm text-gray-500">流转方案说明</span>
@@ -7488,10 +7544,26 @@
                     </div>
                   </div>
                   <div class="p-4 bg-gray-50 rounded-md">
-                    <div class="grid grid-cols-9 gap-4">
+                    <div class="grid gap-4" style="grid-template-columns: repeat(13, minmax(0, 1fr));">
                       <div>
                         <span class="text-sm text-gray-500">流转方案</span>
                         <p class="text-sm text-gray-800 mt-1">转车队确认</p>
+                      </div>
+                      <div>
+                        <span class="text-sm text-gray-500">查件仓库</span>
+                        <p class="text-sm text-gray-800 mt-1">-</p>
+                      </div>
+                      <div>
+                        <span class="text-sm text-gray-500">查件车队</span>
+                        <p class="text-sm text-gray-800 mt-1">FLT000398</p>
+                      </div>
+                      <div>
+                        <span class="text-sm text-gray-500">找到包裹处理方式</span>
+                        <p class="text-sm text-gray-800 mt-1">退回</p>
+                      </div>
+                      <div>
+                        <span class="text-sm text-gray-500">超期默认结果</span>
+                        <p class="text-sm text-gray-800 mt-1">包裹丢失</p>
                       </div>
                       <div>
                         <span class="text-sm text-gray-500">流转方案说明</span>
@@ -7736,6 +7808,26 @@
                     <input type="text" readonly class="filter-input w-full bg-gray-50" value="派送延迟">
                   </div>
                   <div>
+                    <label class="block text-sm text-gray-500 mb-1">揽收仓</label>
+                    <input type="text" readonly class="filter-input w-full bg-gray-50" value="LAX01">
+                  </div>
+                  <div>
+                    <label class="block text-sm text-gray-500 mb-1">派送仓</label>
+                    <input type="text" readonly class="filter-input w-full bg-gray-50" value="ORD01">
+                  </div>
+                  <div>
+                    <label class="block text-sm text-gray-500 mb-1">车队编号</label>
+                    <input type="text" readonly class="filter-input w-full bg-gray-50" value="FLT000398">
+                  </div>
+                  <div>
+                    <label class="block text-sm text-gray-500 mb-1">车队名称</label>
+                    <input type="text" readonly class="filter-input w-full bg-gray-50" value="LAX-Hi Horse">
+                  </div>
+                  <div>
+                    <label class="block text-sm text-gray-500 mb-1">司机编号</label>
+                    <input type="text" readonly class="filter-input w-full bg-gray-50" value="DRV001">
+                  </div>
+                  <div>
                     <label class="block text-sm text-gray-500 mb-1">工单来源</label>
                     <input type="text" readonly class="filter-input w-full bg-gray-50" value="客诺电话">
                   </div>
@@ -7784,10 +7876,26 @@
                 </h4>
                 <div class="space-y-3">
                   <div class="p-4 bg-gray-50 rounded-md">
-                    <div class="grid grid-cols-9 gap-4">
+                    <div class="grid gap-4" style="grid-template-columns: repeat(13, minmax(0, 1fr));">
                       <div>
                         <span class="text-sm text-gray-500">流转方案</span>
                         <p class="text-sm text-gray-800 mt-1">转仓库查件</p>
+                      </div>
+                      <div>
+                        <span class="text-sm text-gray-500">查件仓库</span>
+                        <p class="text-sm text-gray-800 mt-1">ORD01</p>
+                      </div>
+                      <div>
+                        <span class="text-sm text-gray-500">查件车队</span>
+                        <p class="text-sm text-gray-800 mt-1">-</p>
+                      </div>
+                      <div>
+                        <span class="text-sm text-gray-500">找到包裹处理方式</span>
+                        <p class="text-sm text-gray-800 mt-1">退回</p>
+                      </div>
+                      <div>
+                        <span class="text-sm text-gray-500">超期默认结果</span>
+                        <p class="text-sm text-gray-800 mt-1">包裹丢失</p>
                       </div>
                       <div>
                         <span class="text-sm text-gray-500">流转方案说明</span>
@@ -7832,10 +7940,26 @@
                     </div>
                   </div>
                   <div class="p-4 bg-gray-50 rounded-md">
-                    <div class="grid grid-cols-9 gap-4">
+                    <div class="grid gap-4" style="grid-template-columns: repeat(13, minmax(0, 1fr));">
                       <div>
                         <span class="text-sm text-gray-500">流转方案</span>
                         <p class="text-sm text-gray-800 mt-1">转车队确认</p>
+                      </div>
+                      <div>
+                        <span class="text-sm text-gray-500">查件仓库</span>
+                        <p class="text-sm text-gray-800 mt-1">-</p>
+                      </div>
+                      <div>
+                        <span class="text-sm text-gray-500">查件车队</span>
+                        <p class="text-sm text-gray-800 mt-1">FLT000398</p>
+                      </div>
+                      <div>
+                        <span class="text-sm text-gray-500">找到包裹处理方式</span>
+                        <p class="text-sm text-gray-800 mt-1">退回</p>
+                      </div>
+                      <div>
+                        <span class="text-sm text-gray-500">超期默认结果</span>
+                        <p class="text-sm text-gray-800 mt-1">包裹丢失</p>
                       </div>
                       <div>
                         <span class="text-sm text-gray-500">流转方案说明</span>
@@ -8833,15 +8957,15 @@
                           </select>
                         </div>
                         <div id="batch-warehouse-container" class="hidden">
-                          <label class="block text-sm text-gray-500 mb-1">查件仓库 <span class="text-red-500">*</span></label>
+                          <label class="block text-sm text-gray-500 mb-1">查件仓库</label>
                           <input type="text" id="batch-warehouse" class="filter-input w-full" placeholder="请输入查件仓库" value="ORD01" autocomplete="off">
                         </div>
                         <div id="batch-fleet-container" class="hidden">
-                          <label class="block text-sm text-gray-500 mb-1">查件车队 <span class="text-red-500">*</span></label>
+                          <label class="block text-sm text-gray-500 mb-1">查件车队</label>
                           <input type="text" id="batch-fleet" class="filter-input w-full" placeholder="请输入查件车队" value="FLT000398" autocomplete="off">
                         </div>
                         <div id="batch-processing-plan-container" class="hidden">
-                          <label class="block text-sm text-gray-500 mb-1">找到包裹处理方式 <span class="text-red-500">*</span></label>
+                          <label class="block text-sm text-gray-500 mb-1">找到包裹处理方式</label>
                           <select id="batch-processing-plan" class="filter-input w-full">
                             <option value="">请选择</option>
                             <option value="return">退回</option>
@@ -9943,30 +10067,7 @@
               alert('请选择处理方案');
               return;
             }
-            // 处理方案 必填校验
-            if (solution === 'transfer-warehouse') {
-              const warehouse = batchModal.querySelector('#batch-warehouse').value;
-              if (!warehouse.trim()) {
-                alert('请填写查件仓库');
-                return;
-              }
-              const processingPlan = batchModal.querySelector('#batch-processing-plan').value;
-              if (!processingPlan) {
-                alert('请选择找到包裹处理方式');
-                return;
-              }
-            } else if (solution === 'transfer-fleet') {
-              const fleet = batchModal.querySelector('#batch-fleet').value;
-              if (!fleet.trim()) {
-                alert('请填写查件车队');
-                return;
-              }
-              const processingPlan = batchModal.querySelector('#batch-processing-plan').value;
-              if (!processingPlan) {
-                alert('请选择找到包裹处理方式');
-                return;
-              }
-            }
+            // 处理方案 必填校验已移除（转车队查件/转仓库查件场景非必填）
             document.body.removeChild(batchModal);
             alert('批量处理操作成功！');
           });
@@ -10867,31 +10968,6 @@
           if (!solution) {
             alert('请选择处理方案');
             return;
-          }
-
-          // 处理方案 必填校验
-          if (solution === 'transfer-warehouse') {
-            const warehouse = document.getElementById('handle-warehouse').value;
-            if (!warehouse.trim()) {
-              alert('请填写查件仓库');
-              return;
-            }
-            const processingPlan = document.getElementById('handle-processing-plan').value;
-            if (!processingPlan) {
-              alert('请选择找到包裹处理方式');
-              return;
-            }
-          } else if (solution === 'transfer-fleet') {
-            const fleet = document.getElementById('handle-fleet').value;
-            if (!fleet.trim()) {
-              alert('请填写查件车队');
-              return;
-            }
-            const processingPlan = document.getElementById('handle-processing-plan').value;
-            if (!processingPlan) {
-              alert('请选择找到包裹处理方式');
-              return;
-            }
           }
 
           if (solution === 'transfer') {
@@ -13167,10 +13243,26 @@
             </h4>
             <div class="space-y-3">
               <div class="p-4 bg-gray-50 rounded-md">
-                <div class="grid grid-cols-9 gap-4">
+                <div class="grid gap-4" style="grid-template-columns: repeat(13, minmax(0, 1fr));">
                   <div>
                     <span class="text-sm text-gray-500">流转方案</span>
                     <p class="text-sm text-gray-800 mt-1">转仓库查件</p>
+                  </div>
+                  <div>
+                    <span class="text-sm text-gray-500">查件仓库</span>
+                    <p class="text-sm text-gray-800 mt-1">ORD01</p>
+                  </div>
+                  <div>
+                    <span class="text-sm text-gray-500">查件车队</span>
+                    <p class="text-sm text-gray-800 mt-1">-</p>
+                  </div>
+                  <div>
+                    <span class="text-sm text-gray-500">找到包裹处理方式</span>
+                    <p class="text-sm text-gray-800 mt-1">退回</p>
+                  </div>
+                  <div>
+                    <span class="text-sm text-gray-500">超期默认结果</span>
+                    <p class="text-sm text-gray-800 mt-1">包裹丢失</p>
                   </div>
                   <div>
                     <span class="text-sm text-gray-500">流转方案说明</span>
@@ -13215,10 +13307,26 @@
                 </div>
               </div>
               <div class="p-4 bg-gray-50 rounded-md">
-                <div class="grid grid-cols-9 gap-4">
+                <div class="grid gap-4" style="grid-template-columns: repeat(13, minmax(0, 1fr));">
                   <div>
                     <span class="text-sm text-gray-500">流转方案</span>
                     <p class="text-sm text-gray-800 mt-1">转车队确认</p>
+                  </div>
+                  <div>
+                    <span class="text-sm text-gray-500">查件仓库</span>
+                    <p class="text-sm text-gray-800 mt-1">-</p>
+                  </div>
+                  <div>
+                    <span class="text-sm text-gray-500">查件车队</span>
+                    <p class="text-sm text-gray-800 mt-1">FLT000398</p>
+                  </div>
+                  <div>
+                    <span class="text-sm text-gray-500">找到包裹处理方式</span>
+                    <p class="text-sm text-gray-800 mt-1">退回</p>
+                  </div>
+                  <div>
+                    <span class="text-sm text-gray-500">超期默认结果</span>
+                    <p class="text-sm text-gray-800 mt-1">包裹丢失</p>
                   </div>
                   <div>
                     <span class="text-sm text-gray-500">流转方案说明</span>
@@ -13287,6 +13395,26 @@
               <div>
                 <label class="block text-sm text-gray-500 mb-1">客诉小类</label>
                 <input type="text" readonly class="filter-input w-full bg-gray-50" value="派送延迟">
+              </div>
+              <div>
+                <label class="block text-sm text-gray-500 mb-1">揽收仓</label>
+                <input type="text" readonly class="filter-input w-full bg-gray-50" value="LAX01">
+              </div>
+              <div>
+                <label class="block text-sm text-gray-500 mb-1">派送仓</label>
+                <input type="text" readonly class="filter-input w-full bg-gray-50" value="ORD01">
+              </div>
+              <div>
+                <label class="block text-sm text-gray-500 mb-1">车队编号</label>
+                <input type="text" readonly class="filter-input w-full bg-gray-50" value="FLT000398">
+              </div>
+              <div>
+                <label class="block text-sm text-gray-500 mb-1">车队名称</label>
+                <input type="text" readonly class="filter-input w-full bg-gray-50" value="LAX-Hi Horse">
+              </div>
+              <div>
+                <label class="block text-sm text-gray-500 mb-1">司机编号</label>
+                <input type="text" readonly class="filter-input w-full bg-gray-50" value="DRV001">
               </div>
               <div>
                 <label class="block text-sm text-gray-500 mb-1">工单来源</label>
