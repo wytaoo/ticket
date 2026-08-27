@@ -880,6 +880,26 @@
                   <label class="block text-xs text-gray-500 mb-1.5">专属客服</label>
                   <input type="text" class="filter-input w-full" placeholder="请输入专属客服">
                 </div>
+                <div>
+                  <label class="block text-xs text-gray-500 mb-1.5">揽收仓</label>
+                  <input type="text" class="filter-input w-full" placeholder="请输入揽收仓">
+                </div>
+                <div>
+                  <label class="block text-xs text-gray-500 mb-1.5">配送仓</label>
+                  <input type="text" class="filter-input w-full" placeholder="请输入配送仓">
+                </div>
+                <div>
+                  <label class="block text-xs text-gray-500 mb-1.5">车队编号</label>
+                  <input type="text" class="filter-input w-full" placeholder="请输入车队编号">
+                </div>
+                <div>
+                  <label class="block text-xs text-gray-500 mb-1.5">车队名称</label>
+                  <input type="text" class="filter-input w-full" placeholder="请输入车队名称">
+                </div>
+                <div>
+                  <label class="block text-xs text-gray-500 mb-1.5">司机编号</label>
+                  <input type="text" class="filter-input w-full" placeholder="请输入司机编号">
+                </div>
               </div>
               <div class="flex items-center justify-between mt-3 gap-3">
                 <div class="flex items-center gap-2">
@@ -1010,6 +1030,11 @@
                     <th class="px-3 py-3 text-left font-medium text-black border-b border-gray-200 w-[170px]">是否创建DSP投诉扣罚</th>
                     <th class="px-3 py-3 text-left font-medium text-black border-b border-gray-200 w-[170px]">咨询人邮箱</th>
                     <th class="px-3 py-3 text-left font-medium text-black border-b border-gray-200 w-[150px]">咨询人电话</th>
+                    <th class="px-3 py-3 text-left font-medium text-black border-b border-gray-200 w-[100px]">揽收仓</th>
+                    <th class="px-3 py-3 text-left font-medium text-black border-b border-gray-200 w-[100px]">配送仓</th>
+                    <th class="px-3 py-3 text-left font-medium text-black border-b border-gray-200 w-[120px]">车队编号</th>
+                    <th class="px-3 py-3 text-left font-medium text-black border-b border-gray-200 w-[150px]">车队名称</th>
+                    <th class="px-3 py-3 text-left font-medium text-black border-b border-gray-200 w-[100px]">司机编号</th>
                     <th class="px-3 py-3 text-left font-medium text-black border-b border-gray-200 w-[120px]"><span class="inline-flex items-center gap-1">工单来源<span class="sort-icon"><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 5l5 7H5l5-7z"/></svg><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 15l-5-7h10l-5 7z"/></svg></span></span></th>
                     <th class="px-3 py-3 text-left font-medium text-black border-b border-gray-200 w-[90px]">工单创建人</th>
                     <th class="px-3 py-3 text-left font-medium text-black border-b border-gray-200 w-[150px]"><span class="inline-flex items-center gap-1">工单创建时间<span class="sort-icon"><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 5l5 7H5l5-7z"/></svg><svg class="w-3 h-3 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 15l-5-7h10l-5 7z"/></svg></span></span></th>
@@ -1055,6 +1080,11 @@
                     <td class="px-3 py-3 border-b border-gray-100">-</td>
                     <td class="px-3 py-3 border-b border-gray-100"><span class="desensitize-text cursor-pointer hover:text-blue-500" data-full="john.smith@email.com" data-masked="john***@email.com">john***@email.com</span></td>
                     <td class="px-3 py-3 border-b border-gray-100"><span class="desensitize-text cursor-pointer hover:text-blue-500" data-full="+1-555-0123" data-masked="+1-555-***">+1-555-***</span></td>
+                    <td class="px-3 py-3 border-b border-gray-100">LAX01</td>
+                    <td class="px-3 py-3 border-b border-gray-100">JFK01</td>
+                    <td class="px-3 py-3 border-b border-gray-100">FLT000398</td>
+                    <td class="px-3 py-3 border-b border-gray-100">LAX-Hi Horse</td>
+                    <td class="px-3 py-3 border-b border-gray-100">DRV001</td>
                     <td class="px-3 py-3 border-b border-gray-100">客诺在线</td>
                     <td class="px-3 py-3 border-b border-gray-100">Ibtesam</td>
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/1 12:00</td>
@@ -1098,6 +1128,11 @@
                     <td class="px-3 py-3 border-b border-gray-100">-</td>
                     <td class="px-3 py-3 border-b border-gray-100"><span class="desensitize-text cursor-pointer hover:text-blue-500" data-full="tom.smith@email.com" data-masked="john***@email.com">john***@email.com</span></td>
                     <td class="px-3 py-3 border-b border-gray-100"><span class="desensitize-text cursor-pointer hover:text-blue-500" data-full="+1-555-0129" data-masked="+1-555-***">***</span></td>
+                    <td class="px-3 py-3 border-b border-gray-100">DFW01</td>
+                    <td class="px-3 py-3 border-b border-gray-100">ORD01</td>
+                    <td class="px-3 py-3 border-b border-gray-100">FLT000401</td>
+                    <td class="px-3 py-3 border-b border-gray-100">DFW-Swift Line</td>
+                    <td class="px-3 py-3 border-b border-gray-100">DRV012</td>
                     <td class="px-3 py-3 border-b border-gray-100">客诺电话</td>
                     <td class="px-3 py-3 border-b border-gray-100">Usama</td>
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/2 2:00</td>
@@ -1141,6 +1176,11 @@
                     <td class="px-3 py-3 border-b border-gray-100">是</td>
                     <td class="px-3 py-3 border-b border-gray-100"><span class="desensitize-text cursor-pointer hover:text-blue-500" data-full="Jerry.smith@email.com" data-masked="Jerry***@email.com">john***@email.com</span></td>
                     <td class="px-3 py-3 border-b border-gray-100"><span class="desensitize-text cursor-pointer hover:text-blue-500" data-full="+1-555-0129" data-masked="+1-555-***">***</span></td>
+                    <td class="px-3 py-3 border-b border-gray-100">PHX01</td>
+                    <td class="px-3 py-3 border-b border-gray-100">LAX01</td>
+                    <td class="px-3 py-3 border-b border-gray-100">FLT000415</td>
+                    <td class="px-3 py-3 border-b border-gray-100">PHX-Desert Express</td>
+                    <td class="px-3 py-3 border-b border-gray-100">DRV023</td>
                     <td class="px-3 py-3 border-b border-gray-100">客诺邮件</td>
                     <td class="px-3 py-3 border-b border-gray-100">Usama</td>
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/3 12:00</td>
@@ -1184,6 +1224,11 @@
                     <td class="px-3 py-3 border-b border-gray-100">-</td>
                     <td class="px-3 py-3 border-b border-gray-100">-</td>
                     <td class="px-3 py-3 border-b border-gray-100"><span class="desensitize-text cursor-pointer hover:text-blue-500" data-full="+1-555-0129" data-masked="+1-555-***">***</span></td>
+                    <td class="px-3 py-3 border-b border-gray-100">LAS01</td>
+                    <td class="px-3 py-3 border-b border-gray-100">SEA01</td>
+                    <td class="px-3 py-3 border-b border-gray-100">FLT000520</td>
+                    <td class="px-3 py-3 border-b border-gray-100">LAS-Nevada Fleet</td>
+                    <td class="px-3 py-3 border-b border-gray-100">DRV034</td>
                     <td class="px-3 py-3 border-b border-gray-100">国内查件工单</td>
                     <td class="px-3 py-3 border-b border-gray-100">Usama</td>
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/3 12:00</td>
@@ -1227,6 +1272,11 @@
                     <td class="px-3 py-3 border-b border-gray-100">-</td>
                     <td class="px-3 py-3 border-b border-gray-100"><span class="desensitize-text cursor-pointer hover:text-blue-500" data-full="john.smith@email.com" data-masked="john***@email.com">john***@email.com</span></td>
                     <td class="px-3 py-3 border-b border-gray-100">-</td>
+                    <td class="px-3 py-3 border-b border-gray-100">LAX01</td>
+                    <td class="px-3 py-3 border-b border-gray-100">MIA01</td>
+                    <td class="px-3 py-3 border-b border-gray-100">FLT000633</td>
+                    <td class="px-3 py-3 border-b border-gray-100">LAX-Hi Horse</td>
+                    <td class="px-3 py-3 border-b border-gray-100">DRV045</td>
                     <td class="px-3 py-3 border-b border-gray-100">客诺WhatsApp</td>
                     <td class="px-3 py-3 border-b border-gray-100">khudija</td>
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/1 1:00</td>
@@ -1270,6 +1320,11 @@
                     <td class="px-3 py-3 border-b border-gray-100">-</td>
                     <td class="px-3 py-3 border-b border-gray-100"><span class="desensitize-text cursor-pointer hover:text-blue-500" data-full="john.smith@email.com" data-masked="john***@email.com">john***@email.com</span></td>
                     <td class="px-3 py-3 border-b border-gray-100">-</td>
+                    <td class="px-3 py-3 border-b border-gray-100">SAN01</td>
+                    <td class="px-3 py-3 border-b border-gray-100">ORD01</td>
+                    <td class="px-3 py-3 border-b border-gray-100">FLT000712</td>
+                    <td class="px-3 py-3 border-b border-gray-100">SAN-Coastal Transit</td>
+                    <td class="px-3 py-3 border-b border-gray-100">DRV056</td>
                     <td class="px-3 py-3 border-b border-gray-100">创建工单</td>
                     <td class="px-3 py-3 border-b border-gray-100">Shahzaib</td>
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/1 12:00</td>
@@ -1313,6 +1368,11 @@
                     <td class="px-3 py-3 border-b border-gray-100">-</td>
                     <td class="px-3 py-3 border-b border-gray-100">-</td>
                     <td class="px-3 py-3 border-b border-gray-100"><span class="desensitize-text cursor-pointer hover:text-blue-500" data-full="+1-555-0129" data-masked="+1-555-***">***</span></td>
+                    <td class="px-3 py-3 border-b border-gray-100">SAN01</td>
+                    <td class="px-3 py-3 border-b border-gray-100">ATL01</td>
+                    <td class="px-3 py-3 border-b border-gray-100">FLT000748</td>
+                    <td class="px-3 py-3 border-b border-gray-100">SAN-Coastal Transit</td>
+                    <td class="px-3 py-3 border-b border-gray-100">DRV067</td>
                     <td class="px-3 py-3 border-b border-gray-100">客户中心商户</td>
                     <td class="px-3 py-3 border-b border-gray-100">abcd</td>
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/2 2:00</td>
@@ -1356,6 +1416,11 @@
                     <td class="px-3 py-3 border-b border-gray-100">-</td>
                     <td class="px-3 py-3 border-b border-gray-100">-</td>
                     <td class="px-3 py-3 border-b border-gray-100">-</td>
+                    <td class="px-3 py-3 border-b border-gray-100">ATL01</td>
+                    <td class="px-3 py-3 border-b border-gray-100">JFK01</td>
+                    <td class="px-3 py-3 border-b border-gray-100">FLT000825</td>
+                    <td class="px-3 py-3 border-b border-gray-100">ATL-Peach State</td>
+                    <td class="px-3 py-3 border-b border-gray-100">DRV078</td>
                     <td class="px-3 py-3 border-b border-gray-100">客户中心个人</td>
                     <td class="px-3 py-3 border-b border-gray-100">khudija</td>
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/2 2:00</td>
@@ -1399,6 +1464,11 @@
                     <td class="px-3 py-3 border-b border-gray-100">-</td>
                     <td class="px-3 py-3 border-b border-gray-100">-</td>
                     <td class="px-3 py-3 border-b border-gray-100"><span class="desensitize-text cursor-pointer hover:text-blue-500" data-full="+1-555-0129" data-masked="+1-555-***">***</span></td>
+                    <td class="px-3 py-3 border-b border-gray-100">ATL01</td>
+                    <td class="px-3 py-3 border-b border-gray-100">ORD01</td>
+                    <td class="px-3 py-3 border-b border-gray-100">FLT000901</td>
+                    <td class="px-3 py-3 border-b border-gray-100">ATL-Peach State</td>
+                    <td class="px-3 py-3 border-b border-gray-100">DRV089</td>
                     <td class="px-3 py-3 border-b border-gray-100">创建工单</td>
                     <td class="px-3 py-3 border-b border-gray-100">程思敏</td>
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/2 2:00</td>
@@ -1442,6 +1512,11 @@
                     <td class="px-3 py-3 border-b border-gray-100">是</td>
                     <td class="px-3 py-3 border-b border-gray-100"><span class="desensitize-text cursor-pointer hover:text-blue-500" data-full="Jerry.smith@email.com" data-masked="Jerry***@email.com">***</span></td>
                     <td class="px-3 py-3 border-b border-gray-100">-</td>
+                    <td class="px-3 py-3 border-b border-gray-100">ATL01</td>
+                    <td class="px-3 py-3 border-b border-gray-100">DFW01</td>
+                    <td class="px-3 py-3 border-b border-gray-100">FLT000963</td>
+                    <td class="px-3 py-3 border-b border-gray-100">ATL-Peach State</td>
+                    <td class="px-3 py-3 border-b border-gray-100">DRV090</td>
                     <td class="px-3 py-3 border-b border-gray-100">创建工单</td>
                     <td class="px-3 py-3 border-b border-gray-100">程思敏</td>
                     <td class="px-3 py-3 border-b border-gray-100">2026/5/2 2:00</td>
